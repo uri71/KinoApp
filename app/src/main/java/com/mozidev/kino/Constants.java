@@ -5,4 +5,5 @@ package com.mozidev.kino;
  */
 public class Constants {
     public static int DRAWER_TOP_ITEM_COUNT = 8;
+    public static final String ARG_SECTION_NUMBER = "section_number";
 }

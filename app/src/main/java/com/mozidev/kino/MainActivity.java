@@ -1,22 +1,20 @@
 package com.mozidev.kino;
 
 import android.app.Activity;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.content.Context;
-import android.os.Build;
-import android.os.Bundle;
-import android.view.Gravity;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.support.v4.widget.DrawerLayout;
-import android.widget.ArrayAdapter;
-import android.widget.TextView;
+
+import com.mozidev.kino.fragments.PosterFragment;
 
 
 public class MainActivity extends ActionBarActivity
@@ -31,7 +29,7 @@ public class MainActivity extends ActionBarActivity
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
      */
     private CharSequence mTitle;
-    private String [] mTitles;
+    private String[] mTitles;
 
 
     @Override
@@ -54,16 +52,57 @@ public class MainActivity extends ActionBarActivity
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
+        Fragment fragment;
+        switch (position) {
+            case (1):
+                fragment = PosterFragment.newInstance(position);
+                break;
+            case (2):
+                fragment = PlaceholderFragment.newInstance(position);
+                break;
+            case (3):
+                fragment = PlaceholderFragment.newInstance(position);
+                break;
+            case (4):
+                fragment = PlaceholderFragment.newInstance(position);
+                break;
+            case (5):
+                fragment = PlaceholderFragment.newInstance(position);
+                break;
+            case (6):
+                fragment = PlaceholderFragment.newInstance(position);
+                break;
+            case (7):
+                fragment = PlaceholderFragment.newInstance(position);
+                break;
+            case (8):
+                fragment = PlaceholderFragment.newInstance(position);
+                break;
+            case (9):
+                fragment = PlaceholderFragment.newInstance(position);
+                break;
+            default:
+                fragment = PlaceholderFragment.newInstance(position);
+                break;
+        }
+        setFragment(fragment);
+
+    }
+
+
+    private void setFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.container, PlaceholderFragment.newInstance(position))
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left,
+                R.anim.slide_in_left, R.anim.slide_out_right);
+        fragmentTransaction.replace(R.id.container, fragment)
                 .commit();
+
     }
 
 
     public void onSectionAttached(int number) {
         mTitle = mTitles[number];
-
     }
 
 
@@ -114,7 +153,6 @@ public class MainActivity extends ActionBarActivity
          * The fragment argument representing the section number for this
          * fragment.
          */
-        private static final String ARG_SECTION_NUMBER = "section_number";
 
 
         /**
@@ -124,7 +162,7 @@ public class MainActivity extends ActionBarActivity
         public static PlaceholderFragment newInstance(int sectionNumber) {
             PlaceholderFragment fragment = new PlaceholderFragment();
             Bundle args = new Bundle();
-            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+            args.putInt(Constants.ARG_SECTION_NUMBER, sectionNumber);
             fragment.setArguments(args);
             return fragment;
         }
@@ -146,7 +184,7 @@ public class MainActivity extends ActionBarActivity
         public void onAttach(Activity activity) {
             super.onAttach(activity);
             ((MainActivity) activity).onSectionAttached(
-                    getArguments().getInt(ARG_SECTION_NUMBER));
+                    getArguments().getInt(Constants.ARG_SECTION_NUMBER));
         }
     }
 

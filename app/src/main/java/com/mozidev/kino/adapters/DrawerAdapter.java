@@ -56,20 +56,19 @@ public class DrawerAdapter extends ArrayAdapter {
         if (convertView == null) {
 
             if (position == 0 || position == Constants.DRAWER_TOP_ITEM_COUNT) {
-                mResourse = android.R.layout.simple_list_item_1;
+                mResourse = R.layout.drawer_title;
             } else if (position < Constants.DRAWER_TOP_ITEM_COUNT) {
-                mResourse = android.R.layout.simple_list_item_1;
+                mResourse = R.layout.item_drawer_top;
             } else if (position > Constants.DRAWER_TOP_ITEM_COUNT) {
-                mResourse = android.R.layout.simple_list_item_1;
+                mResourse = R.layout.item_drawer_bottom;
             }
             view = LayoutInflater.from(mContext).inflate(mResourse, parent, false);
         }
         String title = mTitle.get(position);
 
-        TextView textView = ((TextView) view.findViewById(android.R.id.text1));
+        TextView textView = ((TextView) view.findViewById(R.id.text));
         textView.setText(title);
         textView.setTypeface(Typeface.create("sans-serif", Typeface.BOLD));
-        textView.setTextColor(Color.WHITE);
         return view;
     }
 }
