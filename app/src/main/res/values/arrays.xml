@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="title">
+        <item>Фильм Мотыльки</item>
+        <item>Постер</item>
+        <item>Сюжет</item>
+        <item>Кадры и трейлеры</item>
+        <item>Создатели</item>
+        <item>О фильме</item>
+        <item>Рейтинги  и отзывы</item>
+        <item>Сеансы и заказ билетов</item>
+        <item>FILM.UA</item>
+        <item>О компании</item>
+        <item>Наши фильмы</item>
+        <item>Скоро на экранах</item>
+        <item>Чат</item>
+    </string-array>
+</resources>
