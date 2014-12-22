@@ -15,4 +15,40 @@
         <item>Скоро на экранах</item>
         <item>Чат</item>
     </string-array>
+    <integer-array name="small_shot">
+        <item>@drawable/sm_1</item>
+        <item>@drawable/sm_2</item>
+        <item>@drawable/sm_3</item>
+        <item>@drawable/sm_4</item>
+        <item>@drawable/sm_5</item>
+        <item>@drawable/sm_6</item>
+        <item>@drawable/sm_7</item>
+        <item>@drawable/sm_8</item>
+        <item>@drawable/sm_9</item>
+        <item>@drawable/sm_10</item>
+        <item>@drawable/sm_11</item>
+        <item>@drawable/sm_12</item>
+        <item>@drawable/sm_13</item>
+        <item>@drawable/sm_14</item>
+        <item>@drawable/sm_15</item>
+        <item>@drawable/sm_16</item>
+    </integer-array>
+    <array name="big_shot">
+        <item>R.raw.shot_1</item>
+        <item>R.raw.shot_2</item>
+        <item>R.raw.shot_3</item>
+        <item>R.raw.shot_4</item>
+        <item>R.raw.shot_5</item>
+        <item>R.raw.shot_6</item>
+        <item>R.raw.shot_7</item>
+        <item>R.raw.shot_8</item>
+        <item>R.raw.shot_9</item>
+        <item>R.raw.shot_10</item>
+        <item>R.raw.shot_11</item>
+        <item>R.raw.shot_12</item>
+        <item>R.raw.shot_13</item>
+        <item>R.raw.shot_14</item>
+        <item>R.raw.shot_15</item>
+        <item>R.raw.shot_16</item>
+    </array>
 </resources>

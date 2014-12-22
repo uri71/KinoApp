@@ -15,6 +15,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.mozidev.kino.fragments.PosterFragment;
+import com.mozidev.kino.fragments.ShotFragment;
+import com.mozidev.kino.fragments.StoryFragment;
 
 
 public class MainActivity extends ActionBarActivity
@@ -58,10 +60,10 @@ public class MainActivity extends ActionBarActivity
                 fragment = PosterFragment.newInstance(position);
                 break;
             case (2):
-                fragment = PlaceholderFragment.newInstance(position);
+                fragment = StoryFragment.newInstance(position);
                 break;
             case (3):
-                fragment = PlaceholderFragment.newInstance(position);
+                fragment = ShotFragment.newInstance(position);
                 break;
             case (4):
                 fragment = PlaceholderFragment.newInstance(position);
