@@ -1,0 +1,106 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/background_story"
+              android:orientation="vertical"
+              android:paddingTop="48dp"
+              tools:context="com.mozidev.kino.fragments.RatingFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Рейтинги"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:textAllCaps="true"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:paddingLeft="32dp"
+            android:paddingRight="32dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/tv_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Кинопоиск"/>
+
+            <TextView
+                style="@style/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7,8"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="32dp"
+            android:paddingRight="32dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/tv_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="IMDB"/>
+
+            <TextView
+                style="@style/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="8,3"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <TextView
+        style="@style/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="отзывы"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:textAllCaps="true"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:listSelector="@android:color/transparent"
+            android:scrollbarAlwaysDrawVerticalTrack="false"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_gravity="top"
+            android:background="@drawable/edge_transparent_top"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/edge_transparent_bottom"/>
+
+    </FrameLayout>
+
+
+</LinearLayout>

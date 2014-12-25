@@ -51,4 +51,68 @@
         <item>R.raw.shot_15</item>
         <item>R.raw.shot_16</item>
     </array>
+    <string-array name="team_names">
+        <item>Виталий Воробьев</item>
+        <item>Юрий Борисов</item>
+        <item>Мария Поезжаева</item>
+        <item>Евгения Лоза</item>
+        <item>Артем Ткаченко</item>
+        <item>Станислав Мельник</item>
+    </string-array>
+    <string-array name="team_lines">
+        <item>Режиссер</item>
+        <item>Павел</item>
+        <item>Аля</item>
+        <item>Сестра Али</item>
+        <item>Врач-интерн</item>
+        <item>Сержант милиции</item>
+    </string-array>
+    <string-array name="team_links">
+        <item>http://www.kinopoisk.ru/name/565971/</item>
+        <item>http://www.kinopoisk.ru/name/2286839/</item>
+        <item>http://www.kinopoisk.ru/name/2289203/</item>
+        <item>http://www.kinopoisk.ru/name/1602054/</item>
+        <item>http://www.kinopoisk.ru/name/558076/</item>
+        <item>http://www.kinopoisk.ru/name/2323760/</item>
+    </string-array>
+    <string-array name="comment_name">
+        <item>Иванов</item>
+        <item>Петрова</item>
+        <item>Сидоров</item>
+        <item>Рабинович</item>
+    </string-array>
+    <string-array name="comment">
+        <item>@string/comment1</item>
+        <item>@string/comment2</item>
+        <item>@string/comment3</item>
+        <item>@string/comment4</item>
+    </string-array>
+    <string-array name="about_facts">
+        <item>@string/about1</item>
+        <item>@string/about2</item>
+        <item>@string/about3</item>
+        <item>@string/about4</item>
+    </string-array>
+    <string-array name="about_title">
+        <item>Год</item>
+        <item>Страна</item>
+        <item>Слоган</item>
+        <item>Режиссер</item>
+        <item>Сценарий</item>
+        <item>Жанр</item>
+        <item>Премьера</item>
+        <item>Возраст</item>
+        <item>Время</item>
+    </string-array>
+    <string-array name="about_data">
+        <item>2013</item>
+        <item>Украина</item>
+        <item>"Борьба любви и смерти"</item>
+        <item>Владимир Воробьев</item>
+        <item>Валерий Мухарьямов</item>
+        <item>Драма, сериал</item>
+        <item>27 апреля 2013</item>
+        <item>16+</item>
+        <item>200 мин (4 серии по 50мин.)</item>
+    </string-array>
 </resources>

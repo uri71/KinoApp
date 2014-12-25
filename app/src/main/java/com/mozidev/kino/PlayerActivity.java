@@ -11,6 +11,7 @@ import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.MediaController;
 import android.widget.VideoView;
 
 import java.util.Arrays;
@@ -31,16 +32,18 @@ private List<Integer> trailers;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player);
-        trailers = Arrays.asList(R.raw.trailer1, R.raw.trailer2, R.raw.trailer2);
+        trailers = Arrays.asList(R.raw.trailer1, R.raw.trailer2);
 
-        int resource = getIntent().getIntExtra(Constants.ARG_SHOT_NUMBER, Constants.SHOT_COUNT)-Constants.SHOT_COUNT;
+        int resource = getIntent().getIntExtra(Constants.ARG_SHOT_NUMBER, Constants.SHOT_COUNT)-Constants.SHOT_COUNT-1;
 
-         videoView = (VideoView)findViewById(R.id.vv_trailer);
-        videoView.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + "R.raw.trailer"+resource));
+        videoView = (VideoView)findViewById(R.id.vv_trailer);
+        videoView.setMediaController(new MediaController(this));
+        videoView.canPause();
+        videoView.canSeekBackward();
+        videoView.canSeekForward();
+        videoView.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + trailers.get(resource)));
         videoView.start();
 
     }
-
-
 
 }

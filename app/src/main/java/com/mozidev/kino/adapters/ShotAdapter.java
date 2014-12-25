@@ -38,8 +38,8 @@ public class ShotAdapter extends BaseAdapter {
                 R.drawable.sm_11, R.drawable.sm_12,
                 R.drawable.sm_13, R.drawable.sm_14,
                 R.drawable.sm_15, R.drawable.sm_16,
-                R.drawable.trailer1, R.drawable.trailer2,
-                R.drawable.trailer3);
+                R.drawable.trailer1, R.drawable.trailer2 );
+
         //List images = Arrays.asList(mContext.getResources().getIntArray(R.array.small_shot));
         return images;
     }

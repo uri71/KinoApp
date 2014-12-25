@@ -14,9 +14,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.mozidev.kino.fragments.AboutFragment;
 import com.mozidev.kino.fragments.PosterFragment;
+import com.mozidev.kino.fragments.RatingFragment;
 import com.mozidev.kino.fragments.ShotFragment;
 import com.mozidev.kino.fragments.StoryFragment;
+import com.mozidev.kino.fragments.TeamFragment;
 
 
 public class MainActivity extends ActionBarActivity
@@ -66,13 +69,13 @@ public class MainActivity extends ActionBarActivity
                 fragment = ShotFragment.newInstance(position);
                 break;
             case (4):
-                fragment = PlaceholderFragment.newInstance(position);
+                fragment = TeamFragment.newInstance(position);
                 break;
             case (5):
-                fragment = PlaceholderFragment.newInstance(position);
+                fragment = AboutFragment.newInstance(position);
                 break;
             case (6):
-                fragment = PlaceholderFragment.newInstance(position);
+                fragment = RatingFragment.newInstance(position);
                 break;
             case (7):
                 fragment = PlaceholderFragment.newInstance(position);
