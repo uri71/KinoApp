@@ -56,7 +56,7 @@ private List<String> mLines;
         if(view == null){
             view = LayoutInflater.from(mContext).inflate(R.layout.item_list_team, parent,false);
         }
-        ((de.hdodenhof.circleimageview.CircleImageView)view.findViewById(R.id.iv_team)).setImageResource(mImage.get(position));
+        ((ImageView)view.findViewById(R.id.iv_team)).setImageResource(mImage.get(position));
         ((TextView)view.findViewById(R.id.tv_name)).setText(mName.get(position));
         ((TextView)view.findViewById(R.id.tv_lines)).setText(mLines.get(position));
         return view;

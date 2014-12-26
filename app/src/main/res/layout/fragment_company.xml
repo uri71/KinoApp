@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background_company"/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingLeft="16dp"
+                android:text="Основные направления"
+                android:textAppearance="?android:textAppearanceLarge"
+                android:textColor="@color/team_text"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/comp_prodaction"
+                style="@style/tv_company"
+                android:layout_marginTop="16dp"
+                android:text="PRODUCTION"/>
+
+            <TextView
+                android:id="@+id/comp_distribution"
+                style="@style/tv_company"
+                android:text="DISTRIBUTION"/>
+
+            <TextView
+                android:id="@+id/comp_television"
+                style="@style/tv_company"
+                android:text="TELEVISION"/>
+
+            <TextView
+                android:id="@+id/comp_postprodaction"
+                style="@style/tv_company"
+                android:text="POSTPRODUCTION"/>
+
+            <TextView
+                android:id="@+id/comp_studio"
+                style="@style/tv_company"
+                android:text="STUDIO"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:paddingLeft="16dp"
+                android:text="Наша продукция"
+                android:textAppearance="?android:textAppearanceLarge"
+                android:textColor="@color/team_text"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/comp_films"
+                style="@style/tv_company"
+                android:text="КАТАЛОГ"/>
+
+            <TextView
+                android:id="@+id/comp_new_films"
+                style="@style/tv_company"
+                android:text="НАШИ НОВИНКИ"/>
+
+            <TextView
+                android:id="@+id/comp_soon"
+                style="@style/tv_company"
+                android:text="СКОРО НА ЭКРАНАХ"/>
+
+            <TextView
+                android:id="@+id/comp_education"
+                style="@style/tv_company"
+                android:text="ОБРАЗОВАТЕЛЬНЫЕ ПРОЕКТЫ"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

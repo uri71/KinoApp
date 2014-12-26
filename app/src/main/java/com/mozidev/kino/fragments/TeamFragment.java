@@ -13,7 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.mozidev.kino.Constants;
-import com.mozidev.kino.MainActivity;
+import com.mozidev.kino.activity.MainActivity;
 import com.mozidev.kino.R;
 import com.mozidev.kino.adapters.TeamAdapter;
 

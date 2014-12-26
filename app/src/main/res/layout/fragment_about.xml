@@ -4,7 +4,7 @@
               android:layout_height="match_parent"
               android:background="@drawable/background_story"
               android:orientation="vertical"
-              android:paddingTop="32dp"
+              android:paddingTop="16dp"
               tools:context="com.mozidev.kino.fragments.AboutFragment">
 
     <LinearLayout
@@ -19,6 +19,7 @@
             android:layout_height="wrap_content"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
+            android:paddingBottom="16dp"
             android:text="О фильме"
             android:textAllCaps="true"
             />
@@ -32,8 +33,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:listSelector="@android:color/transparent"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
                 android:scrollbarAlwaysDrawVerticalTrack="false"/>
 
             <View
@@ -79,8 +78,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:listSelector="@android:color/transparent"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
                 android:scrollbarAlwaysDrawVerticalTrack="false"/>
 
             <View

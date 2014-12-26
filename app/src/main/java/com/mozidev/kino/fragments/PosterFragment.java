@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.mozidev.kino.Constants;
-import com.mozidev.kino.MainActivity;
+import com.mozidev.kino.activity.MainActivity;
 import com.mozidev.kino.R;
 
 /**

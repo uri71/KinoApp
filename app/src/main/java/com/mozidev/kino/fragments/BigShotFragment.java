@@ -56,12 +56,12 @@ public class BigShotFragment extends Fragment {
                              ViewGroup container,
                              @Nullable
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_big_shot, container, false);
+        View view = inflater.inflate(R.layout.activity_big_shot, container, false);
         SliderLayout slider = (SliderLayout) view.findViewById(R.id.slider);
         for(int shot: bigShot){
             TextSliderView textSliderView = new TextSliderView(getActivity());
             textSliderView.image(shot)
-                    .setScaleType(BaseSliderView.ScaleType.Fit);
+                    .setScaleType(BaseSliderView.ScaleType.CenterCrop);
 
             slider.addSlider(textSliderView);
         }

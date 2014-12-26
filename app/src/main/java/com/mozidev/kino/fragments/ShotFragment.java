@@ -5,19 +5,16 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.GridLayout;
 import android.widget.GridView;
 
-import com.mozidev.kino.BigShotActivity;
+import com.mozidev.kino.activity.BigShotActivity;
 import com.mozidev.kino.Constants;
-import com.mozidev.kino.MainActivity;
-import com.mozidev.kino.PlayerActivity;
+import com.mozidev.kino.activity.MainActivity;
+import com.mozidev.kino.activity.PlayerActivity;
 import com.mozidev.kino.R;
 import com.mozidev.kino.adapters.ShotAdapter;
 

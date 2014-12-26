@@ -8,12 +8,11 @@
         <item>Создатели</item>
         <item>О фильме</item>
         <item>Рейтинги  и отзывы</item>
-        <item>Сеансы и заказ билетов</item>
         <item>FILM.UA</item>
         <item>О компании</item>
         <item>Наши фильмы</item>
+        <item>Наши новинки</item>
         <item>Скоро на экранах</item>
-        <item>Чат</item>
     </string-array>
     <integer-array name="small_shot">
         <item>@drawable/sm_1</item>
@@ -100,9 +99,12 @@
         <item>Режиссер</item>
         <item>Сценарий</item>
         <item>Жанр</item>
+        <item>Тип</item>
         <item>Премьера</item>
         <item>Возраст</item>
         <item>Время</item>
+        <item>Награды</item>
+        <item>Номинации</item>
     </string-array>
     <string-array name="about_data">
         <item>2013</item>
@@ -110,9 +112,23 @@
         <item>"Борьба любви и смерти"</item>
         <item>Владимир Воробьев</item>
         <item>Валерий Мухарьямов</item>
-        <item>Драма, сериал</item>
+        <item>Драма</item>
+        <item>Минисериал</item>
         <item>27 апреля 2013</item>
         <item>16+</item>
         <item>200 мин (4 серии по 50мин.)</item>
+        <item>@string/awards</item>
+        <item>@string/nomination</item>
+    </string-array>
+    <string-array name="uri_about">
+        <item>http://film.ua/ru/production</item>
+        <item>http://film.ua/ru/distribution/about</item>
+        <item>http://film.ua/ru/production/television</item>
+        <item>http://film.ua/ru/production/postproduction</item>
+        <item>http://film.ua/ru/studio/about</item>
+        <item>http://faculty.film.ua/</item>
+        <item>http://film.ua/ru/production/filmsandseries/projects?status=1</item>//готовые
+        <item>http://film.ua/ru/production/filmsandseries/projects?status=1&amp;year=2014</item>//новинки
+        <item>http://film.ua/ru/production/filmsandseries/projects?status=2</item>//в производстве
     </string-array>
 </resources>
