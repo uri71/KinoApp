@@ -65,7 +65,7 @@ public class DrawerAdapter extends ArrayAdapter {
         if (position == 0 || position == Constants.DRAWER_TOP_ITEM_COUNT) {
             view.setBackgroundResource(R.color.transparent);
         } else {
-            view.setBackgroundResource(R.color.background_gray_transparent);
+            view.setBackgroundResource(R.color.background_menu_transparent);
         }
         String title = mTitle.get(position);
         TextView textView = ((TextView) view.findViewById(R.id.text));

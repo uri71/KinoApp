@@ -52,7 +52,7 @@
         <item name="android:textColor">@drawable/company_text_color_selector</item>
         <item name="android:textStyle">italic|bold</item>
         <item name="android:gravity">center_vertical</item>
-        <item name="android:background">@color/background_gray_transparent</item>
+        <item name="android:background">@color/background_menu_transparent</item>
     </style>
 
 </resources>

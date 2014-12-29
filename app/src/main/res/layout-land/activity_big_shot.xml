@@ -7,7 +7,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/background_big_shot"
+        android:src="@drawable/background_big_shot_land"
         android:scaleType="centerCrop"
         android:nextFocusDown="@+id/slider"/>
 
