@@ -1,6 +1,7 @@
 package com.mozidev.kino.adapters;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -53,24 +54,23 @@ public class DrawerAdapter extends ArrayAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = convertView;
         if (convertView == null) {
-
-            if (position == 0 || position == Constants.DRAWER_TOP_ITEM_COUNT) {
-                mResourse = R.layout.drawer_title;
-            } else {
-                mResourse = R.layout.item_drawer_top;
-            }
+            mResourse = R.layout.item_drawer_top;
             view = LayoutInflater.from(mContext).inflate(mResourse, parent, false);
         }
 
-        if (position == 0 || position == Constants.DRAWER_TOP_ITEM_COUNT) {
-            view.setBackgroundResource(R.color.transparent);
-        } else {
-            view.setBackgroundResource(R.color.background_menu_transparent);
-        }
         String title = mTitle.get(position);
         TextView textView = ((TextView) view.findViewById(R.id.text));
         textView.setText(title);
-        textView.setTypeface(Typeface.create("sans-serif", Typeface.BOLD));
+
+        if (position == 0 || position == Constants.DRAWER_TOP_ITEM_COUNT) {
+            view.setBackgroundResource(R.color.transparent);
+            textView.setTypeface(Typeface.create("sans-serif", Typeface.BOLD));
+            textView.setTextColor(Color.WHITE);
+        } else {
+            view.setBackgroundResource(R.color.background_menu_transparent);
+            textView.setTypeface(Typeface.create("sans-serif", Typeface.BOLD_ITALIC));
+            textView.setTextColor(mContext.getResources().getColorStateList(R.color.drawer_text_color_selector));
+        }
         return view;
     }
 }

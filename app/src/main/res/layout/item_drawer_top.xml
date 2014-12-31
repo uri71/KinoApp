@@ -10,9 +10,8 @@
        android:id="@+id/text"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       android:textColor="@drawable/drawer_text_color_selector"
-       android:textStyle="bold"
        android:background="@color/transparent"
+       android:textColor="@android:color/white"
        android:textSize="@dimen/navigation_drawer_text_size_item"/>
 
 </LinearLayout>
