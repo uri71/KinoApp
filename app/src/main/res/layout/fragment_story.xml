@@ -18,17 +18,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/background_gray_transparent"/>
+
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="@string/story"
                 android:textAppearance="?android:textAppearanceMedium"
-                android:textColor="@android:color/white"
+                android:textColor="@color/team_text"
                 android:textStyle="bold|italic"/>
         </FrameLayout>
     </ScrollView>

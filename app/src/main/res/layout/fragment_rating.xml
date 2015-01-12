@@ -2,7 +2,7 @@
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="@drawable/background_story"
+              android:background="@drawable/backgroung_monument"
               android:orientation="vertical"
               android:paddingTop="48dp"
               tools:context="com.mozidev.kino.fragments.RatingFragment">
@@ -13,7 +13,7 @@
         android:orientation="vertical">
 
         <TextView
-            style="@style/tv_title"
+            style="@style/TextViewTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Рейтинги"
@@ -30,14 +30,14 @@
             android:orientation="horizontal">
 
             <TextView
-                style="@style/tv_title"
+                style="@style/TextViewTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Кинопоиск"/>
 
             <TextView
-                style="@style/tv_title"
+                style="@style/TextViewTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="7,8"/>
@@ -51,14 +51,14 @@
             android:orientation="horizontal">
 
             <TextView
-                style="@style/tv_title"
+                style="@style/TextViewTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="IMDB"/>
 
             <TextView
-                style="@style/tv_title"
+                style="@style/TextViewTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="8,3"/>
@@ -67,10 +67,11 @@
 
 
     <TextView
-        style="@style/tv_title"
+        style="@style/TextViewTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:layout_marginBottom="8dp"
         android:text="отзывы"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
@@ -84,19 +85,20 @@
             android:id="@+id/list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:dividerHeight="1dp"
             android:listSelector="@android:color/transparent"
             android:scrollbarAlwaysDrawVerticalTrack="false"/>
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="32dp"
+            android:layout_height="16dp"
             android:layout_gravity="top"
             android:background="@drawable/edge_transparent_top"
             />
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="32dp"
+            android:layout_height="16dp"
             android:layout_gravity="bottom"
             android:background="@drawable/edge_transparent_bottom"/>
 

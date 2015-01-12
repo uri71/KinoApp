@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.ListView;
 
 import com.mozidev.kino.Constants;
@@ -43,7 +44,7 @@ public class AboutFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         ListView lv_about = (ListView) view.findViewById(R.id.lv_about);
-        lv_about.setAdapter(new AboutAdapter(getActivity(), R.layout.item_list_about));
+        lv_about.setAdapter(new ArrayAdapter(getActivity(), R.layout.item_list_about));
         lv_about.setVerticalScrollBarEnabled(false);
 
         ListView lv_facts = (ListView) view.findViewById(R.id.lv_facts);

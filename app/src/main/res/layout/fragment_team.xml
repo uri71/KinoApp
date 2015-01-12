@@ -1,8 +1,8 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
-             android:background="@drawable/background_team"
              android:layout_height="match_parent"
+             android:background="@drawable/background_team1"
              tools:context="com.mozidev.kino.fragments.TeamFragment"
     >
 

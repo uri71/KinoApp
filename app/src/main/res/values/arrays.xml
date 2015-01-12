@@ -126,9 +126,9 @@
         <item>http://film.ua/ru/production/television</item>
         <item>http://film.ua/ru/production/postproduction</item>
         <item>http://film.ua/ru/studio/about</item>
-        <item>http://faculty.film.ua/</item>
         <item>http://film.ua/ru/production/filmsandseries/projects?status=1</item>//готовые
         <item>http://film.ua/ru/production/filmsandseries/projects?status=1&amp;year=2014</item>//новинки
         <item>http://film.ua/ru/production/filmsandseries/projects?status=2</item>//в производстве
+        <item>http://faculty.film.ua/</item>
     </string-array>
 </resources>
