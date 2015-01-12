@@ -3,19 +3,28 @@ package com.mozidev.kino.fragments;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 
 import com.mozidev.kino.Constants;
-import com.mozidev.kino.activity.MainActivity;
 import com.mozidev.kino.R;
+import com.mozidev.kino.activity.MainActivity;
+import com.mozidev.kino.adapters.AboutAdapter;
+import com.mozidev.kino.model.Item;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PosterFragment extends Fragment {
+public class PosterFragment extends Fragment{
 
 
     public PosterFragment() {
@@ -23,20 +32,48 @@ public class PosterFragment extends Fragment {
     }
 
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-
-        return inflater.inflate(R.layout.fragment_poster, container, false);
-    }
-
-    public static PosterFragment newInstance(int number){
+    public static PosterFragment newInstance(int number) {
         PosterFragment fragment = new PosterFragment();
         Bundle bundle = new Bundle();
         bundle.putInt(Constants.ARG_SECTION_NUMBER, number);
         fragment.setArguments(bundle);
         return fragment;
     }
+
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_poster, container, false);
+        RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.rv_about);
+        LinearLayoutManager manager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
+        recyclerView.setLayoutManager(manager);
+        AboutAdapter adapter = new AboutAdapter(setItems());
+        recyclerView.setAdapter(adapter);
+
+
+        return view;
+    }
+
+
+    private List setItems() {
+        List <Item> items = new ArrayList();
+        String [] names = getResources().getStringArray(R.array.about_title);
+        String []  data = getResources().getStringArray(R.array.about_data);
+        for(int i=0; i < names.length; i++){
+            items.add(new Item(names[i], data[i]));
+        }
+        return items;
+    }
+
+
+    @Override
+    public void onViewCreated(View view,
+                              @Nullable
+                              Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+    }
+
 
     @Override
     public void onAttach(Activity activity) {

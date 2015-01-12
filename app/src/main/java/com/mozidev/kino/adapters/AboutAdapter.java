@@ -1,49 +1,63 @@
 package com.mozidev.kino.adapters;
 
-import android.content.Context;
-import android.support.v4.app.FragmentActivity;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.TextView;
 
 import com.mozidev.kino.R;
+import com.mozidev.kino.model.Item;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by y.storchak on 24.12.14.
  */
-public class AboutAdapter extends ArrayAdapter {
-    private Context mContext;
-    private int mResource;
-    private String [] mName;
-    private String [] mData;
+public class AboutAdapter extends RecyclerView.Adapter<AboutAdapter.ViewHolder> {
 
-    public AboutAdapter(Context context, int resource) {
-        super(context, resource);
-        mContext = context;
-        mResource = resource;
-        mName = context.getResources().getStringArray(R.array.about_title);
-        mData = context.getResources().getStringArray(R.array.about_data);
+    private List<Item> mItems = new ArrayList<>();
+
+
+    public AboutAdapter(List<Item> items) {
+        mItems = items;
+
     }
 
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        View view = convertView;
-        if (view == null){
-            view = LayoutInflater.from(mContext).inflate(mResource, parent, false);
+    public AboutAdapter.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+        LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
+        View view= inflater.inflate(R.layout.item_list_about, viewGroup, false);
+
+        return new ViewHolder(view);
+    }
+
+
+    @Override
+    public void onBindViewHolder(AboutAdapter.ViewHolder viewHolder, int i) {
+        if(mItems.get(i).name !=null) viewHolder.mName.setText(mItems.get(i).name);
+        if(mItems.get(i).data !=null) viewHolder.mData.setText(mItems.get(i).data);
+    }
+
+
+    @Override
+    public int getItemCount() {
+        return mItems.size();
+    }
+
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
+
+        public TextView mName;
+        public TextView mData;
+
+
+        public ViewHolder(View itemView) {
+            super(itemView);
+            mName = (TextView)itemView.findViewById(R.id.tv_name);
+            mData = (TextView)itemView.findViewById(R.id.tv_data);
         }
-        ((TextView)view.findViewById(R.id.tv_name)).setText(mName[position]);
-        ((TextView)view.findViewById(R.id.tv_data)).setText(mData[position]);
-        return view;
-
-    }
-
-
-    @Override
-    public int getCount() {
-        return mName.length;
     }
 }

@@ -36,28 +36,28 @@
 
             <TextView
                 android:id="@+id/comp_prodaction"
-                style="@style/tv_company"
+                style="@style/TextViewCompanyItem"
                 android:layout_marginTop="16dp"
                 android:text="PRODUCTION"/>
 
             <TextView
                 android:id="@+id/comp_distribution"
-                style="@style/tv_company"
+                style="@style/TextViewCompanyItem"
                 android:text="DISTRIBUTION"/>
 
             <TextView
                 android:id="@+id/comp_television"
-                style="@style/tv_company"
+                style="@style/TextViewCompanyItem"
                 android:text="TELEVISION"/>
 
             <TextView
                 android:id="@+id/comp_postprodaction"
-                style="@style/tv_company"
+                style="@style/TextViewCompanyItem"
                 android:text="POSTPRODUCTION"/>
 
             <TextView
                 android:id="@+id/comp_studio"
-                style="@style/tv_company"
+                style="@style/TextViewCompanyItem"
                 android:text="STUDIO"/>
 
             <TextView
@@ -73,22 +73,22 @@
 
             <TextView
                 android:id="@+id/comp_films"
-                style="@style/tv_company"
+                style="@style/TextViewCompanyItem"
                 android:text="КАТАЛОГ"/>
 
             <TextView
                 android:id="@+id/comp_new_films"
-                style="@style/tv_company"
+                style="@style/TextViewCompanyItem"
                 android:text="НАШИ НОВИНКИ"/>
 
             <TextView
                 android:id="@+id/comp_soon"
-                style="@style/tv_company"
+                style="@style/TextViewCompanyItem"
                 android:text="СКОРО НА ЭКРАНАХ"/>
 
             <TextView
                 android:id="@+id/comp_education"
-                style="@style/tv_company"
+                style="@style/TextViewCompanyItem"
                 android:text="ОБРАЗОВАТЕЛЬНЫЕ ПРОЕКТЫ"/>
 
         </LinearLayout>

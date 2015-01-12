@@ -9,5 +9,6 @@
     <color name="black_overlay">#66000000</color>
     <color name="team_text">#bbb8a5</color>
     <color name="link_color">#BDBDBD</color>
+    <color name="primary_color">#9E9E9E</color>
 
 </resources>

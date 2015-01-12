@@ -3,10 +3,7 @@
               android:orientation="horizontal"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:minHeight="64dp"
-              android:paddingTop="8dp"
-              android:paddingBottom="8dp"
-              android:paddingLeft="32dp"
+
 
     >
     <TextView
@@ -16,9 +13,7 @@
         android:layout_height="wrap_content"
         android:text="Name"
         android:layout_gravity="top"
-
-
-        style="@style/tv_title"/>
+        />
 
     <TextView
         android:id="@+id/tv_data"
@@ -26,9 +21,7 @@
         android:layout_weight="1"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
-        style="@style/tv_title"
         android:textAppearance="?android:textAppearanceMedium"
-        android:textStyle="italic"
         android:text="Data"
         />
 

@@ -13,7 +13,7 @@
         android:orientation="vertical">
 
         <TextView
-            style="@style/tv_title"
+            style="@style/TextViewTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Рейтинги"
@@ -30,14 +30,14 @@
             android:orientation="horizontal">
 
             <TextView
-                style="@style/tv_title"
+                style="@style/TextViewTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Кинопоиск"/>
 
             <TextView
-                style="@style/tv_title"
+                style="@style/TextViewTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="7,8"/>
@@ -51,14 +51,14 @@
             android:orientation="horizontal">
 
             <TextView
-                style="@style/tv_title"
+                style="@style/TextViewTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="IMDB"/>
 
             <TextView
-                style="@style/tv_title"
+                style="@style/TextViewTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="8,3"/>
@@ -67,7 +67,7 @@
 
 
     <TextView
-        style="@style/tv_title"
+        style="@style/TextViewTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"

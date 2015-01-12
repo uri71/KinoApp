@@ -8,7 +8,8 @@
     </style>
 
     <style name="CustomActionBar" parent="@style/Widget.AppCompat.ActionBar">
-        <item name="titleTextStyle">@style/CustomActionBarTextTitle</item>
+        <!--<item name="titleTextStyle">@style/CustomActionBarTextTitle</item>-->
+        <item name="background">@color/primary_color</item>
 
     </style>
     <style name="CustomActionBarTextTitle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
@@ -16,31 +17,13 @@
         <item name="android:textStyle">italic</item>
     </style>
 
-
-    <style name="FullscreenTheme" parent="android:Theme.NoTitleBar">
-        <item name="android:windowContentOverlay">@null</item>
-        <item name="android:windowBackground">@null</item>
-        <item name="metaButtonBarStyle">@style/ButtonBar</item>
-        <item name="metaButtonBarButtonStyle">@style/ButtonBarButton</item>
-    </style>
-
-    <style name="ButtonBar">
-        <item name="android:paddingLeft">2dp</item>
-        <item name="android:paddingTop">5dp</item>
-        <item name="android:paddingRight">2dp</item>
-        <item name="android:paddingBottom">0dp</item>
-        <item name="android:background">@android:drawable/bottom_bar</item>
-    </style>
-
-    <style name="ButtonBarButton" />
-
-    <style name="tv_title">
+    <style name="TextViewTitle">
         <item name="android:textColor">@color/team_text</item>
         <item name="android:textAppearance">?android:textAppearanceLarge</item>
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="tv_company">
+    <style name="TextViewCompanyItem">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">48dp</item>
         <item name="android:paddingTop">8dp</item>
