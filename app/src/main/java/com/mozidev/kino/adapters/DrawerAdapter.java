@@ -1,7 +1,6 @@
 package com.mozidev.kino.adapters;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -63,13 +62,12 @@ public class DrawerAdapter extends ArrayAdapter {
         textView.setText(title);
 
         if (position == 0 || position == Constants.DRAWER_TOP_ITEM_COUNT) {
-            view.setBackgroundResource(R.color.transparent);
+            view.setBackgroundResource(android.R.color.white);
             textView.setTypeface(Typeface.create("sans-serif", Typeface.BOLD));
-            textView.setTextColor(Color.WHITE);
         } else {
-            view.setBackgroundResource(R.color.background_menu_transparent);
-            textView.setTypeface(Typeface.create("sans-serif", Typeface.BOLD_ITALIC));
-            textView.setTextColor(mContext.getResources().getColorStateList(R.color.drawer_text_color_selector));
+
+            view.setBackgroundResource(R.drawable.drawer_item_selector);
+            textView.setTypeface(Typeface.create("sans-serif", Typeface.NORMAL));
         }
         return view;
     }

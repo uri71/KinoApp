@@ -4,23 +4,25 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat">
         <!-- Customize your theme here. -->
-        <item name="actionBarStyle">@style/CustomActionBar</item>
+        <!--<item name="actionBarStyle">@style/CustomActionBar</item>-->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorAccent">@color/accent</item>
     </style>
 
-    <style name="CustomActionBar" parent="@style/Widget.AppCompat.ActionBar">
-        <!--<item name="titleTextStyle">@style/CustomActionBarTextTitle</item>-->
+    <!--<style name="CustomActionBar" parent="@style/Widget.AppCompat.ActionBar">
+        &lt;!&ndash;<item name="titleTextStyle">@style/CustomActionBarTextTitle</item>&ndash;&gt;
         <item name="background">@color/primary_color</item>
 
-    </style>
+    </style>-->
     <style name="CustomActionBarTextTitle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
         <item name="android:textColor">@color/team_text</item>
         <item name="android:textStyle">italic</item>
     </style>
 
-    <style name="TextViewTitle">
-        <item name="android:textColor">@color/team_text</item>
+    <style name="TextViewTitle" parent="@style/TextAppearance.AppCompat.Large">
         <item name="android:textAppearance">?android:textAppearanceLarge</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center_horizontal</item>
     </style>
 
     <style name="TextViewCompanyItem">
@@ -37,5 +39,6 @@
         <item name="android:gravity">center_vertical</item>
         <item name="android:background">@color/background_menu_transparent</item>
     </style>
+
 
 </resources>

@@ -1,6 +1,5 @@
 package com.mozidev.kino.activity;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
@@ -15,13 +14,9 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 
-import com.mozidev.kino.Constants;
 import com.mozidev.kino.R;
 import com.mozidev.kino.fragments.AboutFragment;
 import com.mozidev.kino.fragments.CompanyFragment;
@@ -69,7 +64,7 @@ public class MainActivity extends ActionBarActivity
     public void onNavigationDrawerItemSelected(int position) {
         Fragment fragment = null;
         String uri = "";
-        String [] uris = getResources().getStringArray(R.array.uri_about);
+        String[] uris = getResources().getStringArray(R.array.uri_about);
         switch (position) {
             case (1):
                 fragment = PosterFragment.newInstance(position);
@@ -92,23 +87,28 @@ public class MainActivity extends ActionBarActivity
             case (8):
                 fragment = CompanyFragment.newInstance(position);
                 break;
-            case (9):uri = uris[6];
+            case (9):
+                uri = uris[6];
                 break;
-            case (10):uri = uris[7];
+            case (10):
+                uri = uris[7];
                 break;
-            case (11):uri = uris[8];
+            case (11):
+                uri = uris[8];
                 break;
 
         }
         if (fragment != null) {
             setFragment(fragment);
-        } else if (!uri.equals(""))sendIntent(uri);
+        } else if (!uri.equals("")) {
+            sendIntent(uri);
+        }
 
     }
 
 
     public void sendIntent(String uri) {
-        if(!isConnected()){
+        if (!isConnected()) {
             showConnectedDialog();
             return;
         } else {

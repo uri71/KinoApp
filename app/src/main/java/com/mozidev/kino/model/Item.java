@@ -7,9 +7,13 @@ public class Item {
 
     public String name;
     public String data;
+    public int type;
 
 
-    public Item(String name, String data) {
+
+
+    public Item(int type, String name, String data) {
+        this.type = type;
         this.name = name;
         this.data = data;
     }

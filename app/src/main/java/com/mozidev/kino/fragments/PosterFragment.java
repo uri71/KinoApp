@@ -10,7 +10,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 
 import com.mozidev.kino.Constants;
 import com.mozidev.kino.R;
@@ -24,7 +23,7 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PosterFragment extends Fragment{
+public class PosterFragment extends Fragment {
 
 
     public PosterFragment() {
@@ -45,23 +44,28 @@ public class PosterFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_poster, container, false);
-        RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.rv_about);
-        LinearLayoutManager manager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
-        recyclerView.setLayoutManager(manager);
-        AboutAdapter adapter = new AboutAdapter(setItems());
-        recyclerView.setAdapter(adapter);
-
 
         return view;
     }
 
 
     private List setItems() {
-        List <Item> items = new ArrayList();
-        String [] names = getResources().getStringArray(R.array.about_title);
-        String []  data = getResources().getStringArray(R.array.about_data);
-        for(int i=0; i < names.length; i++){
-            items.add(new Item(names[i], data[i]));
+        List<Item> items = new ArrayList();
+        String[] names = getResources().getStringArray(R.array.about_title);
+        String[] data = getResources().getStringArray(R.array.about_data);
+        String[] facts = getResources().getStringArray(R.array.about_facts);
+        for (int i = 0; i < names.length + facts.length + 2; i++) {
+            if (i > 1 && i < names.length + 2) {
+                items.add(new Item(Constants.TYPE_ITEM, names[i - 2], data[i - 2]));
+            } else if (i == 0) {
+                items.add(new Item(Constants.TYPE_TITLE, getResources().getString(R.string.app_name), ""));
+            } else if (i == 1) {
+                items.add(new Item(Constants.TYPE_STORY, getResources().getString(R.string.story), ""));
+            } else if (i == names.length + 2) {
+                items.add(new Item(Constants.TYPE_TITLE, getResources().getString(R.string.title_facts), ""));
+            } else {
+                items.add(new Item(Constants.TYPE_STORY, facts[i - names.length - 2], ""));
+            }
         }
         return items;
     }
@@ -72,6 +76,17 @@ public class PosterFragment extends Fragment{
                               @Nullable
                               Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_about);
+        recyclerView.setHasFixedSize(true);
+
+
+        AboutAdapter adapter = new AboutAdapter(getActivity(), setItems());
+        //adapter.setHasStableIds(true);
+        recyclerView.setAdapter(adapter);
+
+        LinearLayoutManager manager = new LinearLayoutManager(getActivity());
+        recyclerView.setLayoutManager(manager);
+
     }
 
 
@@ -81,5 +96,4 @@ public class PosterFragment extends Fragment{
         ((MainActivity) activity).onSectionAttached(
                 getArguments().getInt(Constants.ARG_SECTION_NUMBER));
     }
-
 }

@@ -10,5 +10,7 @@
     <color name="team_text">#bbb8a5</color>
     <color name="link_color">#BDBDBD</color>
     <color name="primary_color">#9E9E9E</color>
+    <color name="primary">#009688</color>
+    <color name="accent">#EB0011</color>
 
 </resources>

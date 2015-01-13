@@ -10,8 +10,8 @@
     <string name="section_company_title">Компания FILM.UA</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="story">"Ей не было равных в далеком 1941-м году - и никто не может сравниться с ней и сегодня.
-        Людмила стала самой результативной женщиной-снайпером в истории.
-        Просто со студенческой скамьи Киевского университета имени Тараса Шевченко она отправилась на фронт и стала живой легендой ..."</string>
+Людмила стала самой результативной женщиной-снайпером в истории.
+Просто со студенческой скамьи Киевского университета имени Тараса Шевченко она отправилась на фронт и стала живой легендой..."</string>
     <string name="title_activity_big_shot">BigShotActivity</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_player">PlayerActivity</string>
@@ -43,6 +43,8 @@ Silver Plaque, Chicago International Film Festival Television Awards 2014"</stri
 «За создание выдающейся локации в телешоу или рекламе», VES Awards 2013
 Seoul International Drama Awards, 2014"</string>
     <string name="check_network">Пожалуйста, проверьте подключение к сети</string>
+    <string name="holder">jb</string>
+    <string name="title_facts">Интересные факты</string>
 
 
 </resources>

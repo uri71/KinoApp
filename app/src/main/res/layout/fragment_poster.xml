@@ -1,50 +1,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             android:orientation="vertical"
-             tools:context="com.mozidev.kino.fragments.BlankFragment">
-   <FrameLayout
-       android:id="@+id/fl_poster"
-       android:layout_width="match_parent"
-       android:layout_height="120dp">
-    <ImageView
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:background="@android:color/white"
+              tools:context="com.mozidev.kino.fragments.PosterFragment">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:contentDescription="poster"
+            android:src="@drawable/poster_small_height"/>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_about"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/poster_1"
-        android:adjustViewBounds="true"
-        android:scaleType="centerCrop"/>
-       <View
-           android:id="@+id/v_poster"
-           android:layout_width="match_parent"
-           android:layout_height="match_parent"/>
-   </FrameLayout>
-    <!-- TODO: Update blank fragment layout -->
-   <ScrollView
-       android:layout_width="match_parent"
-       android:layout_height="match_parent">
-       <LinearLayout
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:orientation="vertical">
-           <TextView
-               android:id="@+id/title"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:gravity="center_horizontal"
-               android:text="@string/app_name"
-               android:textAppearance="?android:textAppearanceLarge"/>
-           <TextView
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:textAppearance="?android:textAppearanceMedium"
-               android:text="@string/story"/>
-           <android.support.v7.widget.RecyclerView
-               android:id="@+id/rv_about"
-               android:scrollbars="vertical"
-               android:layout_width="match_parent"
-               android:layout_height="match_parent"/>
-        </LinearLayout>
-       </ScrollView>
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"/>
+
 
 </LinearLayout>

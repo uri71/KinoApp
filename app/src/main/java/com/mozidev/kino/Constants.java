@@ -11,4 +11,7 @@ public class Constants {
     public static final String SAVED_INSTANCE_STATE_TITLES = "SAVED_INSTANCE_STATE_TITLES";
     public static final String SAVED_INSTANCE_STATE_TITLE = "SAVED_INSTANCE_STATE_TITLE";
     public static final String NUMBER_TRANSFORMER = "number_transformer";
+    public static final int TYPE_TITLE = 0;
+    public static final int  TYPE_STORY = 1;
+    public static final int TYPE_ITEM = 2;
 }

@@ -3,34 +3,17 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical"
+              android:background="@android:color/white"
               tools:context=".NavigationDrawerFragment">
 
-    <View
-        android:id="@+id/logo"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:background="@drawable/film_ua_logo"
-        android:clickable="true"
-        />
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/background_drawer"/>
 
         <ListView
             android:id="@+id/list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:cacheColorHint="@android:color/transparent"
             android:divider="@android:color/transparent"
             android:dividerHeight="0dp"
-            android:listSelector="@android:color/transparent"
             />
-    </FrameLayout>
+
 </LinearLayout>

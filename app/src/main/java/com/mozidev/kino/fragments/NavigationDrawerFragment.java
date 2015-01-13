@@ -20,10 +20,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.mozidev.kino.Constants;
-import com.mozidev.kino.activity.MainActivity;
 import com.mozidev.kino.R;
 import com.mozidev.kino.adapters.DrawerAdapter;
 
@@ -120,12 +118,12 @@ public class NavigationDrawerFragment extends Fragment {
         });
 
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
-        layout.findViewById(R.id.logo).setOnClickListener(new View.OnClickListener() {
+        /*layout.findViewById(R.id.logo).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ((MainActivity)getActivity()).sendIntent("http://film.ua/");
             }
-        });
+        });*/
         return layout;
     }
 

@@ -2,7 +2,6 @@
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="@drawable/backgroung_monument"
               android:orientation="vertical"
               android:paddingTop="48dp"
               tools:context="com.mozidev.kino.fragments.RatingFragment">
@@ -88,19 +87,6 @@
             android:dividerHeight="1dp"
             android:listSelector="@android:color/transparent"
             android:scrollbarAlwaysDrawVerticalTrack="false"/>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="16dp"
-            android:layout_gravity="top"
-            android:background="@drawable/edge_transparent_top"
-            />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="16dp"
-            android:layout_gravity="bottom"
-            android:background="@drawable/edge_transparent_bottom"/>
 
     </FrameLayout>
 
