@@ -100,7 +100,7 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
         public ViewHolderItem(View itemView) {
             super(itemView);
-            mName = (TextView) itemView.findViewById(R.id.tv_name);
+            mName = (TextView) itemView.findViewById(R.id.content);
             mData = (TextView) itemView.findViewById(R.id.tv_data);
         }
     }

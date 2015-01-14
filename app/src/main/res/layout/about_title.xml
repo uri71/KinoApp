@@ -4,7 +4,7 @@
           android:layout_height="match_parent"
           android:gravity="center_horizontal"
           android:textAllCaps="true"
-          android:id="@+id/tv_name"
+          android:id="@+id/content"
           android:textAppearance="?android:textAppearanceLarge"
           android:paddingLeft="@dimen/horizontal_padding"
           android:paddingRight="@dimen/horizontal_padding"

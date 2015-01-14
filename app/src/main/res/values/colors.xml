@@ -12,5 +12,8 @@
     <color name="primary_color">#9E9E9E</color>
     <color name="primary">#009688</color>
     <color name="accent">#EB0011</color>
+    <color name="text_main">#212121</color>
+    <color name="text_second">#727272</color>
+    <color name="background">#ffffff</color>
 
 </resources>

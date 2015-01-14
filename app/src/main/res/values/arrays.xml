@@ -51,20 +51,36 @@
         <item>R.raw.shot_16</item>
     </array>
     <string-array name="team_names">
-        <item>Виталий Воробьев</item>
-        <item>Юрий Борисов</item>
-        <item>Мария Поезжаева</item>
-        <item>Евгения Лоза</item>
-        <item>Артем Ткаченко</item>
-        <item>Станислав Мельник</item>
+        <item>Сергей Мокрицкий</item>
+        <item>Юлия Пересильд</item>
+        <item>Евгений Цыганов</item>
+        <item>Никита Тарасов</item>
+        <item>Джоан Блэкхэм</item>
+        <item>Виталий Линецкий</item>
     </string-array>
     <string-array name="team_lines">
         <item>Режиссер</item>
-        <item>Павел</item>
-        <item>Аля</item>
-        <item>Сестра Али</item>
-        <item>Врач-интерн</item>
-        <item>Сержант милиции</item>
+        <item>Людмила Павличенко</item>
+        <item>Жених Людмилы</item>
+        <item>" "</item>
+        <item>Елеонора Рузвельт </item>
+        <item>" "</item>
+    </string-array>
+    <string-array name="team_rating">
+        <item>6.01</item>
+        <item>6.8</item>
+        <item>6.71</item>
+        <item>6.12</item>
+        <item>""</item>
+        <item>6.3</item>
+    </string-array>
+    <string-array name="team_about">
+        <item>@string/actor_about_1</item>
+        <item>@string/actor_about_2</item>
+        <item>@string/actor_about_3</item>
+        <item>@string/actor_about_4</item>
+        <item>@string/actor_about_5</item>
+        <item>@string/actor_about_6</item>
     </string-array>
     <string-array name="team_links">
         <item>http://www.kinopoisk.ru/name/565971/</item>
@@ -73,6 +89,72 @@
         <item>http://www.kinopoisk.ru/name/1602054/</item>
         <item>http://www.kinopoisk.ru/name/558076/</item>
         <item>http://www.kinopoisk.ru/name/2323760/</item>
+    </string-array>
+    <integer-array name="films">
+        <item>@array/line_1</item>
+        <item>@array/line_2</item>
+        <item>@array/line_3</item>
+        <item>@array/line_4</item>
+        <item>@array/line_5</item>
+        <item>@array/line_6</item>
+    </integer-array>
+    <string-array name="line_1">
+        <item>Молога. Русская Атлантида</item>
+        <item>Анна Герман. Эхо любви </item>
+        <item>Мой папа – Барышников</item>
+        <item>Мог ли Сталин остановить Гитлера?</item>
+        <item>Изображая жертву </item>
+        <item>Охотники за иконами</item>
+        <item>Баязет</item>
+    </string-array>
+    <string-array name="line_2">
+        <item>Палач </item>
+        <item>Weekend</item>
+        <item>Параджанов</item>
+        <item>Зоннентау</item>
+        <item>Лето волков </item>
+        <item>Дело гастронома №1</item>
+        <item>Пять невест</item>
+        <item>Я вернусь </item>
+    </string-array>
+    <string-array name="line_3">
+        <item>С чего начинается Родина</item>
+        <item>Куприн. Впотьмах</item>
+        <item>Оттепель</item>
+        <item>Откровения</item>
+        <item>Забытый</item>
+        <item>Брестская крепость</item>
+        <item>Плюс один</item>
+        <item>Охотник</item>
+    </string-array>
+    <string-array name="line_4">
+        <item>Кухня</item>
+        <item>Жизнь и приключения Мишки Япончика</item>
+        <item>Первая попытка</item>
+        <item>Спасите наши души</item>
+        <item>Тяжелый песок</item>
+        <item>Одна ночь любви</item>
+        <item>Комната потерянных игрушек</item>
+        <item>Остров</item>
+    </string-array>
+    <string-array name="line_5">
+        <item>Летучий отряд Скотланд-Ярда</item>
+        <item>Беспокойное сердце</item>
+        <item>Катастрофа</item>
+        <item>Чисто английские убийства</item>
+        <item>Дневник Бриджет Джонс</item>
+        <item>Доктор Кто</item>
+        <item>Современный потрошитель</item>
+    </string-array>
+    <string-array name="line_6">
+        <item>Перелётные птицы </item>
+        <item>Вечное возвращение</item>
+        <item>Тот, кто прошел сквозь огонь</item>
+        <item>Отряд</item>
+        <item>Украденное счастье</item>
+        <item>Жажда экстрима </item>
+        <item>Абонент временно недоступен</item>
+        <item>Когда на юг улетят журавли</item>
     </string-array>
     <string-array name="comment_name">
         <item>Иванов</item>
@@ -103,22 +185,18 @@
         <item>Премьера</item>
         <item>Возраст</item>
         <item>Время</item>
-        <item>Награды</item>
-        <item>Номинации</item>
     </string-array>
     <string-array name="about_data">
-        <item>2013</item>
-        <item>Украина</item>
-        <item>"Борьба любви и смерти"</item>
-        <item>Владимир Воробьев</item>
-        <item>Валерий Мухарьямов</item>
-        <item>Драма</item>
-        <item>Минисериал</item>
-        <item>27 апреля 2013</item>
+        <item>2015 г.</item>
+        <item>Россия, Украина</item>
+        <item>" "</item>
+        <item>Сергей Мокрицкий</item>
+        <item>Егор Олесов, Максим Бударин, Максим Данкевич</item>
+        <item>военный, боевик, мелодрама, драма</item>
+        <item>Полнометражный фильм</item>
+        <item>2 апреля 2015</item>
         <item>16+</item>
-        <item>200 мин (4 серии по 50мин.)</item>
-        <item>@string/awards</item>
-        <item>@string/nomination</item>
+        <item>110 мин.</item>
     </string-array>
     <string-array name="uri_about">
         <item>http://film.ua/ru/production</item>

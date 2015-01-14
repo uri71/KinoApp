@@ -1,12 +1,10 @@
 package com.mozidev.kino.adapters;
 
 import android.content.Context;
-import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.TextView;
 
 import com.mozidev.kino.R;
@@ -45,7 +43,7 @@ public class RatingAdapter extends ArrayAdapter {
         if (view == null){
             view = LayoutInflater.from(mContext).inflate(mResource, parent, false);
         }
-        ((TextView)view.findViewById(R.id.tv_name)).setText(mName.get(position));
+        ((TextView)view.findViewById(R.id.content)).setText(mName.get(position));
         ((TextView)view.findViewById(R.id.comment)).setText(mComment.get(position));
 
         return view;

@@ -14,4 +14,6 @@ public class Constants {
     public static final int TYPE_TITLE = 0;
     public static final int  TYPE_STORY = 1;
     public static final int TYPE_ITEM = 2;
+    public static final String PROFILE_ARG = "PROFILE_ARG";
+    public static final String PROFILE_ARG_TEAM = "PROFILE_ARG_TEAM";
 }

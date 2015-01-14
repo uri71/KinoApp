@@ -63,7 +63,7 @@ public class DrawerAdapter extends ArrayAdapter {
 
         if (position == 0 || position == Constants.DRAWER_TOP_ITEM_COUNT) {
             view.setBackgroundResource(android.R.color.white);
-            textView.setTypeface(Typeface.create("sans-serif", Typeface.BOLD));
+            textView.setTypeface(Typeface.create("sans-serif", Typeface.NORMAL));
         } else {
 
             view.setBackgroundResource(R.drawable.drawer_item_selector);

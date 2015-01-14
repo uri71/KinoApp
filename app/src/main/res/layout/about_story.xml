@@ -2,13 +2,13 @@
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
           android:layout_width="match_parent"
           android:layout_height="match_parent"
-          android:id="@+id/tv_name"
+          android:id="@+id/content"
           android:textAppearance="?android:textAppearanceMedium"
           android:paddingLeft="@dimen/horizontal_padding"
           android:paddingRight="@dimen/horizontal_padding"
           android:paddingTop="@dimen/vertical_padding"
           android:paddingBottom="@dimen/vertical_padding"
-          android:textColor="@android:color/black"
+          android:background="@color/background"
+          android:textColor="@android:color/black"/>
 
-    />
 
