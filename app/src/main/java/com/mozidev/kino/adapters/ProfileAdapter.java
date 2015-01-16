@@ -50,7 +50,8 @@ public class ProfileAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             case Constants.TYPE_TITLE: {
                 ImageViewHolder viewHolder = (ImageViewHolder) holder;
                 Picasso.with(mContext).load(mTeam.image).into(viewHolder.image);
-                viewHolder.textView.setText(mTeam.rating);
+                viewHolder.rating.setText(mContext.getString(R.string.rating) + mTeam.rating);
+                viewHolder.name.setText(mTeam.name);
             }
             break;
             default: {
@@ -91,13 +92,15 @@ public class ProfileAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     public class ImageViewHolder extends RecyclerView.ViewHolder {
 
         ImageView image;
-        TextView textView;
+        TextView name;
+        TextView rating;
 
 
         public ImageViewHolder(View itemView) {
             super(itemView);
             image = (ImageView) itemView.findViewById(R.id.image);
-            textView = (TextView) itemView.findViewById(R.id.rating);
+            rating = (TextView) itemView.findViewById(R.id.rating);
+            name = (TextView) itemView.findViewById(R.id.name);
 
         }
     }

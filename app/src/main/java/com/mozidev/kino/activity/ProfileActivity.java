@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.mozidev.kino.Constants;
 import com.mozidev.kino.KinoApplication;
 import com.mozidev.kino.R;
 import com.mozidev.kino.adapters.ProfileViewPagerAdapter;
@@ -24,11 +25,13 @@ public class ProfileActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        int position = getIntent().getIntExtra(Constants.PROFILE_ARG, 0);
         setContentView(R.layout.activity_profile);
         mTeams = KinoApplication.getInstance(this).getTeamsList();
         mViewPager = (ViewPager)findViewById(R.id.pager);
         ProfileViewPagerAdapter adapter = new ProfileViewPagerAdapter(getSupportFragmentManager(), mTeams);
         mViewPager.setAdapter(adapter);
+        mViewPager.setCurrentItem(position);
 
     }
 

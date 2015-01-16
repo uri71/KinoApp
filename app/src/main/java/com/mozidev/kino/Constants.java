@@ -16,4 +16,5 @@ public class Constants {
     public static final int TYPE_ITEM = 2;
     public static final String PROFILE_ARG = "PROFILE_ARG";
     public static final String PROFILE_ARG_TEAM = "PROFILE_ARG_TEAM";
+    public static final int IMAGE_MAX_SIZE = 2048;
 }

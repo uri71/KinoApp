@@ -1,92 +1,96 @@
 package com.mozidev.kino.fragments;
 
-import android.content.pm.ActivityInfo;
+
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
-import com.daimajia.slider.library.Animations.DescriptionAnimation;
-import com.daimajia.slider.library.SliderLayout;
-import com.daimajia.slider.library.SliderTypes.BaseSliderView;
-import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.mozidev.kino.Constants;
 import com.mozidev.kino.R;
 
-import java.util.Arrays;
-import java.util.List;
-
 /**
- * Created by y.storchak on 22.12.14.
+ * A simple {@link Fragment} subclass.
+ * Use the {@link BigShotFragment#newInstance} factory method to
+ * create an instance of this fragment.
  */
 public class BigShotFragment extends Fragment {
 
-    private List<Integer> bigShot;
+    private static final String ARG_PARAM1 = "param1";
+
+    private int shot;
+    private Bitmap bitmap;
 
 
-    public BigShotFragment() {
-        super();
-        bigShot = Arrays.asList(R.raw.shot_1, R.raw.shot_2,
-                R.raw.shot_3, R.raw.shot_4,
-                R.raw.shot_5, R.raw.shot_6,
-                R.raw.shot_7, R.raw.shot_8,
-                R.raw.shot_9, R.raw.shot_10,
-                R.raw.shot_11, R.raw.shot_12,
-                R.raw.shot_13, R.raw.shot_14,
-                R.raw.shot_15, R.raw.shot_16);
-    }
-
-
-    public static BigShotFragment newInstance(int number) {
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     *
+     * @param param1 Parameter 1.
+     * @return A new instance of fragment BlankFragment.
+     */
+    public static BigShotFragment newInstance(int param1) {
         BigShotFragment fragment = new BigShotFragment();
         Bundle args = new Bundle();
-        args.putInt(Constants.ARG_SHOT_NUMBER, number);
+        args.putInt(ARG_PARAM1, param1);
         fragment.setArguments(args);
         return fragment;
     }
 
 
+    public BigShotFragment() {
+    }
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater,
-                             @Nullable
-                             ViewGroup container,
-                             @Nullable
-                             Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_big_shot, container, false);
-        SliderLayout slider = (SliderLayout) view.findViewById(R.id.slider);
-        for(int shot: bigShot){
-            TextSliderView textSliderView = new TextSliderView(getActivity());
-            textSliderView.image(shot)
-                    .setScaleType(BaseSliderView.ScaleType.CenterCrop);
-
-            slider.addSlider(textSliderView);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            shot = getArguments().getInt(ARG_PARAM1);
         }
-        slider.setCurrentPosition(getArguments().getInt(Constants.ARG_SHOT_NUMBER));
-        slider.setPresetTransformer(SliderLayout.Transformer.Background2Foreground);
-        slider.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
-        slider.setCustomAnimation(new DescriptionAnimation());
-        slider.stopAutoCycle();
-        slider.setDuration(50000);
+    }
+
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_shot_pager, container, false);
+        bitmap = getBitmap();
+        ((ImageView) view.findViewById(R.id.iv_shot)).setImageBitmap(bitmap);
         return view;
     }
 
 
-    @Override
-    public void onViewCreated(View view,
-                              @Nullable
-                              Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
+    private Bitmap getBitmap() {
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeResource(getResources(), shot, options);
+        int with = options.outWidth;
+        int height = options.outHeight;
+        Log.e("BigShotActivity ", " with -" + with + " height - " + height);
+        Bitmap bitmap;
+        if (with > Constants.IMAGE_MAX_SIZE || height > Constants.IMAGE_MAX_SIZE) {
+            int ratio = (int) Math.ceil((with > height ? with / Constants.IMAGE_MAX_SIZE : height / Constants.IMAGE_MAX_SIZE));
+            options.inSampleSize = ratio;
+        } else {
+            options.inScaled = false;
+        }
+        options.inJustDecodeBounds = false;
+        bitmap = BitmapFactory.decodeResource(getResources(), shot, options);
+        return bitmap;
     }
 
 
     @Override
-    public void onStop() {
-        super.onStop();
-        getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+    public void onDestroyView() {
+        super.onDestroyView();
+        bitmap.recycle();
+
     }
 }

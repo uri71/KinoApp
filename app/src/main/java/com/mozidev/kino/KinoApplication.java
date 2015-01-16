@@ -32,7 +32,7 @@ public class KinoApplication extends Application {
 
 
     public static KinoApplication getInstance(Context context) {
-        if(instance == null) {
+        if (instance == null) {
             instance = new KinoApplication();
             mContext = context;
         }
@@ -43,7 +43,7 @@ public class KinoApplication extends Application {
     private List<Team> createTeamList() {
         List<Team> team = new ArrayList();
 
-        List<Integer> images = Arrays.asList(R.drawable.team_1, R.drawable.team_2, R.drawable.team_3, R.drawable.team_3, R.drawable.team_3, R.drawable.team_6);
+        List<Integer> images = Arrays.asList(R.drawable.team_1, R.drawable.team_2, R.drawable.team_3, R.drawable.team_7, R.drawable.team_5, R.drawable.team_6);
         List<String> names = Arrays.asList(mContext.getResources().getStringArray(R.array.team_names));
         List<String> lines = Arrays.asList(mContext.getResources().getStringArray(R.array.team_lines));
         List<String> urls = Arrays.asList(mContext.getResources().getStringArray(R.array.team_links));
@@ -62,7 +62,9 @@ public class KinoApplication extends Application {
 
 
     public List<Team> getTeamsList() {
-        if(mTeams == null)mTeams = createTeamList();
+        if (mTeams == null) {
+            mTeams = createTeamList();
+        }
         return mTeams;
     }
 }
