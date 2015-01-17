@@ -1,0 +1,55 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/background"
+              tools:context="com.mozidev.kino.fragments.HistoryFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/horizontal_padding"
+            android:paddingRight="@dimen/horizontal_padding"
+            >
+
+            <TextView
+                style="@style/TextViewHistoryTitle"
+                android:text="@string/biography"/>
+
+            <TextView
+                android:id="@+id/biography"
+                style="@style/TextViewHistory"
+                android:text="@string/biography_text"/>
+
+            <TextView
+                style="@style/TextViewHistoryTitle"
+                android:text="@string/about_snipers_title"/>
+
+            <TextView
+                android:id="@+id/snipers"
+                style="@style/TextViewHistory"
+                android:text="@string/about_snipers"/>
+
+            <TextView
+                style="@style/TextViewHistoryTitle"
+                android:text="@string/snipers_gun_title"/>
+
+            <TextView
+                android:id="@+id/snipers_guns"
+                style="@style/TextViewHistory"
+                android:text="@string/snipers_gun"/>
+
+            <TextView
+                android:id="@+id/gallery"
+                style="@style/TextViewHistoryTitle"
+                android:text="@string/gallery"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

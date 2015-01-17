@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/background"
+              android:orientation="vertical"
+              android:paddingLeft="@dimen/horizontal_padding"
+              android:paddingRight="@dimen/horizontal_padding">
+
+
+    <TextView
+        style="@style/TextViewHistoryTitle"
+        android:text="@string/about_snipers_title"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/about_snipers"
+        android:textAppearance="?android:textAppearanceSmall"
+        android:textColor="@color/text_primary"/>
+</LinearLayout>

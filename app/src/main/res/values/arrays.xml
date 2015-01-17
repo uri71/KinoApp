@@ -6,7 +6,7 @@
         <item>Сюжет</item>
         <item>Кадры и трейлеры</item>
         <item>Создатели</item>
-        <item>О фильме</item>
+        <item>Исторический раздел</item>
         <item>Рейтинги  и отзывы</item>
         <item>FILM.UA</item>
         <item>О компании</item>
@@ -208,5 +208,41 @@
         <item>http://film.ua/ru/production/filmsandseries/projects?status=1&amp;year=2014</item>//новинки
         <item>http://film.ua/ru/production/filmsandseries/projects?status=2</item>//в производстве
         <item>http://faculty.film.ua/</item>
+    </string-array>
+    <string-array name="snipers_top">
+        <item>Павличенко Людмила</item>
+        <item>Васильева Ольга</item>
+        <item>Ковшова Наталья</item>
+        <item>Перетятько Геня</item>
+        <item>Мудрецова Инна</item>
+        <item>Петрова Нина</item>
+        <item>Костырина Татьяна</item>
+        <item>Бордашевская Ольга</item>
+        <item>Сапьян Наталья</item>
+        <item>Миронова Елизавета</item>
+    </string-array>
+    <string-array name="sniper_result">
+        <item>309</item>
+        <item>185</item>
+        <item>167</item>
+        <item>148</item>
+        <item>138</item>
+        <item>122</item>
+        <item>120</item>
+        <item>108</item>
+        <item>102</item>
+        <item>100</item>
+    </string-array>
+    <string-array name="sniper_about">
+        <item>""</item>
+        <item>""</item>
+        <item>"Погибла в 1942"</item>
+        <item>""</item>
+        <item>""</item>
+        <item>"В 41-м пошла на фронт добровольцем в возрасте 48 лет, погибла в мае 45-го"</item>
+        <item>"Погибла в 1943 г."</item>
+        <item>""</item>
+        <item>"Будучи также санинструктором, вынесла c поля боя 109 раненых бойцов"</item>
+        <item>"Служила в морской пехоте. Погибла в 1943"</item>
     </string-array>
 </resources>

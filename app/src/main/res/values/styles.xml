@@ -40,5 +40,24 @@
         <item name="android:background">@color/background_menu_transparent</item>
     </style>
 
+    <style name="TextViewHistory">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:lines">4</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="TextViewHistoryTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:textAppearance">?android:textAppearanceLarge</item>
+        <item name="android:textColor">@color/text_second</item>
+    </style>
+
 
 </resources>

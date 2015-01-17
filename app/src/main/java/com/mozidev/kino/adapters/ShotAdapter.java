@@ -42,7 +42,6 @@ public class ShotAdapter extends RecyclerView.Adapter<ShotAdapter.ViewHolder> {
                 R.drawable.sm_15, R.drawable.sm_16,
                 R.drawable.trailer1, R.drawable.trailer2);
 
-        //List images = Arrays.asList(mContext.getResources().getIntArray(R.array.small_shot));
         return images;
     }
 
@@ -52,7 +51,7 @@ public class ShotAdapter extends RecyclerView.Adapter<ShotAdapter.ViewHolder> {
         mContext = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(mContext);
         View view = inflater.inflate(R.layout.item_shot, parent, false);
-        return new ViewHolder(view, this);
+        return new ViewHolder(view);
     }
 
 
@@ -83,20 +82,18 @@ public class ShotAdapter extends RecyclerView.Adapter<ShotAdapter.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public ImageView image;
-        private ShotAdapter adapter;
 
 
-        public ViewHolder(View view, ShotAdapter adapter) {
+        public ViewHolder(View view) {
             super(view);
             this.image = (ImageView) view.findViewById(R.id.iv_shot);
-            this.adapter = adapter;
             view.setOnClickListener(this);
         }
 
 
         @Override
         public void onClick(View v) {
-            adapter.onHolderItemClick(this);
+            onHolderItemClick(this);
         }
     }
 }

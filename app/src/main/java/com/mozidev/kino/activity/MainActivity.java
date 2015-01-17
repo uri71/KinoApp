@@ -18,7 +18,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.mozidev.kino.R;
-import com.mozidev.kino.fragments.AboutFragment;
+import com.mozidev.kino.fragments.HistoryFragment;
 import com.mozidev.kino.fragments.CompanyFragment;
 import com.mozidev.kino.fragments.NavigationDrawerFragment;
 import com.mozidev.kino.fragments.PosterFragment;
@@ -79,7 +79,7 @@ public class MainActivity extends ActionBarActivity
                 fragment = TeamFragment.newInstance(position);
                 break;
             case (5):
-                fragment = AboutFragment.newInstance(position);
+                fragment = HistoryFragment.newInstance(position);
                 break;
             case (6):
                 fragment = RatingFragment.newInstance(position);

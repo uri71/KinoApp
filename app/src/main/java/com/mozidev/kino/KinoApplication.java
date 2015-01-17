@@ -2,7 +2,9 @@ package com.mozidev.kino;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.res.Resources;
 
+import com.mozidev.kino.model.Photo;
 import com.mozidev.kino.model.Team;
 
 import java.util.ArrayList;
@@ -16,10 +18,12 @@ public class KinoApplication extends Application {
 
     private static KinoApplication instance;
     private List<Team> mTeams;
-    private static Context mContext;
+    private List<Photo> mPhoto;
+    private Context mContext;
 
 
-    public KinoApplication() {
+    public KinoApplication(Context context) {
+        mContext = context;
     }
 
 
@@ -28,13 +32,16 @@ public class KinoApplication extends Application {
         super.onCreate();
         instance = this;
         mTeams = createTeamList();
+        mPhoto = createPhotoList();
+
+
+
     }
 
 
     public static KinoApplication getInstance(Context context) {
         if (instance == null) {
-            instance = new KinoApplication();
-            mContext = context;
+            instance = new KinoApplication(context);
         }
         return instance;
     }
@@ -66,5 +73,26 @@ public class KinoApplication extends Application {
             mTeams = createTeamList();
         }
         return mTeams;
+    }
+
+
+    private List<Photo> createPhotoList() {
+        String[] captions = mContext.getResources().getStringArray(R.array.photo_caption);
+        int[] photo = new int[] {
+                R.raw.photo_1, R.raw.photo_2, R.raw.photo_3, R.raw.photo_4, R.raw.photo_5, R.raw.photo_6, R.raw.photo_7, R.raw.photo_11, R.raw.photo_9, R.raw.photo_10, R.raw.photo_11, R.raw.usa_1, R.raw.usa_2, R.raw.usa_3, R.raw.usa_4, R.raw.usa_5, R.raw.usa_6, R.raw.usa_7, R.raw.photo_12};
+        List<Photo> list = new ArrayList<>();
+        for (int i = 0; i < photo.length; i++) {
+            list.add(new Photo(photo[i], captions[i]));
+        }
+        return list;
+    }
+
+
+    public  List<Photo>  getPhotoList(){
+        if(mPhoto == null){
+            mPhoto = createPhotoList();
+        }
+        return mPhoto;
+
     }
 }

@@ -6,6 +6,7 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -124,6 +125,17 @@ public class NavigationDrawerFragment extends Fragment {
                 ((MainActivity)getActivity()).sendIntent("http://film.ua/");
             }
         });*/
+
+        getActivity().getSupportFragmentManager().addOnBackStackChangedListener(new FragmentManager.OnBackStackChangedListener() {
+            @Override
+            public void onBackStackChanged() {
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                boolean hasBackStack = fragmentManager.getBackStackEntryCount() > 0;
+                mDrawerToggle.setDrawerIndicatorEnabled(!hasBackStack);
+                getActivity().supportInvalidateOptionsMenu();
+            }
+        });
+
         return layout;
     }
 

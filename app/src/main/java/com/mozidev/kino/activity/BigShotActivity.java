@@ -4,12 +4,10 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
-import android.view.Menu;
 
 import com.mozidev.kino.Constants;
 import com.mozidev.kino.R;
 import com.mozidev.kino.adapters.BigShotFragmentAdapter;
-import com.mozidev.kino.adapters.BigShotImageAdapter;
 
 import java.util.Arrays;
 import java.util.List;
@@ -25,7 +23,9 @@ public class BigShotActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_big_shot);
-        bigShot = Arrays.asList(R.raw.shot_1, R.raw.shot_2,
+        bigShot = Arrays.asList(
+                R.raw.poster_1, R.raw.poster_2,
+                R.raw.poster_3, R.raw.shot_1, R.raw.shot_2,
                 R.raw.shot_3, R.raw.shot_4,
                 R.raw.shot_5, R.raw.shot_6,
                 R.raw.shot_7, R.raw.shot_8,
@@ -48,7 +48,9 @@ public class BigShotActivity extends ActionBarActivity {
         super.onResume();
         if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
             getSupportActionBar().hide();
-        } else getSupportActionBar().setTitle("Кадры фильма");
+        } else {
+            getSupportActionBar().setTitle("Кадры фильма");
+        }
     }
 
 

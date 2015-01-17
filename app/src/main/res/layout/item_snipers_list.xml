@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="96dp"
+              android:background="@color/background"
+              android:orientation="horizontal"
+              android:paddingLeft="@dimen/horizontal_padding"
+              android:paddingRight="@dimen/horizontal_padding">
+
+    <ImageView
+        android:id="@+id/photo"
+        android:layout_width="58dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/snip_1"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/horizontal_padding"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/vertical_padding"
+        android:paddingTop="@dimen/vertical_padding">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ludmila"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@color/text_primary"/>
+
+        <TextView
+            android:id="@+id/about"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="XXXXXXXXXXXX"
+            android:gravity="center_vertical"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/text_second"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="100"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textColor="@color/text_second"/>
+
+
+</LinearLayout>
