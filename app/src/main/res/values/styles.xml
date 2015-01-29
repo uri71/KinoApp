@@ -57,6 +57,8 @@
         <item name="android:layout_marginTop">8dp</item>
         <item name="android:textAppearance">?android:textAppearanceLarge</item>
         <item name="android:textColor">@color/text_second</item>
+        <item name="android:drawableRight">@drawable/ic_arrow_right</item>
+        <item name="android:gravity">center_vertical</item>
     </style>
 
 

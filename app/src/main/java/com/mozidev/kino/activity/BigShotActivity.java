@@ -6,8 +6,10 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 
 import com.mozidev.kino.Constants;
+import com.mozidev.kino.KinoApplication;
 import com.mozidev.kino.R;
 import com.mozidev.kino.adapters.BigShotFragmentAdapter;
+import com.mozidev.kino.model.Photo;
 
 import java.util.Arrays;
 import java.util.List;
@@ -15,7 +17,7 @@ import java.util.List;
 
 public class BigShotActivity extends ActionBarActivity {
 
-    private List<Integer> bigShot;
+    private List<Photo> bigShot;
     private ViewPager pager;
 
 
@@ -23,16 +25,12 @@ public class BigShotActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_big_shot);
-        bigShot = Arrays.asList(
-                R.raw.poster_1, R.raw.poster_2,
-                R.raw.poster_3, R.raw.shot_1, R.raw.shot_2,
-                R.raw.shot_3, R.raw.shot_4,
-                R.raw.shot_5, R.raw.shot_6,
-                R.raw.shot_7, R.raw.shot_8,
-                R.raw.shot_9, R.raw.shot_10,
-                R.raw.shot_11, R.raw.shot_12,
-                R.raw.shot_13, R.raw.shot_14,
-                R.raw.shot_15, R.raw.shot_16);
+        int set = getIntent().getIntExtra(Constants.ARG_NUMBER_PHOTO_SET, 0);
+        if (set == 0) {
+            bigShot = KinoApplication.getInstance(this).getShotList();
+        } else {
+            bigShot = KinoApplication.getInstance(this).getHistoryPhotoList();
+        }
 
         pager = (ViewPager) findViewById(R.id.pager);
         int position = getIntent().getIntExtra(Constants.ARG_SHOT_NUMBER, 0);

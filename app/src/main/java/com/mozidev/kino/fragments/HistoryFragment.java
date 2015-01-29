@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.widget.DrawerLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,6 +54,15 @@ public class HistoryFragment extends Fragment implements View.OnClickListener {
         super.onAttach(activity);
         ((MainActivity) activity).onSectionAttached(
                 getArguments().getInt(Constants.ARG_SECTION_NUMBER));
+
+    }
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        ((DrawerLayout)(getActivity()).findViewById(R.id.drawer_layout))
+                .setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
     }
 
 
@@ -87,6 +97,8 @@ public class HistoryFragment extends Fragment implements View.OnClickListener {
 
 
     private void replaceFragment(Fragment fragment, String title) {
+        ((DrawerLayout)(getActivity()).findViewById(R.id.drawer_layout))
+                .setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
         FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
         transaction.addToBackStack(null);
         transaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left,

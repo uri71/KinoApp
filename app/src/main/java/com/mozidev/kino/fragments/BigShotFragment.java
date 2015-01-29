@@ -13,6 +13,7 @@ import android.widget.ImageView;
 
 import com.mozidev.kino.Constants;
 import com.mozidev.kino.R;
+import com.mozidev.kino.model.Photo;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,7 +24,7 @@ public class BigShotFragment extends Fragment {
 
     private static final String ARG_PARAM1 = "param1";
 
-    private int shot;
+    private Photo shot;
     private Bitmap bitmap;
 
 
@@ -34,10 +35,10 @@ public class BigShotFragment extends Fragment {
      * @param param1 Parameter 1.
      * @return A new instance of fragment BlankFragment.
      */
-    public static BigShotFragment newInstance(int param1) {
+    public static BigShotFragment newInstance(Photo param1) {
         BigShotFragment fragment = new BigShotFragment();
         Bundle args = new Bundle();
-        args.putInt(ARG_PARAM1, param1);
+        args.putSerializable(ARG_PARAM1, param1);
         fragment.setArguments(args);
         return fragment;
     }
@@ -51,7 +52,7 @@ public class BigShotFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            shot = getArguments().getInt(ARG_PARAM1);
+            shot = (Photo)getArguments().getSerializable(ARG_PARAM1);
         }
     }
 
@@ -70,7 +71,7 @@ public class BigShotFragment extends Fragment {
     private Bitmap getBitmap() {
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
-        BitmapFactory.decodeResource(getResources(), shot, options);
+        BitmapFactory.decodeResource(getResources(), shot.photo, options);
         int with = options.outWidth;
         int height = options.outHeight;
         Log.e("BigShotActivity ", " with -" + with + " height - " + height);
@@ -82,7 +83,7 @@ public class BigShotFragment extends Fragment {
             options.inScaled = false;
         }
         options.inJustDecodeBounds = false;
-        bitmap = BitmapFactory.decodeResource(getResources(), shot, options);
+        bitmap = BitmapFactory.decodeResource(getResources(), shot.photo, options);
         return bitmap;
     }
 

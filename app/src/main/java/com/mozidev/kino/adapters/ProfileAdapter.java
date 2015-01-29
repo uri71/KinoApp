@@ -1,6 +1,7 @@
 package com.mozidev.kino.adapters;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -49,7 +50,7 @@ public class ProfileAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         switch (getItemViewType(position)) {
             case Constants.TYPE_TITLE: {
                 ImageViewHolder viewHolder = (ImageViewHolder) holder;
-                Picasso.with(mContext).load(mTeam.image).into(viewHolder.image);
+                Picasso.with(mContext).load(mTeam.image).fit().centerCrop().into(viewHolder.image);
                 viewHolder.rating.setText(mContext.getString(R.string.rating) + mTeam.rating);
                 viewHolder.name.setText(mTeam.name);
             }
@@ -63,6 +64,9 @@ public class ProfileAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                     break;
                     case 2: {
                         viewHolder.textView.setText(mContext.getString(R.string.filmografy));
+                        viewHolder.textView.setTypeface(Typeface.create("sans-serif", Typeface.BOLD));
+                        viewHolder.textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+
                     }
                     break;
                     default: {

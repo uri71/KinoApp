@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -32,8 +35,8 @@ public class ArticleFragment extends Fragment {
     public static ArticleFragment newInstance(String param1, String param2) {
         ArticleFragment fragment = new ArticleFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_TITLE, param1);
-        args.putString(ARG_TEXT, param2);
+        args.putString(ARG_TITLE, param2);
+        args.putString(ARG_TEXT, param1);
         fragment.setArguments(args);
         return fragment;
     }
@@ -74,5 +77,12 @@ public class ArticleFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         ((TextView)view.findViewById(R.id.title)).setText(mTitle);
         ((TextView)view.findViewById(R.id.article)).setText(mText);
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId() == android.support.v7.appcompat.R.id.home);
+        return false;
     }
 }

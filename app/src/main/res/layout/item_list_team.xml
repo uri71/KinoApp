@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
-              android:layout_width="match_parent"
-              android:layout_height="72dp"
-              android:orientation="horizontal"
-              android:background="@drawable/drawer_item_selector"
-              android:paddingLeft="@dimen/horizontal_padding"
-              android:paddingRight="@dimen/horizontal_padding"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:background="@drawable/drawer_item_selector"
+
     >
 
     <ImageView
@@ -14,39 +12,48 @@
         android:id="@+id/iv_team"
         android:layout_width="40dp"
         android:layout_height="56dp"
-        android:layout_gravity="center_vertical"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/team_3"/>
+        android:src="@drawable/team_3"
+        android:layout_marginLeft="@dimen/horizontal_padding"
+        android:layout_marginStart="@dimen/horizontal_padding"/>
 
     <LinearLayout
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="vertical"
         android:layout_marginLeft="@dimen/horizontal_padding"
+        android:layout_marginStart="@dimen/horizontal_padding"
+        android:layout_toRightOf="@+id/iv_team"
+        android:layout_toEndOf="@+id/iv_team"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
         android:paddingBottom="@dimen/text_padding_bottom"
         android:paddingTop="@dimen/text_padding_top"
-        android:gravity="center_vertical"
         >
 
         <TextView
             android:id="@+id/content"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/black"
+            android:textColor="@color/text_primary"
             android:textSize="16sp"
-            android:text="Name"
             />
 
         <TextView
             android:id="@+id/tv_lines"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/black"
+            android:textColor="@color/text_second"
             android:textSize="14sp"
-            android:text="Lines"
             />
 
     </LinearLayout>
 
-</LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/item_divider"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

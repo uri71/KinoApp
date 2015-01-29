@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.mozidev.kino.R;
 import com.mozidev.kino.model.Team;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -40,7 +41,7 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.image.setImageResource(mTeam.get(position).image);
+        Picasso.with(mContext).load(mTeam.get(position).image).fit().centerCrop().into(holder.image);
         holder.name.setText(mTeam.get(position).name);
         holder.lines.setText(mTeam.get(position).line);
     }

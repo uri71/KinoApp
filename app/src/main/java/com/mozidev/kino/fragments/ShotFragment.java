@@ -50,7 +50,7 @@ public class ShotFragment extends Fragment implements AdapterView.OnItemClickLis
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         RecyclerView list = ((RecyclerView) view.findViewById(R.id.list));
-        ShotAdapter adapter = new ShotAdapter();
+        ShotAdapter adapter = new ShotAdapter(getActivity());
         adapter.setOnItemClickListener(this);
         list.setAdapter(adapter);
         GridLayoutManager manager = new GridLayoutManager(getActivity(), 3);

@@ -22,7 +22,6 @@ import com.mozidev.kino.fragments.HistoryFragment;
 import com.mozidev.kino.fragments.CompanyFragment;
 import com.mozidev.kino.fragments.NavigationDrawerFragment;
 import com.mozidev.kino.fragments.PosterFragment;
-import com.mozidev.kino.fragments.RatingFragment;
 import com.mozidev.kino.fragments.ShotFragment;
 import com.mozidev.kino.fragments.StoryFragment;
 import com.mozidev.kino.fragments.TeamFragment;
@@ -63,45 +62,25 @@ public class MainActivity extends ActionBarActivity
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         Fragment fragment = null;
-        String uri = "";
-        String[] uris = getResources().getStringArray(R.array.uri_about);
         switch (position) {
             case (1):
                 fragment = PosterFragment.newInstance(position);
                 break;
             case (2):
-                fragment = StoryFragment.newInstance(position);
+                fragment = TeamFragment.newInstance(position);
                 break;
             case (3):
                 fragment = ShotFragment.newInstance(position);
                 break;
             case (4):
-                fragment = TeamFragment.newInstance(position);
-                break;
-            case (5):
                 fragment = HistoryFragment.newInstance(position);
                 break;
-            case (6):
-                fragment = RatingFragment.newInstance(position);
-                break;
-            case (8):
+            case (5):
                 fragment = CompanyFragment.newInstance(position);
                 break;
-            case (9):
-                uri = uris[6];
-                break;
-            case (10):
-                uri = uris[7];
-                break;
-            case (11):
-                uri = uris[8];
-                break;
-
         }
         if (fragment != null) {
             setFragment(fragment);
-        } else if (!uri.equals("")) {
-            sendIntent(uri);
         }
 
     }
@@ -142,30 +121,6 @@ public class MainActivity extends ActionBarActivity
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        if (!mNavigationDrawerFragment.isDrawerOpen()) {
-
-            getMenuInflater().inflate(R.menu.main, menu);
-            restoreActionBar();
-            return true;
-        }
-        return super.onCreateOptionsMenu(menu);
-    }
-
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 
 
     public boolean isConnected() {

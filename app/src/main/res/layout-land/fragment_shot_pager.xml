@@ -3,13 +3,17 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              android:background="@color/background"
+             android:paddingRight="8dp"
+             android:paddingLeft="8dp"
              tools:context="com.mozidev.kino.fragments.BigShotFragment">
 
     <ImageView
         android:id="@+id/iv_shot"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:adjustViewBounds="true"
+        android:src="@drawable/poster_1"
+        android:layout_gravity="center"
         android:scaleType="centerCrop"/>
 
 </FrameLayout>

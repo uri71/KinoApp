@@ -1,14 +1,20 @@
 package com.mozidev.kino.adapters;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 
+import com.mozidev.kino.Constants;
+import com.mozidev.kino.KinoApplication;
 import com.mozidev.kino.R;
+import com.mozidev.kino.model.Photo;
 import com.squareup.picasso.Picasso;
 
 import java.util.Arrays;
@@ -19,30 +25,15 @@ import java.util.List;
  */
 public class ShotAdapter extends RecyclerView.Adapter<ShotAdapter.ViewHolder> {
 
-    private List<Integer> mImageResource;
+    private List<Photo> mImageResource;
     private Context mContext;
     private AdapterView.OnItemClickListener mOnItemClickListener;
 
 
-    public ShotAdapter() {
+    public ShotAdapter(Context context) {
         super();
-        mImageResource = setImageList();
-    }
-
-
-    private List<Integer> setImageList() {
-        List images = Arrays.asList(
-                R.drawable.sm_1, R.drawable.sm_2,
-                R.drawable.sm_3, R.drawable.sm_4,
-                R.drawable.sm_5, R.drawable.sm_6,
-                R.drawable.sm_7, R.drawable.sm_8,
-                R.drawable.sm_9, R.drawable.sm_10,
-                R.drawable.sm_11, R.drawable.sm_12,
-                R.drawable.sm_13, R.drawable.sm_14,
-                R.drawable.sm_15, R.drawable.sm_16,
-                R.drawable.trailer1, R.drawable.trailer2);
-
-        return images;
+        mContext = context;
+        mImageResource = KinoApplication.getInstance(context).getShotList();
     }
 
 
@@ -57,7 +48,7 @@ public class ShotAdapter extends RecyclerView.Adapter<ShotAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Picasso.with(mContext).load(mImageResource.get(position)).into(holder.image);
+        Picasso.with(mContext).load(mImageResource.get(position).photo).fit().centerCrop().into(holder.image);
     }
 
 

@@ -20,10 +20,18 @@
             <TextView
                 android:id="@+id/title"
                 style="@style/TextViewHistoryTitle"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/item_divider"/>
 
             <TextView
                 android:id="@+id/article"
-                style="@style/TextViewHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@color/text_primary"
                 />
         </LinearLayout>
     </ScrollView>

@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.mozidev.kino.fragments.BigShotFragment;
+import com.mozidev.kino.model.Photo;
 
 import java.util.List;
 
@@ -13,10 +14,10 @@ import java.util.List;
  */
 public class BigShotFragmentAdapter extends FragmentStatePagerAdapter {
 
-    private List<Integer> shots;
+    private List<Photo> shots;
 
 
-    public BigShotFragmentAdapter(FragmentManager fm, List<Integer> list) {
+    public BigShotFragmentAdapter(FragmentManager fm, List<Photo> list) {
         super(fm);
         shots = list;
     }

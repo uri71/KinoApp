@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="title">
-        <item>ФИЛЬМ МОТЫЛЬКИ</item>
-        <item>Постер</item>
-        <item>Сюжет</item>
+        <item>НЕЗЛАМНА</item>
+        <item>О фильме</item>
+        <item>Съемочная группа</item>
         <item>Кадры и трейлеры</item>
-        <item>Создатели</item>
         <item>Исторический раздел</item>
-        <item>Рейтинги  и отзывы</item>
-        <item>FILM.UA</item>
-        <item>О компании</item>
-        <item>Наши фильмы</item>
-        <item>Наши новинки</item>
-        <item>Скоро на экранах</item>
+        <item>КИНОКОМПАНИЯ</item>
     </string-array>
     <integer-array name="small_shot">
         <item>@drawable/sm_1</item>
@@ -62,7 +56,7 @@
         <item>Режиссер</item>
         <item>Людмила Павличенко</item>
         <item>Жених Людмилы</item>
-        <item>" "</item>
+        <item>врач Борис</item>
         <item>Елеонора Рузвельт </item>
         <item>" "</item>
     </string-array>
@@ -71,7 +65,7 @@
         <item>6.8</item>
         <item>6.71</item>
         <item>6.12</item>
-        <item>""</item>
+        <item>6.1</item>
         <item>6.3</item>
     </string-array>
     <string-array name="team_about">
@@ -244,5 +238,50 @@
         <item>""</item>
         <item>"Будучи также санинструктором, вынесла c поля боя 109 раненых бойцов"</item>
         <item>"Служила в морской пехоте. Погибла в 1943"</item>
+    </string-array>
+    <string-array name="photo_caption">
+        <item>Людмила Павличенко в начале войны</item>
+        <item>На позиции</item>
+        <item>На позиции</item>
+        <item>Людмила Павличенко</item>
+        <item>На позиции</item>
+        <item>Позиция на дереве</item>
+        <item>Людмила Павличенко</item>
+        <item>Людмила Павличенко и Сидор Ковпак</item>
+        <item>Людмила Павличенко на марке</item>
+        <item>Людмила Павличенко на марке</item>
+        <item>Людмила Павличенко и Элеонора Рузвельт в 1942 г.</item>
+        <item>Русская делегация  в Вашингтоне.</item>
+        <item>У советского посольства в Вашингтоне.1942г</item>
+        <item>Людмила Людмила Павличенко и жена И. Майского (Агния Александровна) на приеме в советском посольстве в Великобритании по случаю 25-летия Октябрьской революции - 1942 г.</item>
+        <item>Людмила Павличенко и Миссис Дэвис (жена американского посла в СССР)</item>
+        <item>Людмила Павличенко и Элеонора Рузвельт</item>
+        <item>Людмила Павличенко и Джозеф Дэвис (посол в СССР)</item>
+        <item>Выступление на митинге в Чикаго</item>
+        <item>Марка 1943 года с Людмилой Павличенко.</item>
+    </string-array>
+    <string-array name="shot_caption">
+        <item>" "</item>
+        <item>" "</item>
+        <item>" "</item>
+        <item>" "</item>
+        <item>" "</item>
+        <item>" "</item>
+        <item>" "</item>
+        <item>" "</item>
+        <item>" "</item>
+        <item>" "</item>
+        <item>" "</item>
+        <item>" "</item>
+        <item>" "</item>
+        <item>" "</item>
+        <item>" "</item>
+        <item>" "</item>
+        <item>" "</item>
+        <item>" "</item>
+        <item>" "</item>
+        <item>" "</item>
+        <item>" "</item>
+        <item>" "</item>
     </string-array>
 </resources>

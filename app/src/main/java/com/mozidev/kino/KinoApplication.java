@@ -2,7 +2,6 @@ package com.mozidev.kino;
 
 import android.app.Application;
 import android.content.Context;
-import android.content.res.Resources;
 
 import com.mozidev.kino.model.Photo;
 import com.mozidev.kino.model.Team;
@@ -19,7 +18,9 @@ public class KinoApplication extends Application {
     private static KinoApplication instance;
     private List<Team> mTeams;
     private List<Photo> mPhoto;
+    private List<Photo> mShots;
     private Context mContext;
+    private List<Integer> mSmallShot;
 
 
     public KinoApplication(Context context) {
@@ -32,8 +33,8 @@ public class KinoApplication extends Application {
         super.onCreate();
         instance = this;
         mTeams = createTeamList();
+        mShots = createShotList();
         mPhoto = createPhotoList();
-
 
 
     }
@@ -77,22 +78,83 @@ public class KinoApplication extends Application {
 
 
     private List<Photo> createPhotoList() {
-        String[] captions = mContext.getResources().getStringArray(R.array.photo_caption);
+        List<String> captions = Arrays.asList(mContext.getResources().getStringArray(R.array.photo_caption));
         int[] photo = new int[] {
-                R.raw.photo_1, R.raw.photo_2, R.raw.photo_3, R.raw.photo_4, R.raw.photo_5, R.raw.photo_6, R.raw.photo_7, R.raw.photo_11, R.raw.photo_9, R.raw.photo_10, R.raw.photo_11, R.raw.usa_1, R.raw.usa_2, R.raw.usa_3, R.raw.usa_4, R.raw.usa_5, R.raw.usa_6, R.raw.usa_7, R.raw.photo_12};
+                R.raw.photo_1, R.raw.photo_2, R.raw.photo_3, R.raw.photo_4, R.raw.photo_5, R.raw.photo_6, R.raw.photo_7, R.raw.photo_9, R.raw.usa_1, R.raw.usa_2, R.raw.usa_3, R.raw.usa_4, R.raw.usa_5, R.raw.usa_6, R.raw.usa_7, R.raw.photo_12};
         List<Photo> list = new ArrayList<>();
         for (int i = 0; i < photo.length; i++) {
-            list.add(new Photo(photo[i], captions[i]));
+            if (captions.get(i) != null) {
+                list.add(new Photo(photo[i], captions.get(i)));
+            } else {
+                list.add(new Photo(photo[i], " "));
+            }
         }
         return list;
     }
 
 
-    public  List<Photo>  getPhotoList(){
-        if(mPhoto == null){
+    private List<Photo> createShotList() {
+        int[] shot = new int[] {
+                R.raw.poster_1, R.raw.poster_2,
+                R.raw.poster_3, R.raw.shot_1, R.raw.shot_2,
+                R.raw.shot_3, R.raw.shot_4,
+                R.raw.shot_5, R.raw.shot_6,
+                R.raw.shot_7, R.raw.shot_8,
+                R.raw.shot_9, R.raw.shot_10,
+                R.raw.shot_11, R.raw.shot_12,
+                R.raw.shot_13, R.raw.shot_14,
+                R.raw.shot_15, R.raw.shot_16, R.raw.shot_17, R.raw.shot_18};
+        List<String> captions = new ArrayList<>(shot.length);
+        captions.addAll(Arrays.asList(mContext.getResources().getStringArray(R.array.shot_caption)));
+
+        List<Photo> list = new ArrayList<>();
+        for (int i = 0; i < shot.length; i++) {
+            if (captions.size() > i && captions.get(i) != null) {
+                list.add(new Photo(shot[i], captions.get(i)));
+            } else {
+                list.add(new Photo(shot[i], " "));
+            }
+        }
+        return list;
+    }
+
+
+    public List<Photo> getShotList() {
+        if (mShots == null) {
+            mShots = createShotList();
+        }
+        return mShots;
+
+    }
+
+
+    private List<Integer> createSmallShotList() {
+
+        List<Integer> smallShot = Arrays.asList(R.drawable.small_shot_1, R.drawable.small_shot_2,
+                R.drawable.small_shot_3, R.drawable.small_shot_4, R.drawable.small_shot_5,
+                R.drawable.small_shot_6, R.drawable.small_shot_7, R.drawable.small_shot_8,
+                R.drawable.small_shot_9, R.drawable.small_shot_10, R.drawable.small_shot_11,
+                R.drawable.small_shot_12, R.drawable.small_shot_13, R.drawable.small_shot_14,
+                R.drawable.small_shot_15, R.drawable.small_shot_16/*, R.drawable.small_shot_17_jpg,
+                R.drawable.small_shot_18_jpg*/);
+        return smallShot;
+    }
+
+
+    public List<Integer> getSmallShotList() {
+        if (mSmallShot == null) {
+            mSmallShot = createSmallShotList();
+        }
+        return mSmallShot;
+    }
+
+
+    public List<Photo> getHistoryPhotoList() {
+        if (mPhoto == null) {
             mPhoto = createPhotoList();
         }
         return mPhoto;
-
     }
+
+
 }

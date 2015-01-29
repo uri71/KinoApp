@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 import com.mozidev.kino.Constants;
 import com.mozidev.kino.R;
 import com.mozidev.kino.activity.MainActivity;
-import com.mozidev.kino.adapters.AboutAdapter;
+import com.mozidev.kino.adapters.PosterAdapter;
 import com.mozidev.kino.model.Item;
 
 import java.util.ArrayList;
@@ -80,7 +80,7 @@ public class PosterFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
 
 
-        AboutAdapter adapter = new AboutAdapter(getActivity(), setItems());
+        PosterAdapter adapter = new PosterAdapter(getActivity(), setItems());
         //adapter.setHasStableIds(true);
         recyclerView.setAdapter(adapter);
 

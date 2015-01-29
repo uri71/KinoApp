@@ -15,5 +15,6 @@
     <color name="text_primary">#212121</color>
     <color name="text_second">#727272</color>
     <color name="background">#ffffff</color>
+    <color name="item_divider">#BDBDBD</color>
 
 </resources>

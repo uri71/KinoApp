@@ -17,13 +17,13 @@ import java.util.List;
 /**
  * Created by y.storchak on 24.12.14.
  */
-public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class PosterAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private List<Item> mItems = new ArrayList<>();
     private Context mContext;
 
 
-    public AboutAdapter(Context context, List<Item> items) {
+    public PosterAdapter(Context context, List<Item> items) {
         mItems = items;
         mContext = context;
     }

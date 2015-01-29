@@ -19,34 +19,40 @@
             >
 
             <TextView
+                android:id="@+id/biography"
                 style="@style/TextViewHistoryTitle"
                 android:text="@string/biography"/>
 
             <TextView
-                android:id="@+id/biography"
+
                 style="@style/TextViewHistory"
                 android:text="@string/biography_text"/>
 
             <TextView
+                android:id="@+id/snipers"
                 style="@style/TextViewHistoryTitle"
+                android:layout_marginTop="16dp"
                 android:text="@string/about_snipers_title"/>
 
             <TextView
-                android:id="@+id/snipers"
+
                 style="@style/TextViewHistory"
                 android:text="@string/about_snipers"/>
 
             <TextView
+                android:id="@+id/snipers_guns"
+                android:layout_marginTop="16dp"
                 style="@style/TextViewHistoryTitle"
                 android:text="@string/snipers_gun_title"/>
 
             <TextView
-                android:id="@+id/snipers_guns"
+
                 style="@style/TextViewHistory"
                 android:text="@string/snipers_gun"/>
 
             <TextView
                 android:id="@+id/gallery"
+                android:layout_marginTop="16dp"
                 style="@style/TextViewHistoryTitle"
                 android:text="@string/gallery"/>
 

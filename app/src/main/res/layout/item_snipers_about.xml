@@ -11,11 +11,16 @@
     <TextView
         style="@style/TextViewHistoryTitle"
         android:text="@string/about_snipers_title"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/item_divider"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/about_snipers"
         android:textAppearance="?android:textAppearanceSmall"
+        android:layout_marginTop="8dp"
         android:textColor="@color/text_primary"/>
 </LinearLayout>

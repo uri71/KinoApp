@@ -15,25 +15,25 @@
             android:name=".activity.MainActivity"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/app_name"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.BigShotActivity"
+            android:label="@string/title_activity_big_shot" />
+        <activity
+            android:name=".activity.PlayerActivity"
+            android:label="@string/title_activity_player"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".activity.ProfileActivity"
+            android:label="@string/title_activity_profile"/>
+        <activity
+            android:name=".activity.SplashActivity"
+            android:label="@string/title_activity_splach" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".activity.BigShotActivity"
-            android:label="@string/title_activity_big_shot" >
-        </activity>
-        <activity
-            android:name=".activity.PlayerActivity"
-            android:label="@string/title_activity_player"
-            android:screenOrientation="landscape" >
-        </activity>
-        <activity
-            android:name=".activity.ProfileActivity"
-            android:label="@string/title_activity_profile" >
         </activity>
     </application>
 
