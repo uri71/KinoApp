@@ -284,4 +284,17 @@
         <item>" "</item>
         <item>" "</item>
     </string-array>
+
+    <string-array name="news_title">
+        <item>@string/about1</item>
+        <item>@string/about2</item>
+        <item>@string/about3</item>
+        <item>@string/about4</item>
+        <item>@string/about5</item>
+        <item>@string/about6</item>
+        <item>@string/about7</item>
+        <item>@string/about8</item>
+        <item>@string/about9</item>
+
+    </string-array>
 </resources>

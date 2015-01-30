@@ -9,9 +9,10 @@ import com.mozidev.kino.Constants;
 import com.mozidev.kino.KinoApplication;
 import com.mozidev.kino.R;
 import com.mozidev.kino.adapters.BigShotFragmentAdapter;
+import com.mozidev.kino.model.NewsItem;
 import com.mozidev.kino.model.Photo;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -26,18 +27,41 @@ public class BigShotActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_big_shot);
         int set = getIntent().getIntExtra(Constants.ARG_NUMBER_PHOTO_SET, 0);
-        if (set == 0) {
-            bigShot = KinoApplication.getInstance(this).getShotList();
-        } else {
-            bigShot = KinoApplication.getInstance(this).getHistoryPhotoList();
+        int position = getIntent().getIntExtra(Constants.ARG_SHOT_NUMBER, 0);
+        switch (set) {
+            case Constants.SHOT_SET: {
+                bigShot = KinoApplication.getInstance(this).getShotList();
+                bigShot.remove(bigShot.size()-1);
+                bigShot.remove(bigShot.size()-1);
+            }
+            break;
+            case Constants.PHOTO_SET: {
+                bigShot = KinoApplication.getInstance(this).getHistoryPhotoList();
+            }
+            break;
+            case Constants.NEWS_SET: {
+                bigShot = getNewsShot(position);
+            }
+            break;
         }
 
         pager = (ViewPager) findViewById(R.id.pager);
-        int position = getIntent().getIntExtra(Constants.ARG_SHOT_NUMBER, 0);
         //BigShotImageAdapter adapter = new BigShotImageAdapter(this, bigShot);
         BigShotFragmentAdapter adapter = new BigShotFragmentAdapter(getSupportFragmentManager(), bigShot);
         pager.setAdapter(adapter);
-        pager.setCurrentItem(position);
+        if (set != Constants.NEWS_SET) {
+            pager.setCurrentItem(position);
+        }
+    }
+
+
+    private List<Photo> getNewsShot(int position) {
+        List<NewsItem> list = KinoApplication.getInstance(this).getNewsItem();
+        List<Photo> photo = new ArrayList<>();
+        photo.add(new Photo(list.get(position).photo_1, ""));
+        photo.add(new Photo(list.get(position).photo_2, ""));
+        photo.add(new Photo(list.get(position).photo_3, ""));
+        return photo;
     }
 
 
@@ -47,7 +71,7 @@ public class BigShotActivity extends ActionBarActivity {
         if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
             getSupportActionBar().hide();
         } else {
-            getSupportActionBar().setTitle("Кадры фильма");
+            getSupportActionBar().setTitle(getString(R.string.films_shot));
         }
     }
 

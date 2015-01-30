@@ -21,6 +21,7 @@ import com.mozidev.kino.R;
 import com.mozidev.kino.fragments.HistoryFragment;
 import com.mozidev.kino.fragments.CompanyFragment;
 import com.mozidev.kino.fragments.NavigationDrawerFragment;
+import com.mozidev.kino.fragments.NewsFragment;
 import com.mozidev.kino.fragments.PosterFragment;
 import com.mozidev.kino.fragments.ShotFragment;
 import com.mozidev.kino.fragments.StoryFragment;
@@ -76,7 +77,7 @@ public class MainActivity extends ActionBarActivity
                 fragment = HistoryFragment.newInstance(position);
                 break;
             case (5):
-                fragment = CompanyFragment.newInstance(position);
+                fragment = NewsFragment.newInstance(position);
                 break;
         }
         if (fragment != null) {

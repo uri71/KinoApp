@@ -75,6 +75,7 @@ public class ShotFragment extends Fragment implements AdapterView.OnItemClickLis
             intent = new Intent(getActivity(), BigShotActivity.class);
         }
         intent.putExtra(Constants.ARG_SHOT_NUMBER, position);
+        intent.putExtra(Constants.ARG_NUMBER_PHOTO_SET, Constants.SHOT_SET);
         startActivity(intent);
     }
 }

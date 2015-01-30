@@ -16,11 +16,13 @@
             android:orientation="vertical"
             android:paddingLeft="@dimen/horizontal_padding"
             android:paddingRight="@dimen/horizontal_padding"
+            android:paddingBottom="32dp"
             >
 
             <TextView
                 android:id="@+id/biography"
                 style="@style/TextViewHistoryTitle"
+                android:drawableRight="@drawable/ic_arrow_right"
                 android:text="@string/biography"/>
 
             <TextView
@@ -31,6 +33,7 @@
             <TextView
                 android:id="@+id/snipers"
                 style="@style/TextViewHistoryTitle"
+                android:drawableRight="@drawable/ic_arrow_right"
                 android:layout_marginTop="16dp"
                 android:text="@string/about_snipers_title"/>
 
@@ -43,6 +46,7 @@
                 android:id="@+id/snipers_guns"
                 android:layout_marginTop="16dp"
                 style="@style/TextViewHistoryTitle"
+                android:drawableRight="@drawable/ic_arrow_right"
                 android:text="@string/snipers_gun_title"/>
 
             <TextView
@@ -54,6 +58,7 @@
                 android:id="@+id/gallery"
                 android:layout_marginTop="16dp"
                 style="@style/TextViewHistoryTitle"
+                android:drawableRight="@drawable/ic_arrow_right"
                 android:text="@string/gallery"/>
 
         </LinearLayout>

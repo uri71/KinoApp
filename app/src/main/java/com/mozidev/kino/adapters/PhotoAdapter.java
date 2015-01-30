@@ -4,15 +4,18 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 
+import com.mozidev.kino.Constants;
 import com.mozidev.kino.KinoApplication;
 import com.mozidev.kino.R;
 import com.mozidev.kino.model.Photo;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -44,13 +47,9 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(PhotoAdapter.ViewHolder holder, int position) {
-        BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inSampleSize = 4;
-        Bitmap bitmap = BitmapFactory.decodeResource(mContext.getResources(), mPhoto.get(position).photo , options);
-        holder.image.setImageBitmap(bitmap);
-       // Picasso.with(mContext).load(mPhoto.get(position).photo).into(holder.image);
-    }
 
+        Picasso.with(mContext).load(mPhoto.get(position).photo).fit().centerCrop().into(holder.image);
+    }
 
     @Override
     public int getItemCount() {

@@ -28,6 +28,12 @@ ImageView mImage;
         Animation animationIn = AnimationUtils.loadAnimation(this, R.anim.fade_in);
         final Animation animationOut = AnimationUtils.loadAnimation(this, R.anim.fade_out);
         getSupportActionBar().hide();
+        mImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendIntent();
+            }
+        });
 
         animationIn.setAnimationListener(new Animation.AnimationListener() {
             @Override
@@ -56,9 +62,7 @@ ImageView mImage;
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
+                sendIntent();
             }
 
 
@@ -73,6 +77,11 @@ ImageView mImage;
     }
 
 
+    private void sendIntent() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
 
 
     @Override

@@ -17,8 +17,7 @@ import com.mozidev.kino.activity.BigShotActivity;
 import com.mozidev.kino.adapters.PhotoAdapter;
 
 
-public class PhotoFragment extends Fragment implements AdapterView.OnItemClickListener{
-
+public class PhotoFragment extends Fragment implements AdapterView.OnItemClickListener {
 
 
     public static PhotoFragment newInstance() {
@@ -28,7 +27,6 @@ public class PhotoFragment extends Fragment implements AdapterView.OnItemClickLi
 
     public PhotoFragment() {
     }
-
 
 
     @Override
@@ -55,7 +53,7 @@ public class PhotoFragment extends Fragment implements AdapterView.OnItemClickLi
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent(getActivity(), BigShotActivity.class);
-        intent.putExtra(Constants.ARG_NUMBER_PHOTO_SET, 1);
+        intent.putExtra(Constants.ARG_NUMBER_PHOTO_SET, Constants.PHOTO_SET);
         intent.putExtra(Constants.ARG_SHOT_NUMBER, position);
         startActivity(intent);
 

@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import com.mozidev.kino.Constants;
 import com.mozidev.kino.R;
 import com.mozidev.kino.model.Photo;
+import com.squareup.picasso.Picasso;
 
 /**
  * A simple {@link Fragment} subclass.
