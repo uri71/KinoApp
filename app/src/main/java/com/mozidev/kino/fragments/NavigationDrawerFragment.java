@@ -112,7 +112,7 @@ public class NavigationDrawerFragment extends Fragment {
         mDrawerListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (position != 0 && position != Constants.DRAWER_TOP_ITEM_COUNT) {
+                if (position != 0) {
                     selectItem(position);
                 }
             }

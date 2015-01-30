@@ -79,6 +79,9 @@ public class MainActivity extends ActionBarActivity
             case (5):
                 fragment = NewsFragment.newInstance(position);
                 break;
+            case (6):
+                fragment = CompanyFragment.newInstance(position);
+                break;
         }
         if (fragment != null) {
             setFragment(fragment);

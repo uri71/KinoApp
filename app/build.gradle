@@ -33,4 +33,5 @@ dependencies {
     compile 'com.squareup.picasso:picasso:2.3.2'
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'com.daimajia.slider:library:1.1.2@aar'
+    compile 'com.sothree.slidinguppanel:library:2.0.4'
 }

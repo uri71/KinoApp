@@ -2,18 +2,24 @@ package com.mozidev.kino.fragments;
 
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.mozidev.kino.Constants;
-import com.mozidev.kino.activity.MainActivity;
 import com.mozidev.kino.R;
+import com.mozidev.kino.activity.MainActivity;
+import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 
-public class CompanyFragment extends Fragment implements View.OnClickListener{
+public class CompanyFragment extends Fragment {
+
+    private SlidingUpPanelLayout mSlidingUpPanelLayout;
+
 
     public CompanyFragment() {
     }
@@ -38,15 +44,17 @@ public class CompanyFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        view.findViewById(R.id.comp_prodaction).setOnClickListener(this);
-        view.findViewById(R.id.comp_distribution).setOnClickListener(this);
-        view.findViewById(R.id.comp_television).setOnClickListener(this);
-        view.findViewById(R.id.comp_postprodaction).setOnClickListener(this);
-        view.findViewById(R.id.comp_studio).setOnClickListener(this);
-        view.findViewById(R.id.comp_films).setOnClickListener(this);
-        view.findViewById(R.id.comp_new_films).setOnClickListener(this);
-        view.findViewById(R.id.comp_soon).setOnClickListener(this);
-        view.findViewById(R.id.comp_education).setOnClickListener(this);
+        mSlidingUpPanelLayout = (SlidingUpPanelLayout) view.findViewById(R.id.main_container);
+        mSlidingUpPanelLayout.setOverlayed(true);
+        mSlidingUpPanelLayout.setCoveredFadeColor(Color.argb(200, 110, 110, 110));
+        if (savedInstanceState == null) {
+            FragmentManager fm = getActivity().getSupportFragmentManager();
+            fm.beginTransaction()
+                    .add(R.id.container, new FilmUaFragment())
+                    .add(R.id.slider_container, OtherCompany.newInstance(null, mSlidingUpPanelLayout))
+                    .commit();
+        }
+
     }
 
 
@@ -58,23 +66,4 @@ public class CompanyFragment extends Fragment implements View.OnClickListener{
     }
 
 
-    @Override
-    public void onClick(View v) {
-        String [] uris = getResources().getStringArray(R.array.uri_about);
-        String uri = "";
-        switch (v.getId()){
-            case R.id.comp_prodaction:uri = uris[0];break;
-            case R.id.comp_distribution:uri = uris[1];break;
-            case R.id.comp_television:uri = uris[2];break;
-            case R.id.comp_postprodaction:uri = uris[3];break;
-            case R.id.comp_studio:uri = uris[4];break;
-            case R.id.comp_films:uri = uris[5];break;
-            case R.id.comp_new_films:uri = uris[6];break;
-            case R.id.comp_soon:uri = uris[7];break;
-            case R.id.comp_education:uri = uris[8];break;
-        }
-        if (!uri.equals("")) {
-            ((MainActivity) getActivity()).sendIntent(uri);
-        }
-    }
 }

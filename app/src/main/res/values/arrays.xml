@@ -6,7 +6,8 @@
         <item>Съемочная группа</item>
         <item>Кадры и трейлеры</item>
         <item>Исторический раздел</item>
-        <item>КИНОКОМПАНИЯ</item>
+        <item>Новости</item>
+        <item>Кинокомпания</item>
     </string-array>
     <integer-array name="small_shot">
         <item>@drawable/sm_1</item>
