@@ -34,7 +34,7 @@ import java.util.List;
  * See the <a href="https://developer.android.com/design/patterns/navigation-drawer.html#Interaction">
  * design guidelines</a> for a complete explanation of the behaviors implemented here.
  */
-public class NavigationDrawerFragment extends Fragment {
+public class DrawerFragment extends Fragment {
 
     /**
      * Remember the position of the selected item.
@@ -66,7 +66,7 @@ public class NavigationDrawerFragment extends Fragment {
     private boolean mUserLearnedDrawer;
 
 
-    public NavigationDrawerFragment() {
+    public DrawerFragment() {
     }
 
 

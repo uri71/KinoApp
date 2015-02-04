@@ -298,4 +298,15 @@
         <item>@string/about9</item>
 
     </string-array>
+
+    <string-array name="new_people_films">
+        <item>@string/new_people_film_1</item>
+        <item>@string/new_people_film_2</item>
+        <item>@string/new_people_film_3</item>
+        <item>@string/new_people_film_4</item>
+        <item>@string/new_people_film_6</item>
+        <item>@string/new_people_film_7</item>
+
+
+    </string-array>
 </resources>

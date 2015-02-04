@@ -99,5 +99,12 @@ B 1997 гoдy пocтyпил нa peжиccepcкий фaкyльтeт PATИ, a в 20
 "</string>
     <string name="title_activity_splach">SplachActivity</string>
     <string name="films_shot">Кадры фильма</string>
+    <string name="new_people_film_1">День учителя</string>
+    <string name="new_people_film_2">Изображая жертву</string>
+    <string name="new_people_film_3">Кино про Алексеева</string>
+    <string name="new_people_film_4">Класс коррекции</string>
+    <string name="new_people_film_5">Мой папа – Барышников</string>
+    <string name="new_people_film_6">Четыре возраста любви</string>
+    <string name="new_people_film_7">Юрьев день</string>
 
 </resources>

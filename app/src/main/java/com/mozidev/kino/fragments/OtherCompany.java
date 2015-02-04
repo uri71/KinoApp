@@ -3,11 +3,15 @@ package com.mozidev.kino.fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.mozidev.kino.Constants;
+import com.mozidev.kino.R;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 /**
@@ -16,6 +20,7 @@ import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 public class OtherCompany extends Fragment implements SlidingUpPanelLayout.PanelSlideListener{
 
     private SlidingUpPanelLayout mSlidingUpPanelLayout;
+    private Toolbar mToolbar;
 
     public OtherCompany() {
     }
@@ -25,7 +30,7 @@ public class OtherCompany extends Fragment implements SlidingUpPanelLayout.Panel
         OtherCompany fragment = new OtherCompany();
         if (args != null)
             fragment.setArguments(args);
-        panelLayout.setPanelSlideListener(fragment);
+        //panelLayout.setPanelSlideListener(fragment);
         fragment.setSlidingUpPanelLayout(panelLayout);
         return fragment;
     }
@@ -37,7 +42,8 @@ public class OtherCompany extends Fragment implements SlidingUpPanelLayout.Panel
                              ViewGroup container,
                              @Nullable
                              Bundle savedInstanceState) {
-        return super.onCreateView(inflater, container, savedInstanceState);
+        View view = inflater.inflate(R.layout.fragment_other_company, container, false);
+        return view;
     }
 
 
@@ -46,7 +52,10 @@ public class OtherCompany extends Fragment implements SlidingUpPanelLayout.Panel
                               @Nullable
                               Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        //mSlidingUpPanelLayout.setDragView();
+        mToolbar = (Toolbar) view.findViewById(R.id.toolbar);
+        mSlidingUpPanelLayout.setDragView(mToolbar);
+        ListView listView = (ListView) view.findViewById(R.id.list);
+        listView.setAdapter(new ArrayAdapter(getActivity(), R.layout.item_company_films, getResources().getStringArray(R.array.new_people_films)));
     }
 
     public void setSlidingUpPanelLayout(SlidingUpPanelLayout l) {

@@ -159,8 +159,8 @@ public class KinoApplication extends Application {
                 R.drawable.small_shot_6, R.drawable.small_shot_7, R.drawable.small_shot_8,
                 R.drawable.small_shot_9, R.drawable.small_shot_10, R.drawable.small_shot_11,
                 R.drawable.small_shot_12, R.drawable.small_shot_13, R.drawable.small_shot_14,
-                R.drawable.small_shot_15, R.drawable.small_shot_16/*, R.drawable.small_shot_17_jpg,
-                R.drawable.small_shot_18_jpg*/);
+                R.drawable.small_shot_15, R.drawable.small_shot_16, R.drawable.small_shot_17,
+                R.drawable.small_shot_18);
         return smallShot;
     }
 
