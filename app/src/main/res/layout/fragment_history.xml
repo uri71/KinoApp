@@ -50,9 +50,8 @@
                 android:text="@string/snipers_gun_title"/>
 
             <TextView
-
                 style="@style/TextViewHistory"
-                android:text="@string/snipers_gun"/>
+                android:text="@string/snipers_gun_1"/>
 
             <TextView
                 android:id="@+id/gallery"

@@ -83,7 +83,7 @@ public class HistoryFragment extends Fragment implements View.OnClickListener {
             break;
             case R.id.snipers_guns: {
                 title = "Снайперские винтовки";
-                fragment = ArticleFragment.newInstance(getResources().getString(R.string.snipers_gun), title);
+                fragment =  SniperGunFragment.newInstance();
             }
             break;
             default: {

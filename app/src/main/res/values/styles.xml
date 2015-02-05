@@ -30,13 +30,12 @@
         <item name="android:layout_height">48dp</item>
         <item name="android:paddingTop">8dp</item>
         <item name="android:paddingBottom">8dp</item>
-        <item name="android:paddingLeft">32dp</item>
+        <item name="android:paddingLeft">16dp</item>
         <item name="android:paddingRight">8dp</item>
         <item name="android:linksClickable">true</item>
+        <item name="android:background">@drawable/drawer_item_selector</item>
         <item name="android:textColor">@drawable/company_text_color_selector</item>
-        <item name="android:textStyle">italic|bold</item>
         <item name="android:gravity">center_vertical</item>
-        <item name="android:background">@color/background_menu_transparent</item>
     </style>
 
     <style name="TextViewHistory">
@@ -53,10 +52,12 @@
     <style name="TextViewHistoryTitle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
         <item name="android:textAppearance">?android:textAppearanceLarge</item>
         <item name="android:textColor">@color/text_second</item>
         <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@drawable/drawer_item_selector</item>
     </style>
 
 

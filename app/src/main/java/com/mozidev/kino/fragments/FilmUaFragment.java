@@ -4,19 +4,21 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.mozidev.kino.Constants;
 import com.mozidev.kino.R;
+import com.mozidev.kino.activity.CompanyActivity;
 import com.mozidev.kino.activity.MainActivity;
 
 /**
  * Created by y.storchak on 30.01.15.
  */
 public class FilmUaFragment extends Fragment implements View.OnClickListener{
-
+private Toolbar mToolbar;
 
     public FilmUaFragment() {
     }
@@ -43,6 +45,13 @@ public class FilmUaFragment extends Fragment implements View.OnClickListener{
                               @Nullable
                               Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        mToolbar = (Toolbar) view.findViewById(R.id.toolbar);
+        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().finish();
+            }
+        });
         view.findViewById(R.id.comp_prodaction).setOnClickListener(this);
         view.findViewById(R.id.comp_distribution).setOnClickListener(this);
         view.findViewById(R.id.comp_television).setOnClickListener(this);
@@ -70,7 +79,7 @@ public class FilmUaFragment extends Fragment implements View.OnClickListener{
             case R.id.comp_education:uri = uris[8];break;
         }
         if (!uri.equals("")) {
-            ((MainActivity) getActivity()).sendIntent(uri);
+            ((CompanyActivity) getActivity()).sendIntent(uri);
         }
     }
 }

@@ -21,6 +21,7 @@
         android:layout_height="match_parent"
         android:layout_marginLeft="@dimen/horizontal_padding"
         android:layout_weight="1"
+        android:gravity="center_vertical"
         android:orientation="vertical"
         android:paddingBottom="@dimen/vertical_padding"
         android:paddingTop="@dimen/vertical_padding">
@@ -36,9 +37,7 @@
         <TextView
             android:id="@+id/about"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:text="XXXXXXXXXXXX"
+            android:layout_height="wrap_content"
             android:gravity="center_vertical"
             android:textAppearance="?android:textAppearanceSmall"
             android:textColor="@color/text_second"/>

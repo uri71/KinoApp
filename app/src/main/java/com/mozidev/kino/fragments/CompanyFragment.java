@@ -52,19 +52,13 @@ public class CompanyFragment extends Fragment implements SlidingUpPanelLayout.Pa
         if (savedInstanceState == null) {
             FragmentManager fm = getActivity().getSupportFragmentManager();
             fm.beginTransaction()
-                    .add(R.id.container, OtherCompany.newInstance(null, mSlidingUpPanelLayout))
+                    .add(R.id.container, new FilmUaFragment())
                     .add(R.id.slider_container, OtherCompany.newInstance(null, mSlidingUpPanelLayout))
                     .commit();
         }
     }
 
 
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        ((MainActivity) activity).onSectionAttached(
-                getArguments().getInt(Constants.ARG_SECTION_NUMBER));
-    }
 
 
     @Override

@@ -48,29 +48,30 @@ public class SniperAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         switch (getItemViewType(position)) {
-            case Constants.TYPE_ITEM: {
+            case Constants.TYPE_ITEM:
                 ListViewHolder viewHolder = (ListViewHolder) holder;
                 viewHolder.photo.setImageResource(mList.get(position - 1).photo);
                 viewHolder.name.setText(mList.get(position - 1).name);
                 viewHolder.result.setText(mList.get(position - 1).result);
-                if (mList.get(position - 1).about != null) {
+                if (mList.get(position - 1).about != null && !mList.get(position - 1).about.isEmpty()) {
+                    viewHolder.about.setVisibility(View.VISIBLE);
                     viewHolder.about.setText(mList.get(position - 1).about);
-                }
-            }
+                }else if(mList.get(position - 1).about == null || mList.get(position - 1).about.isEmpty())viewHolder.about.setVisibility(View.GONE);
+            break;
         }
     }
 
 
     @Override
     public int getItemCount() {
-        return mList.size()+1;
+        return mList.size() + 1;
     }
 
 
     @Override
     public int getItemViewType(int position) {
         int type;
-        type = (position == 0 ? Constants.TYPE_TITLE : Constants.TYPE_ITEM);
+        type = (position == 0? Constants.TYPE_TITLE : Constants.TYPE_ITEM);
         return type;
     }
 

@@ -5,7 +5,8 @@
               android:background="@color/background"
               android:orientation="vertical"
               android:paddingLeft="@dimen/horizontal_padding"
-              android:paddingRight="@dimen/horizontal_padding">
+              android:paddingRight="@dimen/horizontal_padding"
+    android:paddingBottom="8dp">
 
 
     <TextView
@@ -17,10 +18,26 @@
         android:background="@color/item_divider"/>
 
     <TextView
+        android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/about_snipers"
         android:textAppearance="?android:textAppearanceMedium"
         android:layout_marginTop="8dp"
         android:textColor="@color/text_primary"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:layout_marginTop="8dp"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="8dp"
+        android:textColor="@color/text_second"
+        android:textStyle="bold"
+        android:text="ТОП-10 женщин-снайперов"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/item_divider"
+        />
 </LinearLayout>

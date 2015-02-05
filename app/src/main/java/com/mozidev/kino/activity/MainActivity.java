@@ -14,6 +14,8 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.view.Menu;
+import android.view.View;
 
 import com.mozidev.kino.R;
 import com.mozidev.kino.fragments.DrawerFragment;
@@ -25,7 +27,7 @@ import com.mozidev.kino.fragments.ShotFragment;
 import com.mozidev.kino.fragments.TeamFragment;
 
 
-public class MainActivity extends ActionBarActivity
+public class MainActivity extends BaseActivity
         implements DrawerFragment.NavigationDrawerCallbacks {
 
     /**
@@ -77,24 +79,14 @@ public class MainActivity extends ActionBarActivity
                 fragment = NewsFragment.newInstance(position);
                 break;
             case (6):
-                fragment = CompanyFragment.newInstance(position);
+                startActivity(new Intent(this, CompanyActivity.class));
+                overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
                 break;
         }
         if (fragment != null) {
             setFragment(fragment);
         }
 
-    }
-
-
-    public void sendIntent(String uri) {
-        if (!isConnected()) {
-            showConnectedDialog();
-            return;
-        } else {
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
-            startActivity(intent);
-        }
     }
 
 
@@ -115,30 +107,18 @@ public class MainActivity extends ActionBarActivity
 
 
     public void restoreActionBar() {
+
         ActionBar actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayShowTitleEnabled(true);
-        actionBar.setTitle(mTitle);
+        if(!mNavigationDrawerFragment.isDrawerOpen())actionBar.setTitle(mTitle);
+        else actionBar.setTitle(getResources().getString(R.string.app_name));
     }
 
 
-
-
-    public boolean isConnected() {
-        ConnectivityManager manager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = manager.getActiveNetworkInfo();
-        if (networkInfo == null) {
-            return false;
-        }
-        boolean isConnected = networkInfo.isConnectedOrConnecting();
-        return isConnected;
-    }
-
-
-    public Dialog showConnectedDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(getString(R.string.check_network));
-        Dialog dialog = builder.show();
-        return dialog;
+    @Override
+    protected boolean onPrepareOptionsPanel(View view, Menu menu) {
+        restoreActionBar();
+        return false;
     }
 }

@@ -12,12 +12,13 @@ import android.widget.ListView;
 
 import com.mozidev.kino.Constants;
 import com.mozidev.kino.R;
+import com.mozidev.kino.activity.CompanyActivity;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 /**
  * Created by y.storchak on 30.01.15.
  */
-public class OtherCompany extends Fragment implements SlidingUpPanelLayout.PanelSlideListener{
+public class OtherCompany extends Fragment implements SlidingUpPanelLayout.PanelSlideListener, View.OnClickListener{
 
     private SlidingUpPanelLayout mSlidingUpPanelLayout;
     private Toolbar mToolbar;
@@ -30,7 +31,7 @@ public class OtherCompany extends Fragment implements SlidingUpPanelLayout.Panel
         OtherCompany fragment = new OtherCompany();
         if (args != null)
             fragment.setArguments(args);
-        //panelLayout.setPanelSlideListener(fragment);
+        panelLayout.setPanelSlideListener(fragment);
         fragment.setSlidingUpPanelLayout(panelLayout);
         return fragment;
     }
@@ -53,7 +54,15 @@ public class OtherCompany extends Fragment implements SlidingUpPanelLayout.Panel
                               Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         mToolbar = (Toolbar) view.findViewById(R.id.toolbar);
+        view.findViewById(R.id.tv_new_people).setOnClickListener(this);
+        view.findViewById(R.id.tv_kinorob).setOnClickListener(this);
         mSlidingUpPanelLayout.setDragView(mToolbar);
+        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().finish();
+            }
+        });
         ListView listView = (ListView) view.findViewById(R.id.list);
         listView.setAdapter(new ArrayAdapter(getActivity(), R.layout.item_company_films, getResources().getStringArray(R.array.new_people_films)));
     }
@@ -90,5 +99,20 @@ public class OtherCompany extends Fragment implements SlidingUpPanelLayout.Panel
     @Override
     public void onPanelHidden(View view) {
 
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        String url = "";
+        switch (v.getId()){
+            case R.id.tv_kinorob:
+                url = getResources().getString(R.string.url_kinorob);
+                break;
+            default:
+                url = getResources().getString(R.string.url_kinorob);
+                break;
+        }
+        ((CompanyActivity)getActivity()).sendIntent(url);
     }
 }

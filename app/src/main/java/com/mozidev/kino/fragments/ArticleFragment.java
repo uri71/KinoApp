@@ -11,10 +11,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.mozidev.kino.R;
 import com.mozidev.kino.activity.MainActivity;
+import com.squareup.picasso.Picasso;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,10 +28,8 @@ public class ArticleFragment extends Fragment {
 
     private static final String ARG_TITLE = "param1";
     private static final String ARG_TEXT = "param2";
-
     private String mTitle;
     private String mText;
-
 
 
     public static ArticleFragment newInstance(String param1, String param2) {
@@ -77,6 +77,8 @@ public class ArticleFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         ((TextView)view.findViewById(R.id.title)).setText(mTitle);
         ((TextView)view.findViewById(R.id.article)).setText(mText);
+        ImageView photo = (ImageView) view.findViewById(R.id.iv_photo);
+        photo.setImageResource(R.drawable.article_photo);
     }
 
 

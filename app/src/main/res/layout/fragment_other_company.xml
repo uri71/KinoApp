@@ -12,33 +12,51 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="@color/primary"
+        android:gravity="bottom"
+        android:paddingBottom="4dp"
         app:navigationIcon="@drawable/ic_toolbar_arrow_left"
         app:title="Новые люди и Кинороб"/>
 
     <TextView
+        android:id="@+id/tv_kinorob"
         style="@style/TextViewHistoryTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawableRight="@drawable/ic_arrow_right"
-        android:padding="16dp"
+        android:clickable="true"
+        android:paddingLeft="16dp"
+        android:paddingRight="8dp"
+        android:textColor="@drawable/company_title_text_color_selector"
         android:text="Кинороб"/>
 
     <TextView
+        android:id="@+id/tv_new_people"
         style="@style/TextViewHistoryTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawableRight="@drawable/ic_arrow_right"
-        android:padding="16dp"
+        android:clickable="true"
+        android:paddingLeft="16dp"
+        android:paddingRight="8dp"
+        android:textColor="@drawable/company_title_text_color_selector"
         android:text="Новые люди"/>
 
     <TextView
-        style="@style/TextViewHistory"
+        style="@style/TextViewCompanyItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textStyle="bold"
         android:gravity="center"
         android:paddingLeft="16dp"
-        android:text="Лучшие фильмы"
+        android:text="Новые люди \n Лучшие фильмы"
         />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@android:color/darker_gray"/>
 
     <ListView
         android:id="@+id/list"

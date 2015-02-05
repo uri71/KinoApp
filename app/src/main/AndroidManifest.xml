@@ -25,9 +25,15 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".activity.ProfileActivity"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_profile"/>
         <activity
+            android:name=".activity.CompanyActivity"
+            android:screenOrientation="portrait"
+            android:label="CompanyActivity"/>
+        <activity
             android:name=".activity.SplashActivity"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_splach" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
