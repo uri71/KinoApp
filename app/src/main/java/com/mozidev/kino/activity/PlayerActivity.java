@@ -47,5 +47,4 @@ private List<Integer> trailers;
         videoView.start();
 
     }
-
 }

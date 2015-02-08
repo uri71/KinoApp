@@ -20,10 +20,12 @@ public class KinoApplication extends Application {
     private List<Team> mTeams;
     private List<Photo> mPhoto;
     private List<Photo> mShots;
+    private List<Photo> mShortShots;
     private Context mContext;
     private List<Integer> mSmallShot;
     private List<Integer> photo;
     private List<Integer> shot;
+    private List<Integer> shortShot;
 
 
     public KinoApplication(Context context) {
@@ -37,9 +39,11 @@ public class KinoApplication extends Application {
         instance = this;
         mTeams = createTeamList();
         mShots = createShotList();
+        mShortShots = createShotList();
         mPhoto = createPhotoList();
         photo = fillPhotoList();
         shot = fillShotList();
+        shortShot = fillShortShotList();
 
     }
 
@@ -74,6 +78,19 @@ public class KinoApplication extends Application {
                 R.raw.shot_15, R.raw.shot_16,
                 R.raw.shot_17, R.raw.shot_18);
         return shot;
+    }
+
+    private List<Integer> fillShortShotList() {
+        shortShot = Arrays.asList(R.raw.poster_1, R.raw.poster_2,
+                R.raw.poster_3, R.raw.shot_1, R.raw.shot_2,
+                R.raw.shot_3, R.raw.shot_4,
+                R.raw.shot_5, R.raw.shot_6,
+                R.raw.shot_7, R.raw.shot_8,
+                R.raw.shot_9, R.raw.shot_10,
+                R.raw.shot_11, R.raw.shot_12,
+                R.raw.shot_13, R.raw.shot_14,
+                R.raw.shot_15, R.raw.shot_16);
+        return shortShot;
     }
 
 
@@ -125,9 +142,7 @@ public class KinoApplication extends Application {
 
 
     private List<Photo> createShotList() {
-        if (shot == null) {
-            shot = fillShotList();
-        }
+        if (shot == null) shot = fillShotList();
         List<String> captions = new ArrayList<>(shot.size());
         captions.addAll(Arrays.asList(mContext.getResources().getStringArray(R.array.shot_caption)));
 
@@ -142,12 +157,37 @@ public class KinoApplication extends Application {
         return list;
     }
 
+    private List<Photo> createShortShotList() {
+        if (shortShot == null)
+            shortShot = fillShortShotList();
+        List<String> captions = new ArrayList<>(shot.size());
+        captions.addAll(Arrays.asList(mContext.getResources().getStringArray(R.array.shot_caption)));
+
+        List<Photo> list = new ArrayList<>();
+        for (int i = 0; i < shortShot.size(); i++) {
+            if (captions.size() > i && captions.get(i) != null) {
+                list.add(new Photo(shortShot.get(i), captions.get(i)));
+            } else {
+                list.add(new Photo(shortShot.get(i), " "));
+            }
+        }
+        return list;
+    }
+
 
     public List<Photo> getShotList() {
         if (mShots == null) {
             mShots = createShotList();
         }
         return mShots;
+
+    }
+
+    public List<Photo> getShortShotList() {
+        if (mShortShots == null) {
+            mShortShots = createShortShotList();
+        }
+        return mShortShots;
 
     }
 
@@ -190,9 +230,9 @@ public class KinoApplication extends Application {
                 R.raw.usa_5, R.raw.usa_6, R.raw.usa_7,
                 R.raw.photo_12, R.raw.poster_1, R.raw.poster_2,
                 R.raw.poster_3, R.raw.shot_1, R.raw.shot_2,
-                R.raw.shot_3, R.raw.shot_4,R.raw.shot_5,
-                R.raw.shot_6,R.raw.shot_7, R.raw.shot_8,
-                R.raw.shot_9, R.raw.shot_10,R.raw.shot_11,
+                R.raw.shot_3, R.raw.shot_4, R.raw.shot_5,
+                R.raw.shot_6, R.raw.shot_7, R.raw.shot_8,
+                R.raw.shot_9, R.raw.shot_10, R.raw.shot_11,
                 R.raw.shot_12, R.raw.shot_13, R.raw.shot_14,
                 R.raw.shot_15, R.raw.shot_16);
         return list;
@@ -209,9 +249,9 @@ public class KinoApplication extends Application {
         List<Integer> images = getNewsPhotoList();
         List<NewsItem> list = new ArrayList();
         for (int i = 0; i < title.length; i++) {
-            int img1 = i*3;
-            int img2 = i*3+1;
-            int img3 = i*3+2;
+            int img1 = i * 3;
+            int img2 = i * 3 + 1;
+            int img3 = i * 3 + 2;
             list.add(new NewsItem(images.get(img1), images.get(img2), images.get(img3), title[i]));
         }
         return list;

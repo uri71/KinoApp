@@ -20,6 +20,7 @@ public class BigShotActivity extends ActionBarActivity {
 
     private List<Photo> bigShot;
     private ViewPager pager;
+    private String title;
 
 
     @Override
@@ -28,23 +29,23 @@ public class BigShotActivity extends ActionBarActivity {
         setContentView(R.layout.activity_big_shot);
         int set = getIntent().getIntExtra(Constants.ARG_NUMBER_PHOTO_SET, 0);
         int position = getIntent().getIntExtra(Constants.ARG_SHOT_NUMBER, 0);
+        title = "Кадры фильма";
         switch (set) {
             case Constants.SHOT_SET: {
-                bigShot = KinoApplication.getInstance(this).getShotList();
-                bigShot.remove(bigShot.size()-1);
-                bigShot.remove(bigShot.size()-1);
+                bigShot = KinoApplication.getInstance(this).getShortShotList();
             }
             break;
             case Constants.PHOTO_SET: {
                 bigShot = KinoApplication.getInstance(this).getHistoryPhotoList();
+                title = "Историческая хроника";
             }
             break;
             case Constants.NEWS_SET: {
                 bigShot = getNewsShot(position);
+                title = "Новости";
             }
             break;
         }
-
         pager = (ViewPager) findViewById(R.id.pager);
         //BigShotImageAdapter adapter = new BigShotImageAdapter(this, bigShot);
         BigShotFragmentAdapter adapter = new BigShotFragmentAdapter(getSupportFragmentManager(), bigShot);
@@ -71,13 +72,7 @@ public class BigShotActivity extends ActionBarActivity {
         if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
             getSupportActionBar().hide();
         } else {
-            getSupportActionBar().setTitle(getString(R.string.films_shot));
+            getSupportActionBar().setTitle(title);
         }
-    }
-
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
     }
 }

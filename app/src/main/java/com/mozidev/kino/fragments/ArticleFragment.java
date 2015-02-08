@@ -84,7 +84,9 @@ public class ArticleFragment extends Fragment {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId() == android.support.v7.appcompat.R.id.home);
+        if(item.getItemId() == android.R.id.home){
+            getActivity().getSupportFragmentManager().popBackStack();
+        }
         return false;
     }
 }

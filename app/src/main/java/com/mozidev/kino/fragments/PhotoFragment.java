@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -49,6 +50,13 @@ public class PhotoFragment extends Fragment implements AdapterView.OnItemClickLi
 
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId() == android.R.id.home){
+            getActivity().getSupportFragmentManager().popBackStack();
+        }
+        return false;
+    }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

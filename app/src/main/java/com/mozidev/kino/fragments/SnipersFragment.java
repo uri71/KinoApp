@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -91,5 +92,13 @@ public class SnipersFragment extends Fragment {
             snipers.add (new Sniper(name[i], result[i], about[i], photo[i]));
         }
         return snipers;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId() == android.R.id.home){
+            getActivity().getSupportFragmentManager().popBackStack();
+        }
+        return false;
     }
 }
