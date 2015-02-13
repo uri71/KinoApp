@@ -1,30 +1,23 @@
 package com.mozidev.kino.activity;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.Context;
 import android.content.Intent;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.View;
 
 import com.mozidev.kino.R;
+import com.mozidev.kino.fragments.AboutFilmFragment;
 import com.mozidev.kino.fragments.DrawerFragment;
 import com.mozidev.kino.fragments.HistoryFragment;
-import com.mozidev.kino.fragments.CompanyFragment;
 import com.mozidev.kino.fragments.NewsFragment;
-import com.mozidev.kino.fragments.PosterFragment;
 import com.mozidev.kino.fragments.ShotFragment;
 import com.mozidev.kino.fragments.TeamFragment;
+import com.mozidev.kino.fragments.TrailerFragment;
 
 
 public class MainActivity extends BaseActivity
@@ -64,10 +57,10 @@ public class MainActivity extends BaseActivity
         Fragment fragment = null;
         switch (position) {
             case (1):
-                fragment = PosterFragment.newInstance(position);
+                fragment = AboutFilmFragment.newInstance(position);
                 break;
             case (2):
-                fragment = TeamFragment.newInstance(position);
+                fragment = TrailerFragment.newInstance(position);
                 break;
             case (3):
                 fragment = ShotFragment.newInstance(position);
@@ -76,7 +69,7 @@ public class MainActivity extends BaseActivity
                 fragment = HistoryFragment.newInstance(position);
                 break;
             case (5):
-                fragment = NewsFragment.newInstance(position);
+                fragment = TeamFragment.newInstance(position);
                 break;
             case (6):
                 startActivity(new Intent(this, CompanyActivity.class));
@@ -102,7 +95,7 @@ public class MainActivity extends BaseActivity
 
 
     public void onSectionAttached(int number) {
-        mTitle = mTitles[number];
+        mTitle = mTitles[number - 1];
     }
 
 

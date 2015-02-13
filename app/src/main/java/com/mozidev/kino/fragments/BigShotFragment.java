@@ -64,7 +64,8 @@ public class BigShotFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_shot_pager, container, false);
         bitmap = getBitmap();
-        ((ImageView) view.findViewById(R.id.iv_shot)).setImageBitmap(bitmap);
+        //((ImageView) view.findViewById(R.id.iv_shot)).setImageBitmap(bitmap);
+        Picasso.with(getActivity()).load("https://film-apps.s3.amazonaws.com/shots/shot_37.jpg").fit().centerCrop().into((ImageView) view.findViewById(R.id.iv_shot));
         return view;
     }
 

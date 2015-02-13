@@ -48,7 +48,8 @@ public class ShotAdapter extends RecyclerView.Adapter<ShotAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Picasso.with(mContext).load(mImageResource.get(position).photo).fit().centerCrop().into(holder.image);
+        //Picasso.with(mContext).load(mImageResource.get(position).photo).fit().centerCrop().into(holder.image);
+        Picasso.with(mContext).load("https://film-apps.s3.amazonaws.com/shots/shot_37.jpg").fit().centerCrop().into(holder.image);
     }
 
 

@@ -4,7 +4,7 @@
               android:layout_height="match_parent"
               android:orientation="vertical"
               android:background="@android:color/white"
-              tools:context="com.mozidev.kino.fragments.PosterFragment">
+              tools:context="com.mozidev.kino.fragments.AboutFilmFragment">
 
 
         <ImageView
@@ -13,7 +13,7 @@
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
             android:contentDescription="poster"
-            android:src="@drawable/poster_small_height"/>
+            android:src="@drawable/trailer1"/>
 
 
     <android.support.v7.widget.RecyclerView

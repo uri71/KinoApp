@@ -4,6 +4,12 @@
     <string name="app_name">Незламна</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="drawer_title_about">Про фільм</string>
+    <string name="drawer_title_trailers">Трейлери</string>
+    <string name="drawer_title_shots">Кадри та постери</string>
+    <string name="drawer_title_team">Знімальна група</string>
+    <string name="drawer_title_history">Історична довідка</string>
+    <string name="drawer_title_contest">Конкурс</string>
     <string name="section_film_title">О фильме</string>
     <string name="section_company_title">Компания FILM.UA</string>
     <string name="story">"Ей не было равных в далеком 1941-м году - и никто не может сравниться с ней и сегодня.
@@ -11,8 +17,7 @@
 Просто со студенческой скамьи Киевского университета имени Тараса Шевченко она отправилась на фронт и стала живой легендой..."</string>
     <string name="title_activity_big_shot">BigShotActivity</string>
     <string name="title_activity_player">PlayerActivity</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+
     <string name="comment1">        ""</string>
     <string name="comment2">        ""</string>
     <string name="comment3">        ""</string>
@@ -98,14 +103,6 @@ B 1997 гoдy пocтyпил нa peжиccepcкий фaкyльтeт PATИ, a в 20
 Интересно, что некоторые немецкие снайперы использовали советские трофейные снайперские винтовки."</string>
     <string name="title_activity_splach">SplachActivity</string>
     <string name="films_shot">Кадры фильма</string>
-    <string name="new_people_film_1">День учителя</string>
-    <string name="new_people_film_2">Изображая жертву</string>
-    <string name="new_people_film_3">Кино про Алексеева</string>
-    <string name="new_people_film_4">Класс коррекции</string>
-    <string name="new_people_film_5">Мой папа – Барышников</string>
-    <string name="new_people_film_6">Четыре возраста любви</string>
-    <string name="new_people_film_7">Юрьев день</string>
-    <string name="url_new_people">http://www.proficinema.ru/guide/index.php?ID=25477&amp;PROP_NAME=SPRAV_MAKER</string>
-    <string name="url_kinorob">http://www.ua-region.com.ua/35075593</string>
+
 
 </resources>

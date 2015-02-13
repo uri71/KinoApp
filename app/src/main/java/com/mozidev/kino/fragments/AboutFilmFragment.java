@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 import com.mozidev.kino.Constants;
 import com.mozidev.kino.R;
 import com.mozidev.kino.activity.MainActivity;
-import com.mozidev.kino.adapters.PosterAdapter;
+import com.mozidev.kino.adapters.AboutFilmAdapter;
 import com.mozidev.kino.model.Item;
 
 import java.util.ArrayList;
@@ -23,16 +23,16 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PosterFragment extends Fragment {
+public class AboutFilmFragment extends Fragment {
 
 
-    public PosterFragment() {
+    public AboutFilmFragment() {
         // Required empty public constructor
     }
 
 
-    public static PosterFragment newInstance(int number) {
-        PosterFragment fragment = new PosterFragment();
+    public static AboutFilmFragment newInstance(int number) {
+        AboutFilmFragment fragment = new AboutFilmFragment();
         Bundle bundle = new Bundle();
         bundle.putInt(Constants.ARG_SECTION_NUMBER, number);
         fragment.setArguments(bundle);
@@ -80,7 +80,7 @@ public class PosterFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
 
 
-        PosterAdapter adapter = new PosterAdapter(getActivity(), setItems());
+        AboutFilmAdapter adapter = new AboutFilmAdapter(getActivity(), setItems());
         //adapter.setHasStableIds(true);
         recyclerView.setAdapter(adapter);
 

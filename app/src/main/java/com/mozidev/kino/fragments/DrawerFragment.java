@@ -93,7 +93,7 @@ public class DrawerFragment extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         // Indicate that this fragment would like to influence the set of actions in the action bar.
-        setHasOptionsMenu(true);
+        //setHasOptionsMenu(true);
     }
 
 
@@ -105,6 +105,7 @@ public class DrawerFragment extends Fragment {
 
         mDrawerListView = (ListView) layout.findViewById(R.id.list);
 
+        mDrawerListView.addHeaderView(inflater.inflate(R.layout.drawer_header, null));
         List<String> titles = Arrays.asList(getResources().getStringArray(R.array.title));
         mDrawerListView.setAdapter(new DrawerAdapter(getActivity(), R.layout.item_drawer_top, titles));
         mDrawerListView.setVerticalScrollBarEnabled(false);

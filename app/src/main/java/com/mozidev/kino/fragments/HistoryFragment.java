@@ -73,7 +73,7 @@ public class HistoryFragment extends Fragment implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.biography: {
                 title = "Биография Людмилы Павличенко";
-                fragment = ArticleFragment.newInstance(getResources().getString(R.string.biography_text), title);
+                fragment = BiographyFragment.newInstance(getResources().getString(R.string.biography_text), title);
             }
             break;
             case R.id.snipers: {

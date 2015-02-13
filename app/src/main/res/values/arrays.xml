@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="title">
-        <item>НЕЗЛАМНА</item>
-        <item>О фильме</item>
-        <item>Съемочная группа</item>
-        <item>Кадры и трейлеры</item>
-        <item>Исторический раздел</item>
-        <item>Новости</item>
-        <item>Кинокомпания</item>
+        <item>@string/drawer_title_about</item>
+        <item>@string/drawer_title_trailers</item>
+        <item>@string/drawer_title_shots</item>
+        <item>@string/drawer_title_team</item>
+        <item>@string/drawer_title_history</item>
+        <item>@string/drawer_title_contest</item>
     </string-array>
     <integer-array name="small_shot">
         <item>@drawable/sm_1</item>
@@ -254,7 +253,7 @@
         <item>Людмила Павличенко и Элеонора Рузвельт в 1942 г.</item>
         <item>Русская делегация  в Вашингтоне.</item>
         <item>У советского посольства в Вашингтоне.1942г</item>
-        <item>Людмила Людмила Павличенко и жена И. Майского (Агния Александровна) на приеме в советском посольстве в Великобритании по случаю 25-летия Октябрьской революции - 1942 г.</item>
+        <item>Людмила  Павличенко и жена И. Майского (Агния Александровна) на приеме в советском посольстве в Великобритании по случаю 25-летия Октябрьской революции - 1942 г.</item>
         <item>Людмила Павличенко и Миссис Дэвис (жена американского посла в СССР)</item>
         <item>Людмила Павличенко и Элеонора Рузвельт</item>
         <item>Людмила Павличенко и Джозеф Дэвис (посол в СССР)</item>
@@ -299,14 +298,5 @@
 
     </string-array>
 
-    <string-array name="new_people_films">
-        <item>@string/new_people_film_1</item>
-        <item>@string/new_people_film_2</item>
-        <item>@string/new_people_film_3</item>
-        <item>@string/new_people_film_4</item>
-        <item>@string/new_people_film_6</item>
-        <item>@string/new_people_film_7</item>
 
-
-    </string-array>
 </resources>

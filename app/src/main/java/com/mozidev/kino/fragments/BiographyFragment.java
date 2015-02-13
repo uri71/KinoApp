@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,14 +14,13 @@ import android.widget.TextView;
 
 import com.mozidev.kino.R;
 import com.mozidev.kino.activity.MainActivity;
-import com.squareup.picasso.Picasso;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link ArticleFragment#newInstance} factory method to
+ * Use the {@link BiographyFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ArticleFragment extends Fragment {
+public class BiographyFragment extends Fragment {
 
 
     private static final String ARG_TITLE = "param1";
@@ -32,8 +29,8 @@ public class ArticleFragment extends Fragment {
     private String mText;
 
 
-    public static ArticleFragment newInstance(String param1, String param2) {
-        ArticleFragment fragment = new ArticleFragment();
+    public static BiographyFragment newInstance(String param1, String param2) {
+        BiographyFragment fragment = new BiographyFragment();
         Bundle args = new Bundle();
         args.putString(ARG_TITLE, param2);
         args.putString(ARG_TEXT, param1);
@@ -42,7 +39,7 @@ public class ArticleFragment extends Fragment {
     }
 
 
-    public ArticleFragment() {
+    public BiographyFragment() {
     }
 
 
