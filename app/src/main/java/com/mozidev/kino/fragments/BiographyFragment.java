@@ -20,7 +20,7 @@ import com.mozidev.kino.activity.MainActivity;
  * Use the {@link BiographyFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class BiographyFragment extends Fragment {
+public class  BiographyFragment extends Fragment {
 
 
     private static final String ARG_TITLE = "param1";

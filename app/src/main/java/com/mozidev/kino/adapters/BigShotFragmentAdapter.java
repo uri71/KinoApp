@@ -14,10 +14,10 @@ import java.util.List;
  */
 public class BigShotFragmentAdapter extends FragmentStatePagerAdapter {
 
-    private List<Photo> shots;
+    private String[] shots;
 
 
-    public BigShotFragmentAdapter(FragmentManager fm, List<Photo> list) {
+    public BigShotFragmentAdapter(FragmentManager fm, String [] list) {
         super(fm);
         shots = list;
     }
@@ -25,13 +25,13 @@ public class BigShotFragmentAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        BigShotFragment fragment = BigShotFragment.newInstance(shots.get(position));
+        BigShotFragment fragment = BigShotFragment.newInstance(shots[position]);
         return fragment;
     }
 
 
     @Override
     public int getCount() {
-        return shots.size();
+        return shots.length;
     }
 }

@@ -14,7 +14,6 @@ import android.view.ViewGroup;
 import com.mozidev.kino.R;
 import com.mozidev.kino.adapters.SniperAdapter;
 import com.mozidev.kino.model.Sniper;
-import com.mozidev.kino.util.DividerItemDecorator;
 
 import java.util.ArrayList;
 import java.util.List;

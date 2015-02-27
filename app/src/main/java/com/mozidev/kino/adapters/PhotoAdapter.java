@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 
@@ -24,7 +25,7 @@ import java.util.List;
  */
 public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.ViewHolder> {
 
-    private List<Photo> mPhoto;
+    private String [] mPhoto;
     private Context mContext;
     private AdapterView.OnItemClickListener mOnItemClickListener;
 
@@ -32,7 +33,7 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.ViewHolder> 
     public PhotoAdapter(Context context) {
         super();
         mContext = context;
-        mPhoto = KinoApplication.getInstance(mContext).getHistoryPhotoList();
+        mPhoto = mContext.getResources().getStringArray(R.array.history_urls);
 
     }
 
@@ -46,14 +47,21 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.ViewHolder> 
 
 
     @Override
-    public void onBindViewHolder(PhotoAdapter.ViewHolder holder, int position) {
-
-        Picasso.with(mContext).load(mPhoto.get(position).photo).fit().centerCrop().into(holder.image);
+    public void onBindViewHolder(final PhotoAdapter.ViewHolder holder, final int position) {
+        /*final ViewTreeObserver observer = holder.image.getViewTreeObserver();
+        observer.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                Picasso.with(mContext).load(mPhoto[position]).fit().centerCrop().into(holder.image);
+                holder.image.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+            }
+        });*/
+        Picasso.with(mContext).load(mPhoto[position]).fit().centerCrop().into(holder.image);
     }
 
     @Override
     public int getItemCount() {
-        return mPhoto.size();
+        return mPhoto.length;
     }
 
 

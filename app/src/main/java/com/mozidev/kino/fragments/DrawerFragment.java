@@ -13,8 +13,6 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +20,6 @@ import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
-import com.mozidev.kino.Constants;
 import com.mozidev.kino.R;
 import com.mozidev.kino.adapters.DrawerAdapter;
 
@@ -93,7 +90,7 @@ public class DrawerFragment extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         // Indicate that this fragment would like to influence the set of actions in the action bar.
-        //setHasOptionsMenu(true);
+        setHasOptionsMenu(true);
     }
 
 
@@ -160,8 +157,7 @@ public class DrawerFragment extends Fragment {
         // set up the drawer's list view with items and click listener
 
         ActionBar actionBar = getActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeButtonEnabled(true);
+
 
         // ActionBarDrawerToggle ties together the the proper interactions
         // between the navigation drawer and the action bar app icon.
@@ -199,7 +195,6 @@ public class DrawerFragment extends Fragment {
                 getActivity().supportInvalidateOptionsMenu(); // calls onPrepareOptionsMenu()
             }
         };
-        mDrawerLayout.setDrawerListener(mDrawerToggle);
         // If the user hasn't 'learned' about the drawer, open it to introduce them to the drawer,
         // per the navigation drawer design guidelines.
         if (!mUserLearnedDrawer && !mFromSavedInstanceState) {
@@ -213,8 +208,11 @@ public class DrawerFragment extends Fragment {
                 mDrawerToggle.syncState();
             }
         });
+        //mDrawerToggle.setDrawerIndicatorEnabled(true);
 
         mDrawerLayout.setDrawerListener(mDrawerToggle);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeButtonEnabled(true);
     }
 
 
@@ -266,12 +264,19 @@ public class DrawerFragment extends Fragment {
     }
 
 
-
-
     private ActionBar getActionBar() {
         return ((ActionBarActivity) getActivity()).getSupportActionBar();
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if (mDrawerToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 
     /**
      * Callbacks interface that all activities using this fragment must implement.

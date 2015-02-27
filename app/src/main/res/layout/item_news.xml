@@ -27,7 +27,6 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:adjustViewBounds="true"
-            android:src="@raw/photo_1"
             android:scaleType="centerCrop"/>
 
         <ImageView
@@ -35,7 +34,6 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@raw/photo_2"
             android:layout_marginLeft="4dp"
             android:layout_marginRight="4dp"
             android:adjustViewBounds="true"
@@ -46,7 +44,6 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@raw/photo_3"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"/>
     </LinearLayout>

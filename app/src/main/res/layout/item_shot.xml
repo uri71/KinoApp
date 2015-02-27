@@ -4,8 +4,6 @@
     android:id="@+id/iv_shot"
     android:layout_width="156dp"
     android:layout_height="96dp"
-    android:adjustViewBounds="true"
-    android:scaleType="centerCrop"
     android:background="@color/background"
     android:layout_margin="1dp"
     />

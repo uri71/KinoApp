@@ -2,6 +2,7 @@ package com.mozidev.kino.fragments;
 
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -14,6 +15,7 @@ import android.view.ViewGroup;
 import com.mozidev.kino.Constants;
 import com.mozidev.kino.R;
 import com.mozidev.kino.activity.MainActivity;
+import com.mozidev.kino.activity.PlayerActivity;
 import com.mozidev.kino.adapters.AboutFilmAdapter;
 import com.mozidev.kino.model.Item;
 
@@ -23,7 +25,7 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class AboutFilmFragment extends Fragment {
+public class AboutFilmFragment extends Fragment implements View.OnClickListener {
 
 
     public AboutFilmFragment() {
@@ -79,7 +81,7 @@ public class AboutFilmFragment extends Fragment {
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_about);
         recyclerView.setHasFixedSize(true);
 
-
+        view.findViewById(R.id.trailer).setOnClickListener(this);
         AboutFilmAdapter adapter = new AboutFilmAdapter(getActivity(), setItems());
         //adapter.setHasStableIds(true);
         recyclerView.setAdapter(adapter);
@@ -95,5 +97,21 @@ public class AboutFilmFragment extends Fragment {
         super.onAttach(activity);
         ((MainActivity) activity).onSectionAttached(
                 getArguments().getInt(Constants.ARG_SECTION_NUMBER));
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.trailer:
+                if (((MainActivity) getActivity()).isConnected()) {
+                    Intent intent = new Intent(getActivity(), PlayerActivity.class);
+                    intent.putExtra(Constants.ARG_NUMBER_TRAILER, 0);
+                    startActivity(intent);
+                } else {
+                    ((MainActivity) getActivity()).showConnectedDialog();
+                }
+                break;
+        }
     }
 }

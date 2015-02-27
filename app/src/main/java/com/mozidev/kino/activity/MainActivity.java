@@ -66,10 +66,10 @@ public class MainActivity extends BaseActivity
                 fragment = ShotFragment.newInstance(position);
                 break;
             case (4):
-                fragment = HistoryFragment.newInstance(position);
+                fragment = TeamFragment.newInstance(position);
                 break;
             case (5):
-                fragment = TeamFragment.newInstance(position);
+                fragment = HistoryFragment.newInstance(position);
                 break;
             case (6):
                 startActivity(new Intent(this, CompanyActivity.class));

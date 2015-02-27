@@ -2,19 +2,29 @@
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:orientation="vertical"
               android:background="@android:color/white"
+              android:orientation="vertical"
               tools:context="com.mozidev.kino.fragments.AboutFilmFragment">
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <ImageView
+            android:id="@+id/trailer"
             android:layout_width="match_parent"
             android:layout_height="120dp"
             android:adjustViewBounds="true"
-            android:scaleType="centerCrop"
             android:contentDescription="poster"
+            android:scaleType="centerCrop"
             android:src="@drawable/trailer1"/>
 
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_start_play"/>
+    </FrameLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_about"

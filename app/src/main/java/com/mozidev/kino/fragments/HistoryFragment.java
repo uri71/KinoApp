@@ -72,22 +72,22 @@ public class HistoryFragment extends Fragment implements View.OnClickListener {
         String title;
         switch (v.getId()) {
             case R.id.biography: {
-                title = "Биография Людмилы Павличенко";
+                title = getActivity().getString(R.string.biography_article_title);
                 fragment = BiographyFragment.newInstance(getResources().getString(R.string.biography_text), title);
             }
             break;
             case R.id.snipers: {
-                title = "История снайперсокого движения";
+                title = getActivity().getString(R.string.history_sniper_movement_title);
                 fragment = SnipersFragment.newInstance();
             }
             break;
             case R.id.snipers_guns: {
-                title = "Снайперские винтовки";
+                title = getActivity().getString(R.string.sniper_gun_title);
                 fragment =  SniperGunFragment.newInstance();
             }
             break;
             default: {
-                title = "Исторические фото";
+                title = getActivity().getString(R.string.history_photo_title);
                 fragment = PhotoFragment.newInstance();
             }
         }

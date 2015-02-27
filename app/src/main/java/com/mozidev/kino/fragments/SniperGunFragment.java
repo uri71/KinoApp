@@ -31,6 +31,7 @@ public class SniperGunFragment extends Fragment {
                              @Nullable
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_sniper_gun, container, false);
+        setHasOptionsMenu(true);
         return view;
     }
 

@@ -2,15 +2,44 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
              android:layout_width="match_parent"
              android:layout_height="200dp"
-             android:padding="16dp"
+             android:background="@color/background"
+             android:paddingBottom="2dp"
+
     >
 
     <ImageView
-        android:id="@+id/trailer"
+        android:id="@+id/iv_trailer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center_horizontal"
         android:orientation="vertical"
         android:scaleType="centerCrop"/>
+
+    <ImageView
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_start_play"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:layout_gravity="bottom">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black_overlay"/>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            />
+    </FrameLayout>
+
 
 </FrameLayout>

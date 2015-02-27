@@ -57,39 +57,19 @@ public class KinoApplication extends Application {
 
 
     private List<Integer> fillPhotoList() {
-        photo = Arrays.asList(R.raw.photo_1, R.raw.photo_2, R.raw.photo_3,
-                R.raw.photo_4, R.raw.photo_5, R.raw.photo_6,
-                R.raw.photo_7, R.raw.photo_9, R.raw.usa_1,
-                R.raw.usa_2, R.raw.usa_3, R.raw.usa_4,
-                R.raw.usa_5, R.raw.usa_6, R.raw.usa_7, R.raw.usa_8, R.raw.photo_12, R.raw.photo_13);
+        photo = Arrays.asList();
         return photo;
     }
 
 
     private List<Integer> fillShotList() {
-        shot = Arrays.asList(R.raw.poster_1, R.raw.poster_2,
-                R.raw.poster_3, R.raw.shot_1, R.raw.shot_2,
-                R.raw.shot_3, R.raw.shot_4,
-                R.raw.shot_5, R.raw.shot_6,
-                R.raw.shot_7, R.raw.shot_8,
-                R.raw.shot_9, R.raw.shot_10,
-                R.raw.shot_11, R.raw.shot_12,
-                R.raw.shot_13, R.raw.shot_14,
-                R.raw.shot_15, R.raw.shot_16,
-                R.raw.shot_17, R.raw.shot_18);
+        shot = Arrays.asList();
         return shot;
     }
 
     private List<Integer> fillShortShotList() {
-        shortShot = Arrays.asList(R.raw.poster_1, R.raw.poster_2,
-                R.raw.poster_3, R.raw.shot_1, R.raw.shot_2,
-                R.raw.shot_3, R.raw.shot_4,
-                R.raw.shot_5, R.raw.shot_6,
-                R.raw.shot_7, R.raw.shot_8,
-                R.raw.shot_9, R.raw.shot_10,
-                R.raw.shot_11, R.raw.shot_12,
-                R.raw.shot_13, R.raw.shot_14,
-                R.raw.shot_15, R.raw.shot_16);
+        shortShot = Arrays.asList(
+                );
         return shortShot;
     }
 
@@ -194,13 +174,7 @@ public class KinoApplication extends Application {
 
     private List<Integer> createSmallShotList() {
 
-        List<Integer> smallShot = Arrays.asList(R.drawable.small_shot_1, R.drawable.small_shot_2,
-                R.drawable.small_shot_3, R.drawable.small_shot_4, R.drawable.small_shot_5,
-                R.drawable.small_shot_6, R.drawable.small_shot_7, R.drawable.small_shot_8,
-                R.drawable.small_shot_9, R.drawable.small_shot_10, R.drawable.small_shot_11,
-                R.drawable.small_shot_12, R.drawable.small_shot_13, R.drawable.small_shot_14,
-                R.drawable.small_shot_15, R.drawable.small_shot_16, R.drawable.small_shot_17,
-                R.drawable.small_shot_18);
+        List<Integer> smallShot = Arrays.asList();
         return smallShot;
     }
 
@@ -223,18 +197,7 @@ public class KinoApplication extends Application {
 
     private List<Integer> getNewsPhotoList() {
         List<Integer> list = Arrays.asList(
-                R.raw.photo_1, R.raw.photo_2, R.raw.photo_3,
-                R.raw.photo_4, R.raw.photo_5, R.raw.photo_6,
-                R.raw.photo_7, R.raw.photo_9, R.raw.usa_1,
-                R.raw.usa_2, R.raw.usa_3, R.raw.usa_4,
-                R.raw.usa_5, R.raw.usa_6, R.raw.usa_7,
-                R.raw.photo_12, R.raw.poster_1, R.raw.poster_2,
-                R.raw.poster_3, R.raw.shot_1, R.raw.shot_2,
-                R.raw.shot_3, R.raw.shot_4, R.raw.shot_5,
-                R.raw.shot_6, R.raw.shot_7, R.raw.shot_8,
-                R.raw.shot_9, R.raw.shot_10, R.raw.shot_11,
-                R.raw.shot_12, R.raw.shot_13, R.raw.shot_14,
-                R.raw.shot_15, R.raw.shot_16);
+               );
         return list;
     }
 
@@ -245,15 +208,9 @@ public class KinoApplication extends Application {
 
 
     public List<NewsItem> getNewsItem() {
-        String[] title = getNews();
-        List<Integer> images = getNewsPhotoList();
+
         List<NewsItem> list = new ArrayList();
-        for (int i = 0; i < title.length; i++) {
-            int img1 = i * 3;
-            int img2 = i * 3 + 1;
-            int img3 = i * 3 + 2;
-            list.add(new NewsItem(images.get(img1), images.get(img2), images.get(img3), title[i]));
-        }
+
         return list;
     }
 }

@@ -18,9 +18,11 @@ import java.util.List;
 
 public class BigShotActivity extends ActionBarActivity {
 
-    private List<Photo> bigShot;
+    private String [] bigShot;
     private ViewPager pager;
     private String title;
+    public int mImageWidth = 0;
+    public int mImageHeight = 0;
 
 
     @Override
@@ -29,40 +31,25 @@ public class BigShotActivity extends ActionBarActivity {
         setContentView(R.layout.activity_big_shot);
         int set = getIntent().getIntExtra(Constants.ARG_NUMBER_PHOTO_SET, 0);
         int position = getIntent().getIntExtra(Constants.ARG_SHOT_NUMBER, 0);
-        title = "Кадры фильма";
+        title = getString(R.string.films_shot);
         switch (set) {
             case Constants.SHOT_SET: {
-                bigShot = KinoApplication.getInstance(this).getShortShotList();
+                bigShot = getResources().getStringArray(R.array.shot_urls);
             }
             break;
             case Constants.PHOTO_SET: {
-                bigShot = KinoApplication.getInstance(this).getHistoryPhotoList();
-                title = "Историческая хроника";
+                bigShot = getResources().getStringArray(R.array.history_urls);
+                title = getString(R.string.title_activity_big_photo);
             }
             break;
-            case Constants.NEWS_SET: {
-                bigShot = getNewsShot(position);
-                title = "Новости";
-            }
-            break;
+
         }
         pager = (ViewPager) findViewById(R.id.pager);
-        //BigShotImageAdapter adapter = new BigShotImageAdapter(this, bigShot);
         BigShotFragmentAdapter adapter = new BigShotFragmentAdapter(getSupportFragmentManager(), bigShot);
         pager.setAdapter(adapter);
         if (set != Constants.NEWS_SET) {
             pager.setCurrentItem(position);
         }
-    }
-
-
-    private List<Photo> getNewsShot(int position) {
-        List<NewsItem> list = KinoApplication.getInstance(this).getNewsItem();
-        List<Photo> photo = new ArrayList<>();
-        photo.add(new Photo(list.get(position).photo_1, ""));
-        photo.add(new Photo(list.get(position).photo_2, ""));
-        photo.add(new Photo(list.get(position).photo_3, ""));
-        return photo;
     }
 
 

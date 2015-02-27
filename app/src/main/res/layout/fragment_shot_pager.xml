@@ -2,22 +2,22 @@
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             android:gravity="center_vertical"
-             android:background="@color/background"
+             android:background="@android:color/black"
+             android:gravity="center"
              android:paddingLeft="8dp"
              android:paddingRight="8dp"
              tools:context="com.mozidev.kino.fragments.BigShotFragment">
 
-<ProgressBar
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"/>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+
     <ImageView
         android:id="@+id/iv_shot"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:src="@drawable/poster_1"
-        android:scaleType="centerCrop"/>
+        android:layout_gravity="center"
+        android:src="@drawable/poster_1"/>
 
 </FrameLayout>

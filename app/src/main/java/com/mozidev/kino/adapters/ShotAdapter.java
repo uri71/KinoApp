@@ -1,31 +1,23 @@
 package com.mozidev.kino.adapters;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 
-import com.mozidev.kino.Constants;
-import com.mozidev.kino.KinoApplication;
 import com.mozidev.kino.R;
-import com.mozidev.kino.model.Photo;
 import com.squareup.picasso.Picasso;
-
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * Created by y.storchak on 22.12.14.
  */
 public class ShotAdapter extends RecyclerView.Adapter<ShotAdapter.ViewHolder> {
 
-    private List<Photo> mImageResource;
+    private String[] mShotUrls;
     private Context mContext;
     private AdapterView.OnItemClickListener mOnItemClickListener;
 
@@ -33,7 +25,7 @@ public class ShotAdapter extends RecyclerView.Adapter<ShotAdapter.ViewHolder> {
     public ShotAdapter(Context context) {
         super();
         mContext = context;
-        mImageResource = KinoApplication.getInstance(context).getShotList();
+        mShotUrls = mContext.getResources().getStringArray(R.array.shot_urls);
     }
 
 
@@ -47,15 +39,15 @@ public class ShotAdapter extends RecyclerView.Adapter<ShotAdapter.ViewHolder> {
 
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        //Picasso.with(mContext).load(mImageResource.get(position).photo).fit().centerCrop().into(holder.image);
-        Picasso.with(mContext).load("https://film-apps.s3.amazonaws.com/shots/shot_37.jpg").fit().centerCrop().into(holder.image);
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
+
+        Picasso.with(mContext).load(mShotUrls[position]).fit().centerCrop().into(holder.image);
     }
 
 
     @Override
     public int getItemCount() {
-        return mImageResource.size();
+        return mShotUrls.length;
     }
 
 
@@ -80,6 +72,9 @@ public class ShotAdapter extends RecyclerView.Adapter<ShotAdapter.ViewHolder> {
             super(view);
             this.image = (ImageView) view.findViewById(R.id.iv_shot);
             view.setOnClickListener(this);
+
+
+
         }
 
 

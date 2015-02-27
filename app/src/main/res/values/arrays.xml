@@ -8,52 +8,16 @@
         <item>@string/drawer_title_history</item>
         <item>@string/drawer_title_contest</item>
     </string-array>
-    <integer-array name="small_shot">
-        <item>@drawable/sm_1</item>
-        <item>@drawable/sm_2</item>
-        <item>@drawable/sm_3</item>
-        <item>@drawable/sm_4</item>
-        <item>@drawable/sm_5</item>
-        <item>@drawable/sm_6</item>
-        <item>@drawable/sm_7</item>
-        <item>@drawable/sm_8</item>
-        <item>@drawable/sm_9</item>
-        <item>@drawable/sm_10</item>
-        <item>@drawable/sm_11</item>
-        <item>@drawable/sm_12</item>
-        <item>@drawable/sm_13</item>
-        <item>@drawable/sm_14</item>
-        <item>@drawable/sm_15</item>
-        <item>@drawable/sm_16</item>
-    </integer-array>
-    <array name="big_shot">
-        <item>R.raw.shot_1</item>
-        <item>R.raw.shot_2</item>
-        <item>R.raw.shot_3</item>
-        <item>R.raw.shot_4</item>
-        <item>R.raw.shot_5</item>
-        <item>R.raw.shot_6</item>
-        <item>R.raw.shot_7</item>
-        <item>R.raw.shot_8</item>
-        <item>R.raw.shot_9</item>
-        <item>R.raw.shot_10</item>
-        <item>R.raw.shot_11</item>
-        <item>R.raw.shot_12</item>
-        <item>R.raw.shot_13</item>
-        <item>R.raw.shot_14</item>
-        <item>R.raw.shot_15</item>
-        <item>R.raw.shot_16</item>
-    </array>
     <string-array name="team_names">
-        <item>Сергей Мокрицкий</item>
-        <item>Юлия Пересильд</item>
-        <item>Евгений Цыганов</item>
-        <item>Никита Тарасов</item>
-        <item>Джоан Блэкхэм</item>
-        <item>Виталий Линецкий</item>
+        <item>Сергей Мокрицький</item>
+        <item>Юлія Пересильд</item>
+        <item>Євген Циганов</item>
+        <item>Микита Тарасов</item>
+        <item>Джоан Блекхем</item>
+        <item>Віталий Лінецкий</item>
     </string-array>
     <string-array name="team_lines">
-        <item>Режиссер</item>
+        <item>Режисер</item>
         <item>Людмила Павличенко</item>
         <item>Жених Людмилы</item>
         <item>врач Борис</item>
@@ -150,18 +114,8 @@
         <item>Абонент временно недоступен</item>
         <item>Когда на юг улетят журавли</item>
     </string-array>
-    <string-array name="comment_name">
-        <item>Иванов</item>
-        <item>Петрова</item>
-        <item>Сидоров</item>
-        <item>Рабинович</item>
-    </string-array>
-    <string-array name="comment">
-        <item>@string/comment1</item>
-        <item>@string/comment2</item>
-        <item>@string/comment3</item>
-        <item>@string/comment4</item>
-    </string-array>
+
+
     <string-array name="about_facts">
         <item>@string/about1</item>
         <item>@string/about2</item>
@@ -169,28 +123,26 @@
         <item>@string/about4</item>
     </string-array>
     <string-array name="about_title">
-        <item>Год</item>
+        <item>Рік</item>
         <item>Страна</item>
-        <item>Слоган</item>
-        <item>Режиссер</item>
+        <item>Режисер</item>
         <item>Сценарий</item>
+        <item>В головних ролях</item>
         <item>Жанр</item>
-        <item>Тип</item>
-        <item>Премьера</item>
-        <item>Возраст</item>
-        <item>Время</item>
+        <item>"Прем'ера"</item>
+        <item>Тривалість</item>
+        <item>Студія</item>
     </string-array>
     <string-array name="about_data">
-        <item>2015 г.</item>
-        <item>Россия, Украина</item>
-        <item>" "</item>
-        <item>Сергей Мокрицкий</item>
-        <item>Егор Олесов, Максим Бударин, Максим Данкевич</item>
-        <item>военный, боевик, мелодрама, драма</item>
-        <item>Полнометражный фильм</item>
-        <item>2 апреля 2015</item>
-        <item>16+</item>
+        <item>2015</item>
+        <item>Украіїна, Росія</item>
+        <item>Сергей Мокрицький</item>
+        <item>Єгор Олесов, Максим Бударін, Максим Данкевич</item>
+        <item>Юлія Пересильд, Євген Циганов, Микита Тарасов, Джоан Блекхем, Віталій Лінецький</item>
+        <item>драма, воєнний</item>
+        <item>2 квітня 2015 р.</item>
         <item>110 мин.</item>
+        <item>KINOROB, НОВЫЕ ЛЮДИ, за підтримки Ukrainian State Film Agency</item>
     </string-array>
     <string-array name="uri_about">
         <item>http://film.ua/ru/production</item>
@@ -205,15 +157,15 @@
     </string-array>
     <string-array name="snipers_top">
         <item>Павличенко Людмила</item>
-        <item>Васильева Ольга</item>
-        <item>Ковшова Наталья</item>
+        <item>Васильєва Ольга</item>
+        <item>Ковшова Наталя</item>
         <item>Перетятько Геня</item>
-        <item>Мудрецова Инна</item>
-        <item>Петрова Нина</item>
-        <item>Костырина Татьяна</item>
-        <item>Бордашевская Ольга</item>
-        <item>Сапьян Наталья</item>
-        <item>Миронова Елизавета</item>
+        <item>Мудрецова Інна</item>
+        <item>Петрова Ніна</item>
+        <item>Костиріна Тетяна</item>
+        <item>Бордашевська Ольга</item>
+        <item>"Сап'ян Наталья"</item>
+        <item>Миронова Єлізавета</item>
     </string-array>
     <string-array name="sniper_result">
         <item>309</item>
@@ -233,11 +185,11 @@
         <item>"Погибла в 1942"</item>
         <item>""</item>
         <item>""</item>
-        <item>"В 41-м пошла на фронт добровольцем в возрасте 48 лет, погибла в мае 45-го"</item>
+        <item>"В 41-м пішла на фронт добровольцем у 48 років, загинула в травні 45-го"</item>
         <item>"Погибла в 1943 г."</item>
         <item>""</item>
-        <item>"Будучи также санинструктором, вынесла c поля боя 109 раненых бойцов"</item>
-        <item>"Служила в морской пехоте. Погибла в 1943"</item>
+        <item>"Була також санінструктором, вінесла з полю бою 109 поранених бійців"</item>
+        <item>"Служила в морскій піхоті. Загінула в 1943"</item>
     </string-array>
     <string-array name="photo_caption">
         <item>Людмила Павличенко в начале войны</item>
@@ -285,6 +237,160 @@
         <item>" "</item>
     </string-array>
 
+    <string-array name="shot_urls">
+        <item>https://film-apps.s3.amazonaws.com/shots/poster_1.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/poster_2.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/poster_3.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/poster_4.jpeg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/shot_01.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/shot_02.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/shot_03.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/shot_04.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/shot_05.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/shot_06.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/shot_07.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/shot_08.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/shot_09.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/shot_10.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/shot_11.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/shot_12.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/shot_13.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/shot_14.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/shot_15.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/shot_16.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/shot_17.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/shot_18.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/shot_19.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/shot_20.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/shot_21.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/shot_22.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/shot_23.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/shot_24.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/shot_25.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/shot_26.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/shot_27.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/shot_28.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/shot_29.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/shot_30.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/shot_31.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/shot_32.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/shot_33.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/shot_35.JPG</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/shot_37.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/shot_39.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/shot_41.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/shot_42.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots/shot_43.jpg</item>
+    </string-array>
+    <string-array name="thumb_shot_urls">
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/poster_1.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/poster_2.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/poster_3.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_01.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_02.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_03.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_04.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_05.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_06.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_07.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_08.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_09.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_10.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_11.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_12.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_13.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_14.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_15.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_16.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_17.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_18.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_19.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_20.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_21.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_22.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_23.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_24.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_25.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_26.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_27.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_28.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_29.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_30.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_31.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_32.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_33.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_34.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_35.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_36.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_37.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_38.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_39.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_40.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_41.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_42.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_43.jpg</item>
+    </string-array>
+<string-array name="history_urls">
+    <item>https://film-apps.s3.amazonaws.com/history/photo_1.jpeg</item>
+    <item>https://film-apps.s3.amazonaws.com/history/photo_2.jpg</item>
+    <item>https://film-apps.s3.amazonaws.com/history/photo_3.jpeg</item>
+    <item>https://film-apps.s3.amazonaws.com/history/photo_4.jpeg</item>
+    <item>https://film-apps.s3.amazonaws.com/history/photo_5.jpeg</item>
+    <item>https://film-apps.s3.amazonaws.com/history/photo_6.jpeg</item>
+    <item>https://film-apps.s3.amazonaws.com/history/photo_7.jpeg</item>
+    <item>https://film-apps.s3.amazonaws.com/history/photo_8.jpg</item>
+    <item>https://film-apps.s3.amazonaws.com/history/photo_9.jpeg</item>
+    <item>https://film-apps.s3.amazonaws.com/history/photo_10.jpeg</item>
+    <item>https://film-apps.s3.amazonaws.com/history/photo_11.jpg</item>
+    <item>https://film-apps.s3.amazonaws.com/history/photo_12.jpg</item>
+    <item>https://film-apps.s3.amazonaws.com/history/photo_13.jpg</item>
+    <item>https://film-apps.s3.amazonaws.com/history/photo_14.jpg</item>
+    <item>https://film-apps.s3.amazonaws.com/history/photo_15.jpeg</item>
+    <item>https://film-apps.s3.amazonaws.com/history/photo_16.jpeg</item>
+    <item>https://film-apps.s3.amazonaws.com/history/photo_17.jpeg</item>
+    <item>https://film-apps.s3.amazonaws.com/history/photo_18.jpeg</item>
+
+</string-array>
+    <string-array name="thumb_history_urls">
+    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_1.jpeg</item>
+    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_2.jpg</item>
+    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_3.jpeg</item>
+    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_4.jpeg</item>
+    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_5.jpeg</item>
+    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_6.jpeg</item>
+    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_7.jpeg</item>
+    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_8.jpg</item>
+    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_9.jpeg</item>
+    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_10.jpg</item>
+    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_11.jpg</item>
+    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_12.jpg</item>
+    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_13.jpg</item>
+    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_14.jpg</item>
+    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_15.jpeg</item>
+    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_16.jpeg</item>
+    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_17.jpeg</item>
+    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_18.jpeg</item>
+    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_19.jpeg</item>
+    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_20.jpg</item>
+</string-array>
+    <string-array name="trailers">
+        <item>https://film-apps.s3.amazonaws.com/trailers_small/trailer_1.mp4</item>
+        <item>https://film-apps.s3.amazonaws.com/trailers_small/trailer_2.mp4</item>
+        <item>https://film-apps.s3.amazonaws.com/trailers_small/backstage_1.mp4</item>
+        <item>https://film-apps.s3.amazonaws.com/trailers_small/backstage_2.mp4</item>
+        <item>https://film-apps.s3.amazonaws.com/trailers_small/backstage_3.mp4</item>
+        <item>https://film-apps.s3.amazonaws.com/trailers_small/backstage_4.mp4</item>
+        <item>https://film-apps.s3.amazonaws.com/trailers_small/backstage_5.mp4</item>
+    </string-array>
+    <string-array name="trailers_preview">
+        <item>https://film-apps.s3.amazonaws.com/trailer_preview/backstage1.png</item>
+        <item>https://film-apps.s3.amazonaws.com/trailer_preview/trailer2.png</item>
+        <item>https://film-apps.s3.amazonaws.com/trailer_preview/backstage1.png</item>
+        <item>https://film-apps.s3.amazonaws.com/trailer_preview/backstage2.png</item>
+        <item>https://film-apps.s3.amazonaws.com/trailer_preview/backstage3.png</item>
+        <item>https://film-apps.s3.amazonaws.com/trailer_preview/backstage4.png</item>
+        <item>https://film-apps.s3.amazonaws.com/trailer_preview/backstage5.png</item>
+    </string-array>
     <string-array name="news_title">
         <item>@string/about1</item>
         <item>@string/about2</item>
@@ -296,6 +402,49 @@
         <item>@string/about8</item>
         <item>@string/about9</item>
 
+    </string-array>
+    <string-array name="trailer_title">
+        <item>Перший офіційний трейлер</item>
+        <item>Другий офіційний трейлер</item>
+        <item>Ризикуємо заради хорошого кадру</item>
+        <item>Вогонь і любов в об’єктиві!</item>
+        <item>Актори бруду не бояться</item>
+        <item>Як підірвали майданчик</item>
+        <item>Сніг на майданчику падає навіть влітку</item>
+    </string-array>
+    
+    <string-array name="actors_photo_url">
+        <item>https://film-apps.s3.amazonaws.com/actors/01_Peresyld.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/actors/02_Tsyganov.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/actors/03_Bleckham.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/actors/04_Tarasov.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/actors/05_Pahomova.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/actors/06_Linetsky.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/actors/07_vasylkov.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/actors/08_Boklan.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/actors/09_Sergijko.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/actors/010_Nikolenko.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/actors/011_Syplyvyj.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/actors/012_Mokrytsky.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/actors/013_Korol.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/actors/014_Grygorovych.jpg</item>
+    </string-array>
+
+<string-array name="thumb_actors_photo_url">
+        <item>https://film-apps.s3.amazonaws.com/actors_small/01_Peresyld.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/actors_small/02_Tsyganov.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/actors_small/03_Bleckham.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/actors_small/04_Tarasov.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/actors_small/05_Pahomova.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/actors_small/06_Linetsky.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/actors_small/07_vasylkov.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/actors_small/08_Boklan.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/actors_small/09_Sergijko.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/actors_small/010_Nikolenko.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/actors_small/011_Syplyvyj.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/actors_small/012_Mokrytsky.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/actors_small/013_Korol.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/actors_small/014_Grygorovych.jpg</item>
     </string-array>
 
 
