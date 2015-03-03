@@ -77,16 +77,17 @@ public class KinoApplication extends Application {
     private List<Team> createTeamList() {
         List<Team> team = new ArrayList();
 
-        List<Integer> images = Arrays.asList(R.drawable.team_1, R.drawable.team_2, R.drawable.team_3, R.drawable.team_7, R.drawable.team_5, R.drawable.team_6);
+        List<String> images = Arrays.asList(mContext.getResources().getStringArray(R.array.actors_photo_url));
         List<String> names = Arrays.asList(mContext.getResources().getStringArray(R.array.team_names));
         List<String> lines = Arrays.asList(mContext.getResources().getStringArray(R.array.team_lines));
         List<String> urls = Arrays.asList(mContext.getResources().getStringArray(R.array.team_links));
         List<String> about = Arrays.asList(mContext.getResources().getStringArray(R.array.team_about));
-        List<Integer> films = Arrays.asList(R.array.line_1, R.array.line_2, R.array.line_3, R.array.line_4, R.array.line_5, R.array.line_6);
+        int[] filmografy = mContext.getResources().getIntArray(R.array.arrays_filmografy);
+        List films = Arrays.asList(filmografy);
         List<String> rating = Arrays.asList(mContext.getResources().getStringArray(R.array.team_rating));
 
         for (int i = 0; i < names.size(); i++) {
-            String[] film = mContext.getResources().getStringArray(films.get(i));
+            String[] film = mContext.getResources().getStringArray((int)films.get(i));
             team.add(new Team(names.get(i), lines.get(i), urls.get(i), about.get(i), rating.get(i), images.get(i), film));
         }
 
