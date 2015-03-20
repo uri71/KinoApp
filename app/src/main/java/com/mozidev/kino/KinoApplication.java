@@ -163,7 +163,18 @@ public class KinoApplication extends Application {
             mShots = createShotList();
         }
         return mShots;
+    }
 
+    public List<String[]> getListQuestion(){
+        int[] allQuestion = mContext.getResources().getIntArray(R.array.questions_set);
+
+        List<String[]> set = new ArrayList();
+        while (set.size()<3){
+            int number =  (int)(Math.random()*30);
+            String[]newSet = mContext.getResources().getStringArray(allQuestion[number]);
+            if(!set.contains(newSet))set.add(newSet);
+        }
+        return set;
     }
 
 

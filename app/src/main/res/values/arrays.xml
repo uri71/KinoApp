@@ -500,5 +500,261 @@
         <item>https://film-apps.s3.amazonaws.com/actors_small/014_Grygorovych.jpg</item>
     </string-array>
 
-
+    <integer-array name="arrays_filmografy">
+        <item>@array/line_1</item>
+        <item>@array/line_2</item>
+        <item>@array/line_3</item>
+        <item>@array/line_4</item>
+        <item>@array/line_5</item>
+        <item>@array/line_6</item>
+        <item>@array/line_7</item>
+        <item>@array/line_8</item>
+        <item>@array/line_9</item>
+        <item>@array/line_10</item>
+        <item>@array/line_11</item>
+        <item>@array/line_12</item>
+        <item>@array/line_13</item>
+        <item>@array/line_14</item>
+    </integer-array>
+    <integer-array name="questions_set">
+        <item>@array/question_1</item>
+        <item>@array/question_2</item>
+        <item>@array/question_3</item>
+        <item>@array/question_4</item>
+        <item>@array/question_5</item>
+        <item>@array/question_6</item>
+        <item>@array/question_7</item>
+        <item>@array/question_8</item>
+        <item>@array/question_9</item>
+        <item>@array/question_10</item>
+        <item>@array/question_11</item>
+        <item>@array/question_12</item>
+        <item>@array/question_13</item>
+        <item>@array/question_14</item>
+        <item>@array/question_15</item>
+        <item>@array/question_16</item>
+        <item>@array/question_17</item>
+        <item>@array/question_18</item>
+        <item>@array/question_19</item>
+        <item>@array/question_20</item>
+        <item>@array/question_21</item>
+        <item>@array/question_22</item>
+        <item>@array/question_23</item>
+        <item>@array/question_24</item>
+        <item>@array/question_25</item>
+        <item>@array/question_26</item>
+        <item>@array/question_27</item>
+        <item>@array/question_28</item>
+        <item>@array/question_29</item>
+        <item>@array/question_30</item>
+    </integer-array>
+    <string-array name="question_1">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="question_2">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="question_3">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="question_4">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="question_5">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="question_6">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="question_7">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="question_8">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="question_9">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="question_10">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="question_11">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="question_12">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="question_13">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="question_14">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="question_15">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="question_16">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="question_17">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="question_18">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="question_19">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="question_20">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="question_21">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="question_22">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="question_23">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="question_24">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="question_25">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="question_26">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="question_27">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="question_28">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="question_29">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array><string-array name="question_30">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
 </resources>

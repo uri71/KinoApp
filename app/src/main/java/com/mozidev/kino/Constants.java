@@ -16,6 +16,7 @@ public class Constants {
     public static final int IMAGE_MAX_SIZE = 2048;
     public static final String ARG_NUMBER_PHOTO_SET = "ARG_NUMBER_PHOTO_SET";
     public static final String ARG_NUMBER_TRAILER = "ARG_NUMBER_TRAILER";
+    public static final String ARG_NUMBER_SET_QUESTIONS = "ARG_NUMBER_SET_QUESTIONS";
 
     public static final int PHOTO_SET = 1;
     public static final int SHOT_SET = 0;
