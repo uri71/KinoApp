@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="title">
         <item>@string/drawer_title_about</item>
@@ -11,7 +10,6 @@
     <string-array name="team_names">
         <item>Юлія ПЕРЕСИЛЬД</item>
         <item>Євген ЦИГАНОВ</item>
-        <item>Євген Циганов</item>
         <item>Джоан БЛЕКХЕМ</item>
         <item>Микита ТАРАСОВ</item>
         <item>Поліна ПАХОМОВА </item>
@@ -56,6 +54,14 @@
         <item>@string/actor_about_4</item>
         <item>@string/actor_about_5</item>
         <item>@string/actor_about_6</item>
+        <item>@string/actor_about_7</item>
+        <item>@string/actor_about_8</item>
+        <item>@string/actor_about_9</item>
+        <item>@string/actor_about_10</item>
+        <item>@string/actor_about_11</item>
+        <item>@string/actor_about_12</item>
+        <item>@string/actor_about_13</item>
+        <item>@string/actor_about_14</item>
     </string-array>
     <string-array name="team_links">
         <item>http://www.kinopoisk.ru/name/565971/</item>
@@ -155,28 +161,42 @@
         <item>@string/about2</item>
         <item>@string/about3</item>
         <item>@string/about4</item>
+        <item>@string/about5</item>
+        <item>@string/about6</item>
+        <item>@string/about7</item>
+        <item>@string/about8</item>
     </string-array>
     <string-array name="about_title">
-        <item>Рік</item>
-        <item>Страна</item>
-        <item>Режисер</item>
-        <item>Сценарий</item>
-        <item>В головних ролях</item>
+        <item>Назва</item>
+        <item>Країна</item>
         <item>Жанр</item>
-        <item>"Прем'ера"</item>
-        <item>Тривалість</item>
+        <item>Режисер</item>
+        <item>Продюсери</item>
+        <item>Сценарій</item>
+        <item>Оператор</item>
+        <item>Художник-постановник</item>
+        <item>Режисер монтажу</item>
         <item>Студія</item>
+        <item>Бюджет</item>
+        <item>"Прем'ера"</item>
+        <item>Вік</item>
+        <item>Тривалість</item>
     </string-array>
     <string-array name="about_data">
-        <item>2015</item>
+        <item>Незламна </item>
         <item>Украіїна, Росія</item>
-        <item>Сергей Мокрицький</item>
-        <item>Єгор Олесов, Максим Бударін, Максим Данкевич</item>
-        <item>Юлія Пересильд, Євген Циганов, Микита Тарасов, Джоан Блекхем, Віталій Лінецький</item>
-        <item>драма, воєнний</item>
-        <item>2 квітня 2015 р.</item>
-        <item>110 мин.</item>
+        <item>військовий, драма</item>
+        <item>Сергій Мокрицький</item>
+        <item>Єгор Олесов, Наталія Мокрицька</item>
+        <item>Максим Бударін, Єгор Олесов, Максим Данькевич, Леонід Корін</item>
+        <item>Юрій Король</item>
+        <item>Юрій Григорович</item>
+        <item>Віктор Онисько</item>
         <item>KINOROB, НОВЫЕ ЛЮДИ, за підтримки Ukrainian State Film Agency</item>
+        <item>5.000.000</item>
+        <item>2 квітня 2015 р.</item>
+        <item>16 + </item>
+        <item>110 мин.</item>
     </string-array>
     <string-array name="uri_about">
         <item>http://film.ua/ru/production</item>
@@ -434,7 +454,6 @@
         <item>@string/about6</item>
         <item>@string/about7</item>
         <item>@string/about8</item>
-        <item>@string/about9</item>
 
     </string-array>
     <string-array name="trailer_title">
@@ -467,7 +486,7 @@
 <string-array name="thumb_actors_photo_url">
         <item>https://film-apps.s3.amazonaws.com/actors_small/01_Peresyld.jpg</item>
         <item>https://film-apps.s3.amazonaws.com/actors_small/02_Tsyganov.jpg</item>
-        <item>https://film-apps.s3.amazonaws.com/actors_small/03_Bleckham.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/actors_small/03_Bleckham.png</item>
         <item>https://film-apps.s3.amazonaws.com/actors_small/04_Tarasov.jpg</item>
         <item>https://film-apps.s3.amazonaws.com/actors_small/05_Pahomova.jpg</item>
         <item>https://film-apps.s3.amazonaws.com/actors_small/06_Linetsky.jpg</item>
@@ -480,22 +499,6 @@
         <item>https://film-apps.s3.amazonaws.com/actors_small/013_Korol.jpg</item>
         <item>https://film-apps.s3.amazonaws.com/actors_small/014_Grygorovych.jpg</item>
     </string-array>
-    <integer-array name="arrays_filmografy">
-        <item>@array/line_1</item>
-        <item>@array/line_2</item>
-        <item>@array/line_3</item>
-        <item>@array/line_4</item>
-        <item>@array/line_5</item>
-        <item>@array/line_6</item>
-        <item>@array/line_7</item>
-        <item>@array/line_8</item>
-        <item>@array/line_9</item>
-        <item>@array/line_10</item>
-        <item>@array/line_11</item>
-        <item>@array/line_12</item>
-        <item>@array/line_13</item>
-        <item>@array/line_14</item>
-    </integer-array>
 
 
 </resources>

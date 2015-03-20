@@ -10,12 +10,11 @@
     <ImageView
 
         android:id="@+id/iv_team"
-        android:layout_width="40dp"
+        android:layout_width="48dp"
         android:layout_height="56dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
-        android:scaleType="centerCrop"
         android:src="@drawable/team_3"
         android:layout_marginLeft="@dimen/horizontal_padding"
         android:layout_marginStart="@dimen/horizontal_padding"/>

@@ -20,6 +20,9 @@
                 style="@style/TextViewHistoryTitle"
                 android:text="@string/snipers_gun_title"
                 />
+            <TextView
+                style="@style/TextViewHistoryTitle"
+                android:text="@string/sovjet_gun_title"/>
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -30,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:textColor="@color/text_primary"
-                android:text="Винтовка Мосина"/>
+                android:text="@string/mosins_gun"/>
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -52,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:textColor="@color/text_primary"
-                android:text="СВТ-40"/>
+                android:text="@string/svt_40"/>
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -70,12 +73,20 @@
                 android:textColor="@color/text_primary"
                 />
             <TextView
+                style="@style/TextViewHistoryTitle"
+                android:layout_marginTop="16dp"
+                android:text="@string/deutshe_gun"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/item_divider"/>
+            <TextView
                 style="@style/TextViewTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:textColor="@color/text_primary"
-                android:text="Mauser 98k"/>
+                android:text="@string/mauser"/>
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -99,7 +110,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:textColor="@color/text_primary"
-                android:text="Gewehr 43"/>
+                android:text="@string/gewehr"/>
 
             <ImageView
                 android:layout_width="match_parent"

@@ -67,9 +67,10 @@ public class KinoApplication extends Application {
         return shot;
     }
 
+
     private List<Integer> fillShortShotList() {
         shortShot = Arrays.asList(
-                );
+        );
         return shortShot;
     }
 
@@ -77,18 +78,15 @@ public class KinoApplication extends Application {
     private List<Team> createTeamList() {
         List<Team> team = new ArrayList();
 
-        List<String> images = Arrays.asList(mContext.getResources().getStringArray(R.array.actors_photo_url));
+        List<String> images = Arrays.asList(mContext.getResources().getStringArray(R.array.thumb_actors_photo_url));
         List<String> names = Arrays.asList(mContext.getResources().getStringArray(R.array.team_names));
         List<String> lines = Arrays.asList(mContext.getResources().getStringArray(R.array.team_lines));
-        List<String> urls = Arrays.asList(mContext.getResources().getStringArray(R.array.team_links));
         List<String> about = Arrays.asList(mContext.getResources().getStringArray(R.array.team_about));
-        int[] filmografy = mContext.getResources().getIntArray(R.array.arrays_filmografy);
-        List films = Arrays.asList(filmografy);
-        List<String> rating = Arrays.asList(mContext.getResources().getStringArray(R.array.team_rating));
+        List<Integer> films = Arrays.asList(R.array.line_1, R.array.line_2, R.array.line_3, R.array.line_4, R.array.line_5, R.array.line_6, R.array.line_7, R.array.line_8, R.array.line_9, R.array.line_10, R.array.line_11, R.array.line_12, R.array.line_13, R.array.line_14);
 
         for (int i = 0; i < names.size(); i++) {
-            String[] film = mContext.getResources().getStringArray((int)films.get(i));
-            team.add(new Team(names.get(i), lines.get(i), urls.get(i), about.get(i), rating.get(i), images.get(i), film));
+            String[] film = mContext.getResources().getStringArray(films.get(i));
+            team.add(new Team(names.get(i), lines.get(i),  about.get(i), images.get(i), film));
         }
 
         return team;
@@ -123,7 +121,9 @@ public class KinoApplication extends Application {
 
 
     private List<Photo> createShotList() {
-        if (shot == null) shot = fillShotList();
+        if (shot == null) {
+            shot = fillShotList();
+        }
         List<String> captions = new ArrayList<>(shot.size());
         captions.addAll(Arrays.asList(mContext.getResources().getStringArray(R.array.shot_caption)));
 
@@ -138,9 +138,11 @@ public class KinoApplication extends Application {
         return list;
     }
 
+
     private List<Photo> createShortShotList() {
-        if (shortShot == null)
+        if (shortShot == null) {
             shortShot = fillShortShotList();
+        }
         List<String> captions = new ArrayList<>(shot.size());
         captions.addAll(Arrays.asList(mContext.getResources().getStringArray(R.array.shot_caption)));
 
@@ -163,6 +165,7 @@ public class KinoApplication extends Application {
         return mShots;
 
     }
+
 
     public List<Photo> getShortShotList() {
         if (mShortShots == null) {
@@ -198,7 +201,7 @@ public class KinoApplication extends Application {
 
     private List<Integer> getNewsPhotoList() {
         List<Integer> list = Arrays.asList(
-               );
+        );
         return list;
     }
 

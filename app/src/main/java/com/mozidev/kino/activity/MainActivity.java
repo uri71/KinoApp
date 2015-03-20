@@ -9,6 +9,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Toast;
 
 import com.mozidev.kino.R;
 import com.mozidev.kino.fragments.AboutFilmFragment;
@@ -72,8 +73,9 @@ public class MainActivity extends BaseActivity
                 fragment = HistoryFragment.newInstance(position);
                 break;
             case (6):
-                startActivity(new Intent(this, CompanyActivity.class));
-                overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
+                /*startActivity(new Intent(this, CompanyActivity.class));
+                overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);*/
+                Toast.makeText(this, "Этот функционал пока не реализован", Toast.LENGTH_LONG).show();
                 break;
         }
         if (fragment != null) {
