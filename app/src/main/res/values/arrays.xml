@@ -549,212 +549,212 @@
         <item>@array/question_30</item>
     </integer-array>
     <string-array name="question_1">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>Ім’я актриси, яка зіграла Людмилу Павличенко</item>
+        <item>Юлія Пересильд</item>
+        <item>Поліна Пахомова</item>
+        <item>Чулпан Хаматова</item>
+        <item>1</item>
     </string-array>
     <string-array name="question_2">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>Хто приїхав до Людмили в Москву після війни? </item>
+        <item>Її батько</item>
+        <item>Елеонора Рузвельт</item>
+        <item>Чарлі Чаплін</item>
+        <item>2</item>
     </string-array>
     <string-array name="question_3">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>Ім’я героя, за якого Людмила збиралася заміж перед війною? </item>
+        <item>Віктор</item>
+        <item>Борис</item>
+        <item>Олександр</item>
+        <item>2</item>
     </string-array>
     <string-array name="question_4">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>Кого зіграв Віталій Лінецький?</item>
+        <item>•	Капітана</item>
+        <item>•	Майора</item>
+        <item>•	Прапорщика</item>
+        <item>2</item>
     </string-array>
     <string-array name="question_5">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>Коли Людмила отримала свою першу рушницю? </item>
+        <item>ще на курсах стрільців</item>
+        <item>перед прибуттям у Севастополь</item>
+        <item>після першого бою</item>
+        <item>3</item>
     </string-array>
     <string-array name="question_6">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>Де Людмила вперше побачилася з капітаном Кіценком? </item>
+        <item>в землянці</item>
+        <item>у клубі</item>
+        <item>у штабі</item>
+        <item>1</item>
     </string-array>
     <string-array name="question_7">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>Як називається пісня про Павличенко?</item>
+        <item>Леді снайпер</item>
+        <item>Амазонка</item>
+        <item>Miss Pavlichenko</item>
+        <item>3</item>
     </string-array>
     <string-array name="question_8">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>Як звали лікаря, який підписав Людмилі дозвіл йти на фронт після контузії?</item>
+        <item>Борис</item>
+        <item>Леонід</item>
+        <item>Василь</item>
+        <item>1</item>
     </string-array>
     <string-array name="question_9">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>Хто наказав дівчатам спалити всі цивільні речі?</item>
+        <item>Майор</item>
+        <item>Людмила Павличенко</item>
+        <item>Леонід Кіценко</item>
+        <item>1</item>
     </string-array>
     <string-array name="question_10">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>Пісня якого гурту звучить у фільмі? </item>
+        <item>Сплін</item>
+        <item>Друга ріка</item>
+        <item>Океан Ельзи</item>
+        <item>3</item>
     </string-array>
     <string-array name="question_11">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>Кого змусила чекати Елеонора Рузвельт? </item>
+        <item>Хрущова</item>
+        <item>Франкліна Рузвельта</item>
+        <item>Молодіжну делегацію</item>
+        <item>1</item>
     </string-array>
     <string-array name="question_12">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>Хто допоміг Людмилі евакуюватися із Севастополя? </item>
+        <item>Борис</item>
+        <item>Леонід Кіценко</item>
+        <item>Її подруга Маша</item>
+        <item>1</item>
     </string-array>
     <string-array name="question_13">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>Як звати режисера фільму?</item>
+        <item>Олесь Санін</item>
+        <item>Володимир Денисенко</item>
+        <item>Сергій Мокрицький</item>
+        <item>3</item>
     </string-array>
     <string-array name="question_14">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>Як звали керівника делегації студентів у фільмі? </item>
+        <item>Красавченко Микола</item>
+        <item>Архипенко Степан</item>
+        <item>Борзов Максим</item>
+        <item>1</item>
     </string-array>
     <string-array name="question_15">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>Скільки пострілів зробила Людмила на стрільбищі?</item>
+        <item>7</item>
+        <item>5</item>
+        <item>10</item>
+        <item>2</item>
     </string-array>
     <string-array name="question_16">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>В якому місті народилася Людмила Павличенко?</item>
+        <item>Київ</item>
+        <item>Одеса</item>
+        <item>Біла Церква</item>
+        <item>3</item>
     </string-array>
     <string-array name="question_17">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>Яке звання мала Людмила Павличенко, коли познайомилася з Елеонорою Рузвельт? </item>
+        <item>Капітан</item>
+        <item>Лейтенант</item>
+        <item>Сержант</item>
+        <item>2</item>
     </string-array>
     <string-array name="question_18">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>У скількох хлопців на стрільбищі виграла Людмила? </item>
+        <item>Семи</item>
+        <item>П’яти</item>
+        <item>Трьох</item>
+        <item>3</item>
     </string-array>
     <string-array name="question_19">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>В якому місті Людмилу застала війна?</item>
+        <item>Одеса</item>
+        <item>Севастополь</item>
+        <item>Київ</item>
+        <item>1</item>
     </string-array>
     <string-array name="question_20">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>Скільки загалом німецьких солдатів убила Людмила Павличенко?</item>
+        <item>309</item>
+        <item>310</item>
+        <item>301</item>
+        <item>1</item>
     </string-array>
     <string-array name="question_21">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>Куди вирушила Людмила, коли дізналася результати іспитів?</item>
+        <item>Додому</item>
+        <item>З друзями в парк</item>
+        <item>З друзями в кіно</item>
+        <item>1</item>
     </string-array>
     <string-array name="question_22">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>Скільки було років Людмилі, коли вона пішла на фронт?</item>
+        <item>22</item>
+        <item>23</item>
+        <item>25</item>
+        <item>2</item>
     </string-array>
     <string-array name="question_23">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>Яке прізвище першого фронтового командира Людмили? </item>
+        <item>Кіценко</item>
+        <item>Красавченко</item>
+        <item>Макаров</item>
+        <item>3</item>
     </string-array>
     <string-array name="question_24">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>Якою в списку студентів, які вступили в університет, була Людмила? </item>
+        <item>Першою</item>
+        <item>Третьою</item>
+        <item>П’ятою </item>
+        <item>1</item>
     </string-array>
     <string-array name="question_25">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>Коли вперше Людмила взяла до рук рушницю? </item>
+        <item>стрільбищі</item>
+        <item>на курсах стрільців</item>
+        <item>вдома з татом</item>
+        <item>1</item>
     </string-array>
     <string-array name="question_26">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>Скільки вбитих німців було на рахунку Людмили, коли вона прибула в Севастополь? </item>
+        <item>187</item>
+        <item>285</item>
+        <item>301</item>
+        <item>1</item>
     </string-array>
     <string-array name="question_27">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>Що подарувала Людмилі Елеонора Рузвельт перед виступом? </item>
+        <item>Рушницю</item>
+        <item>Сукню</item>
+        <item>Книжку </item>
+        <item>2</item>
     </string-array>
     <string-array name="question_28">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>Як звати оператора фільму «Незламна»? </item>
+        <item>Юрій Король </item>
+        <item>Юрій Іллєнко</item>
+        <item>Сергій Михальчук</item>
+        <item>1</item>
     </string-array>
     <string-array name="question_29">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>Скільки годин Людмила могла пролежати нерухомо? </item>
+        <item>18</item>
+        <item>24</item>
+        <item>36</item>
+        <item>1</item>
     </string-array><string-array name="question_30">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>Де працювала сестра Бориса Соня? </item>
+        <item>в Одеському архіві</item>
+        <item>в медчастині</item>
+        <item>в університеті</item>
+        <item>1</item>
     </string-array>
 </resources>

@@ -11,7 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ListView;
 
 import com.mozidev.kino.Constants;
 import com.mozidev.kino.R;
@@ -71,8 +70,8 @@ public class TrailerFragment extends Fragment implements AdapterView.OnItemClick
 
 
     public List<Integer> getTrailerList() {
-        return Arrays.asList(R.drawable.trailer1, R.drawable.trailer2, R.drawable.backstage1, R.drawable.backstage2,
-                R.drawable.backstage3, R.drawable.backstage4, R.drawable.backstage5);
+        return Arrays.asList(R.drawable.trailer1, R.drawable.trailer2, R.drawable.backstage_1, R.drawable.backstage_2,
+                R.drawable.backstage_3, R.drawable.backstage_4, R.drawable.backstage_5);
     }
 
 

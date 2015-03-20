@@ -1,15 +1,47 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:context="com.mozidev.kino.activity.SplachActivity">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="com.mozidev.kino.activity.SplachActivity">
 
-    <ImageView
-        android:id="@+id/splash_screen"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
-        android:src="@drawable/poster_1"/>
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
 
-</RelativeLayout>
+        <ImageView
+            android:id="@+id/splash_screen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/poster_2"/>
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/black_overlay"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="@string/splash_message"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@android:color/white"/>
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/btn_tender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_selector"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:text="@string/splash_button_title"
+        android:textAllCaps="true"
+        android:textAppearance="?android:textAppearanceMedium"/>
+
+
+</LinearLayout>

@@ -108,6 +108,7 @@ public class AboutFilmFragment extends Fragment implements View.OnClickListener 
                     Intent intent = new Intent(getActivity(), PlayerActivity.class);
                     intent.putExtra(Constants.ARG_NUMBER_TRAILER, 0);
                     startActivity(intent);
+                    getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 } else {
                     ((MainActivity) getActivity()).showConnectedDialog();
                 }

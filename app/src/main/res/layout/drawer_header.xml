@@ -5,5 +5,5 @@
               android:layout_height="wrap_content"
               android:adjustViewBounds="true"
               android:scaleType="centerCrop"
-    android:src="@drawable/poster_small_height"/>
+    android:src="@drawable/poster_horizont_2"/>
 

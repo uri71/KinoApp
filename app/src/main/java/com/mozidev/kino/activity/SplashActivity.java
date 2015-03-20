@@ -1,84 +1,56 @@
 package com.mozidev.kino.activity;
 
-import android.app.ActivityOptions;
-import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v7.app.ActionBarActivity;
-import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageView;
 
+import com.mozidev.kino.Constants;
 import com.mozidev.kino.R;
+import com.mozidev.kino.util.RippleDrawable;
 import com.squareup.picasso.Picasso;
 
 /**
  * Created by y.storchak on 23.01.15.
  */
 public class SplashActivity extends ActionBarActivity {
-ImageView mImage;
+
+    ImageView mImage;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splach);
         mImage = (ImageView) findViewById(R.id.splash_screen);
-        Animation animationIn = AnimationUtils.loadAnimation(this, R.anim.fade_in);
-        final Animation animationOut = AnimationUtils.loadAnimation(this, R.anim.fade_out);
+        Button btn_tender = (Button) findViewById(R.id.btn_tender);
+        RippleDrawable.createRipple(btn_tender, Color.parseColor("#ffffff"));
+        btn_tender.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendIntent(true);
+            }
+        });
         getSupportActionBar().hide();
         mImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendIntent();
+                sendIntent(false);
             }
         });
 
-        animationIn.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {
 
-            }
-
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-                mImage.startAnimation(animationOut);
-            }
-
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-
-            }
-        });
-        animationOut.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {
-
-            }
-
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-                sendIntent();
-            }
-
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-
-
-            }
-        });
-        mImage.startAnimation(animationIn);
-        Picasso.with(this).load(R.drawable.poster_1).fit().centerCrop().into(mImage);
     }
 
 
-    private void sendIntent() {
+    private void sendIntent(boolean isTender) {
         Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra(Constants.ARG_SET_TENDER, isTender);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         finish();

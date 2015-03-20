@@ -1,6 +1,7 @@
 package com.mozidev.kino.adapters;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 import com.mozidev.kino.Constants;
 import com.mozidev.kino.R;
+import com.mozidev.kino.util.RippleDrawable;
 
 import java.util.List;
 
@@ -56,6 +58,7 @@ public class DrawerAdapter extends ArrayAdapter {
             mResourse = R.layout.item_drawer_top;
             view = LayoutInflater.from(mContext).inflate(mResourse, parent, false);
         }
+        RippleDrawable.createRipple(view, Color.parseColor("#ffffff"));
 
         String title = mTitle.get(position);
         TextView textView = ((TextView) view.findViewById(R.id.text));

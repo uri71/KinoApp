@@ -86,7 +86,7 @@ public class KinoApplication extends Application {
 
         for (int i = 0; i < names.size(); i++) {
             String[] film = mContext.getResources().getStringArray(films.get(i));
-            team.add(new Team(names.get(i), lines.get(i),  about.get(i), images.get(i), film));
+            team.add(new Team(names.get(i), lines.get(i), about.get(i), images.get(i), film));
         }
 
         return team;
@@ -165,14 +165,29 @@ public class KinoApplication extends Application {
         return mShots;
     }
 
-    public List<String[]> getListQuestion(){
-        int[] allQuestion = mContext.getResources().getIntArray(R.array.questions_set);
+
+    public List<String[]> getListQuestion() {
+        // int[] allQuestion = mContext.getResources().getIntArray(R.array.questions_set);
+        int[] allQuestion = new int[] {
+                R.array.question_1, R.array.question_2, R.array.question_3,
+                R.array.question_4, R.array.question_5, R.array.question_6,
+                R.array.question_7, R.array.question_8, R.array.question_9,
+                R.array.question_10, R.array.question_11, R.array.question_12,
+                R.array.question_13, R.array.question_14, R.array.question_15,
+                R.array.question_16, R.array.question_17, R.array.question_18,
+                R.array.question_19, R.array.question_20, R.array.question_21,
+                R.array.question_22, R.array.question_23, R.array.question_24,
+                R.array.question_25, R.array.question_26, R.array.question_27,
+                R.array.question_28, R.array.question_29, R.array.question_30
+        };
 
         List<String[]> set = new ArrayList();
-        while (set.size()<3){
-            int number =  (int)(Math.random()*30);
-            String[]newSet = mContext.getResources().getStringArray(allQuestion[number]);
-            if(!set.contains(newSet))set.add(newSet);
+        while (set.size() < 3) {
+            int number = (int) (Math.random() * 30);
+            String[] newSet = mContext.getResources().getStringArray(allQuestion[number]);
+            if (!set.contains(newSet)) {
+                set.add(newSet);
+            }
         }
         return set;
     }

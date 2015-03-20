@@ -17,8 +17,12 @@ public class Constants {
     public static final String ARG_NUMBER_PHOTO_SET = "ARG_NUMBER_PHOTO_SET";
     public static final String ARG_NUMBER_TRAILER = "ARG_NUMBER_TRAILER";
     public static final String ARG_NUMBER_SET_QUESTIONS = "ARG_NUMBER_SET_QUESTIONS";
+    public static final String ARG_PREFERENCES_WIN = "ARG_PREFERENCES_WIN";
 
     public static final int PHOTO_SET = 1;
     public static final int SHOT_SET = 0;
     public static final int NEWS_SET = 2;
+
+
+    public static final String ARG_SET_TENDER = "ARG_SET_TENDER";
 }

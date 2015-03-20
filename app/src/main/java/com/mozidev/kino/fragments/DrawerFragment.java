@@ -20,6 +20,7 @@ import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
+import com.mozidev.kino.Constants;
 import com.mozidev.kino.R;
 import com.mozidev.kino.adapters.DrawerAdapter;
 
@@ -78,6 +79,10 @@ public class DrawerFragment extends Fragment {
 
         if (savedInstanceState != null) {
             mCurrentSelectedPosition = savedInstanceState.getInt(STATE_SELECTED_POSITION);
+            mFromSavedInstanceState = true;
+        }
+        if(getActivity().getIntent().getBooleanExtra(Constants.ARG_SET_TENDER, false)){
+            mCurrentSelectedPosition = 6;
             mFromSavedInstanceState = true;
         }
 

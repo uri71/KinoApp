@@ -11,10 +11,12 @@
     <color name="link_color">#BDBDBD</color>
     <color name="primary_color">#9E9E9E</color>
     <color name="primary">#009688</color>
+    <color name="primary_pressed">#33cbba</color>
     <color name="accent">#EB0011</color>
     <color name="text_primary">#212121</color>
     <color name="text_second">#727272</color>
     <color name="background">#ffffff</color>
     <color name="item_divider">#BDBDBD</color>
+    <color name="color_radiobutton">#33cbba</color>
 
 </resources>

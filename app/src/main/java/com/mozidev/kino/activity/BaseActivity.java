@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
+import android.os.Build;
 import android.support.v7.app.ActionBarActivity;
 
 import com.mozidev.kino.R;
@@ -43,5 +44,9 @@ public class BaseActivity extends ActionBarActivity {
         builder.setTitle(getString(R.string.check_network));
         Dialog dialog = builder.show();
         return dialog;
+    }
+
+    public boolean checkSDKVersion(){
+        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH;
     }
 }
