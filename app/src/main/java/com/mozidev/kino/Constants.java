@@ -25,4 +25,6 @@ public class Constants {
 
 
     public static final String ARG_SET_TENDER = "ARG_SET_TENDER";
+    public static final String ARG_URL_IOS = "ARG_URL_IOS";
+    public static final String ARG_URL_ANDROID = "ARG_URL_ANDROID";
 }

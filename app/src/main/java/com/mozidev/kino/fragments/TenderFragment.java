@@ -12,12 +12,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.mozidev.kino.Constants;
 import com.mozidev.kino.R;
+import com.mozidev.kino.activity.BaseActivity;
+import com.mozidev.kino.activity.MainActivity;
 import com.mozidev.kino.activity.ShareActivity;
 import com.mozidev.kino.activity.TenderActivity;
 import com.mozidev.kino.util.RippleDrawable;
@@ -25,7 +28,11 @@ import com.mozidev.kino.util.RippleDrawable;
 /**
  * Created by user on 16.03.2015.
  */
-public class TenderFragment extends Fragment {
+public class TenderFragment extends Fragment /*implements CompoundButton.OnCheckedChangeListener*/ {
+
+    private String[] question;
+    private String answer;
+
 
     public TenderFragment newInstance(String[] set) {
         Bundle bundle = new Bundle();
@@ -52,7 +59,7 @@ public class TenderFragment extends Fragment {
                               @Nullable
                               Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        final String[] question = ((TenderActivity) getActivity()).getQuestion();
+        question = ((TenderActivity) getActivity()).getQuestion();
         Button btn_continue = (Button) view.findViewById(R.id.btn_continue);
         RippleDrawable.createRipple(btn_continue, Color.parseColor("#ffffff"));
 
@@ -68,7 +75,7 @@ public class TenderFragment extends Fragment {
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                String answer;
+
                 switch (checkedId) {
                     case R.id.rb_answer1:
                         answer = "1";
@@ -89,20 +96,49 @@ public class TenderFragment extends Fragment {
         btn_continue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(answer == null || answer.isEmpty()) return;
                 if (((TenderActivity) getActivity()).getCounter() == 2) {
                     SharedPreferences preferences = getActivity().getPreferences(Context.MODE_PRIVATE);
-                    preferences.edit().putBoolean(Constants.ARG_PREFERENCES_WIN, ((TenderActivity) getActivity()).isAllAnswerTrue());
-                    Intent intent = new Intent(getActivity(), ShareActivity.class);
-                    startActivity(intent);
-                    getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    getActivity().finish();
+                    preferences.edit().putBoolean(Constants.ARG_PREFERENCES_WIN, ((TenderActivity) getActivity()).isAllAnswerTrue()).apply();
+                    if (((BaseActivity) getActivity()).isConnected()) {
+                        sendIntent();
+                    } else {
+                        ((BaseActivity) getActivity()).showConnectedDialog();
+                    }
 
                 } else {
                     ((TenderActivity) getActivity()).onCounter();
                     ((TenderActivity) getActivity()).setFragment();
-
                 }
             }
         });
     }
+
+
+    private void sendIntent() {
+        Intent intent = new Intent(getActivity(), ShareActivity.class);
+        startActivity(intent);
+        getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+        //getActivity().finish();
+    }
+
+
+    /*@Override
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        String answer;
+        switch (buttonView.getId()) {
+            case R.id.rb_answer1:
+                answer = "1";
+                break;
+            case R.id.rb_answer2:
+                answer = "2";
+                break;
+            default:
+                answer = "3";
+        }
+        String trim = question[4].trim();
+        boolean b = answer.equals(trim);
+        ((TenderActivity) getActivity()).setAllAnswer(b);
+        Log.e("ANSWER", "number answer -" + answer + " right answer -" + trim + "right boolean - " + b);
+    }*/
 }

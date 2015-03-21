@@ -115,40 +115,40 @@
         <item>Таємниця «Святого Патрика»</item>
         <item>Бій з тінню 2</item>
     </string-array>
- <string-array name="line_8">
+    <string-array name="line_8">
         <item>Коли ми вдома </item>
         <item>Поводир</item>
         <item>Нескорений</item>
         <item>Втрачені світанки</item>
     </string-array>
- <string-array name="line_9">
+    <string-array name="line_9">
         <item>Істальгія</item>
         <item>Зцілення любов’ю</item>
         <item>Співачка Жозефіна і мишиний народ</item>
     </string-array>
- <string-array name="line_10">
+    <string-array name="line_10">
         <item>Давай поцілуємося</item>
         <item>Весна в грудні</item>
         <item>Байки Мітяя</item>
     </string-array>
- <string-array name="line_11">
+    <string-array name="line_11">
         <item>Під електричними хмарами</item>
         <item>Роман вихідного дня</item>
         <item>Райскі птахи</item>
         <item>Повернення Мухтара</item>
     </string-array>
- <string-array name="line_12">
+    <string-array name="line_12">
         <item>Зображуючи жертву </item>
         <item>Мисливці за іконами</item>
         <item>Баязет</item>
     </string-array>
- <string-array name="line_13">
+    <string-array name="line_13">
         <item>Трубач</item>
         <item>Вагома причина для вбивства</item>
         <item>Мовчун</item>
         <item>Легенда Людмили Гурченко</item>
     </string-array>
- <string-array name="line_14">
+    <string-array name="line_14">
         <item>Всі пішли</item>
         <item>Юр’їв день</item>
         <item>Вільнюське гето</item>
@@ -205,7 +205,8 @@
         <item>http://film.ua/ru/production/postproduction</item>
         <item>http://film.ua/ru/studio/about</item>
         <item>http://film.ua/ru/production/filmsandseries/projects?status=1</item>//готовые
-        <item>http://film.ua/ru/production/filmsandseries/projects?status=1&amp;year=2014</item>//новинки
+        <item>http://film.ua/ru/production/filmsandseries/projects?status=1&amp;year=2014</item>
+        //новинки
         <item>http://film.ua/ru/production/filmsandseries/projects?status=2</item>//в производстве
         <item>http://faculty.film.ua/</item>
     </string-array>
@@ -384,49 +385,49 @@
         <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_42.jpg</item>
         <item>https://film-apps.s3.amazonaws.com/shots_thumb/shot_43.jpg</item>
     </string-array>
-<string-array name="history_urls">
-    <item>https://film-apps.s3.amazonaws.com/history/photo_1.jpeg</item>
-    <item>https://film-apps.s3.amazonaws.com/history/photo_2.jpg</item>
-    <item>https://film-apps.s3.amazonaws.com/history/photo_3.jpeg</item>
-    <item>https://film-apps.s3.amazonaws.com/history/photo_4.jpeg</item>
-    <item>https://film-apps.s3.amazonaws.com/history/photo_5.jpeg</item>
-    <item>https://film-apps.s3.amazonaws.com/history/photo_6.jpeg</item>
-    <item>https://film-apps.s3.amazonaws.com/history/photo_7.jpeg</item>
-    <item>https://film-apps.s3.amazonaws.com/history/photo_8.jpg</item>
-    <item>https://film-apps.s3.amazonaws.com/history/photo_9.jpeg</item>
-    <item>https://film-apps.s3.amazonaws.com/history/photo_10.jpeg</item>
-    <item>https://film-apps.s3.amazonaws.com/history/photo_11.jpg</item>
-    <item>https://film-apps.s3.amazonaws.com/history/photo_12.jpg</item>
-    <item>https://film-apps.s3.amazonaws.com/history/photo_13.jpg</item>
-    <item>https://film-apps.s3.amazonaws.com/history/photo_14.jpg</item>
-    <item>https://film-apps.s3.amazonaws.com/history/photo_15.jpeg</item>
-    <item>https://film-apps.s3.amazonaws.com/history/photo_16.jpeg</item>
-    <item>https://film-apps.s3.amazonaws.com/history/photo_17.jpeg</item>
-    <item>https://film-apps.s3.amazonaws.com/history/photo_18.jpeg</item>
+    <string-array name="history_urls">
+        <item>https://film-apps.s3.amazonaws.com/history/photo_1.jpeg</item>
+        <item>https://film-apps.s3.amazonaws.com/history/photo_2.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/history/photo_3.jpeg</item>
+        <item>https://film-apps.s3.amazonaws.com/history/photo_4.jpeg</item>
+        <item>https://film-apps.s3.amazonaws.com/history/photo_5.jpeg</item>
+        <item>https://film-apps.s3.amazonaws.com/history/photo_6.jpeg</item>
+        <item>https://film-apps.s3.amazonaws.com/history/photo_7.jpeg</item>
+        <item>https://film-apps.s3.amazonaws.com/history/photo_8.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/history/photo_9.jpeg</item>
+        <item>https://film-apps.s3.amazonaws.com/history/photo_10.jpeg</item>
+        <item>https://film-apps.s3.amazonaws.com/history/photo_11.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/history/photo_12.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/history/photo_13.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/history/photo_14.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/history/photo_15.jpeg</item>
+        <item>https://film-apps.s3.amazonaws.com/history/photo_16.jpeg</item>
+        <item>https://film-apps.s3.amazonaws.com/history/photo_17.jpeg</item>
+        <item>https://film-apps.s3.amazonaws.com/history/photo_18.jpeg</item>
 
-</string-array>
+    </string-array>
     <string-array name="thumb_history_urls">
-    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_1.jpeg</item>
-    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_2.jpg</item>
-    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_3.jpeg</item>
-    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_4.jpeg</item>
-    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_5.jpeg</item>
-    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_6.jpeg</item>
-    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_7.jpeg</item>
-    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_8.jpg</item>
-    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_9.jpeg</item>
-    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_10.jpg</item>
-    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_11.jpg</item>
-    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_12.jpg</item>
-    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_13.jpg</item>
-    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_14.jpg</item>
-    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_15.jpeg</item>
-    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_16.jpeg</item>
-    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_17.jpeg</item>
-    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_18.jpeg</item>
-    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_19.jpeg</item>
-    <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_20.jpg</item>
-</string-array>
+        <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_1.jpeg</item>
+        <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_2.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_3.jpeg</item>
+        <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_4.jpeg</item>
+        <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_5.jpeg</item>
+        <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_6.jpeg</item>
+        <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_7.jpeg</item>
+        <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_8.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_9.jpeg</item>
+        <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_10.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_11.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_12.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_13.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_14.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_15.jpeg</item>
+        <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_16.jpeg</item>
+        <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_17.jpeg</item>
+        <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_18.jpeg</item>
+        <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_19.jpeg</item>
+        <item>https://film-apps.s3.amazonaws.com/history_thumb/photo_20.jpg</item>
+    </string-array>
     <string-array name="trailers">
         <item>https://film-apps.s3.amazonaws.com/trailers_small/trailer_1.mp4</item>
         <item>https://film-apps.s3.amazonaws.com/trailers_small/trailer_2.mp4</item>
@@ -465,7 +466,7 @@
         <item>Як підірвали майданчик</item>
         <item>Сніг на майданчику падає навіть влітку</item>
     </string-array>
-    
+
     <string-array name="actors_photo_url">
         <item>https://film-apps.s3.amazonaws.com/actors/01_Peresyld.jpg</item>
         <item>https://film-apps.s3.amazonaws.com/actors/02_Tsyganov.jpg</item>
@@ -483,7 +484,7 @@
         <item>https://film-apps.s3.amazonaws.com/actors/014_Grygorovych.jpg</item>
     </string-array>
 
-<string-array name="thumb_actors_photo_url">
+    <string-array name="thumb_actors_photo_url">
         <item>https://film-apps.s3.amazonaws.com/actors_small/01_Peresyld.jpg</item>
         <item>https://film-apps.s3.amazonaws.com/actors_small/02_Tsyganov.jpg</item>
         <item>https://film-apps.s3.amazonaws.com/actors_small/03_Bleckham.png</item>
@@ -750,11 +751,20 @@
         <item>24</item>
         <item>36</item>
         <item>1</item>
-    </string-array><string-array name="question_30">
+    </string-array>
+    <string-array name="question_30">
         <item>Де працювала сестра Бориса Соня? </item>
         <item>в Одеському архіві</item>
         <item>в медчастині</item>
         <item>в університеті</item>
         <item>1</item>
+    </string-array>
+    <string-array name="descriptions">
+        <item>"Бери участь в акції «Дивись рідне!» і вигравай iPhone 6!\n
+Я беру участь, а ти?"
+       </item>
+        <item>"Сходи на фільм #НЕЗЛАМНА, завантаж мобільний додаток, дай правильні відповіді на три запитання і бери участь у розіграші iPhone 6!\n
+Я беру участь, а ти?"
+        </item>
     </string-array>
 </resources>
