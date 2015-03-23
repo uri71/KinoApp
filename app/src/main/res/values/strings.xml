@@ -167,12 +167,29 @@
 </string>
     <string name="tender_title">Конкурс</string>
     <string name="splash_message">Щоб перейти до конкурсу - натисніть кнопку, щоб увійти у додаток - косніться екрану</string>
-    <string name="splash_button_title"><![CDATA[Візьми участь в конкурсі і виграй iPhone 6!]]></string>
+    <string name="splash_button_title"><![CDATA[Візьми участь в конкурсі \nі виграй iPhone 6!]]></string>
     <string name="url_sharing">https://film-apps.s3.amazonaws.com/shots/icon_sharing.jpeg</string>
     <string name="link_appstore">"Додаток в App Store \n"</string>
     <string name="link_googleplay">"Додаток в Google Play \n"</string>
     <string name="link_site">Офіційний сайт фільму \n http://nezlamna.com</string>
     <string name="api_url_base">http://188.166.35.28/api</string>
+
+    <string name="action_sign_in_short">Sign in with VK</string>
+    <string name="action_sign_in_force">Force OAuth</string>
+    <string name="users_get">users.get</string>
+    <string name="friends_get">friends.get</string>
+    <string name="captcha_force">captcha.force</string>
+    <string name="wall_post">wall.post</string>
+    <string name="upload_photo">upload photo</string>
+    <string name="upload_photo_to_wall">upload photo to wall</string>
+    <string name="upload_several_photos_to_wall">upload several photos to wall</string>
+    <string name="continue_using_app">Continue using test application</string>
+    <string name="test_validation">Test validation</string>
+    <string name="test_share">Test share dialog</string>
+    <string name="logout">Logout</string>
+    <string name="vk_app_id">4833594</string>
+    <string name="share_fb">Поділитися з FB</string>
+    <string name="share_fb_btn">Поділитися з VK</string>
 
 
 </resources>
