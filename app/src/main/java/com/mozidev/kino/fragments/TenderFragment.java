@@ -69,6 +69,9 @@ public class TenderFragment extends Fragment /*implements CompoundButton.OnCheck
         RadioButton rb_answer_1 = (RadioButton) view.findViewById(R.id.rb_answer1);
         RadioButton rb_answer_2 = (RadioButton) view.findViewById(R.id.rb_answer2);
         RadioButton rb_answer_3 = (RadioButton) view.findViewById(R.id.rb_answer3);
+        RippleDrawable.createRipple(rb_answer_1, Color.parseColor("#ffffff"));
+        RippleDrawable.createRipple(rb_answer_2, Color.parseColor("#ffffff"));
+        RippleDrawable.createRipple(rb_answer_3, Color.parseColor("#ffffff"));
         rb_answer_1.setText(question[1]);
         rb_answer_2.setText(question[2]);
         rb_answer_3.setText(question[3]);
@@ -119,26 +122,7 @@ public class TenderFragment extends Fragment /*implements CompoundButton.OnCheck
         Intent intent = new Intent(getActivity(), ShareActivity.class);
         startActivity(intent);
         getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-        //getActivity().finish();
+        getActivity().finish();
     }
 
-
-    /*@Override
-    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        String answer;
-        switch (buttonView.getId()) {
-            case R.id.rb_answer1:
-                answer = "1";
-                break;
-            case R.id.rb_answer2:
-                answer = "2";
-                break;
-            default:
-                answer = "3";
-        }
-        String trim = question[4].trim();
-        boolean b = answer.equals(trim);
-        ((TenderActivity) getActivity()).setAllAnswer(b);
-        Log.e("ANSWER", "number answer -" + answer + " right answer -" + trim + "right boolean - " + b);
-    }*/
 }

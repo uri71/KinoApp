@@ -37,4 +37,5 @@ dependencies {
     compile 'com.sothree.slidinguppanel:library:3.0.0'
     compile 'com.facebook.android:facebook-android-sdk:3.23.1'
     compile files('libs/android-query.0.26.8.jar')
+    compile project(':vksdk_library')
 }

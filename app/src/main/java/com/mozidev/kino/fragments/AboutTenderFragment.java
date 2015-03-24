@@ -63,7 +63,9 @@ public class AboutTenderFragment extends Fragment implements View.OnClickListene
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_start:
-                startActivity(new Intent(getActivity(), TenderActivity.class));
+                Intent intent = new Intent(getActivity(), TenderActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                startActivity(intent);
                 getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
             case R.id.btn_cancel:

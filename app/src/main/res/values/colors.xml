@@ -18,5 +18,7 @@
     <color name="background">#ffffff</color>
     <color name="item_divider">#BDBDBD</color>
     <color name="color_radiobutton">#33cbba</color>
+    <color name="color_share_normal">#475b9d</color>
+    <color name="color_share_pressed">#798dce</color>
 
 </resources>

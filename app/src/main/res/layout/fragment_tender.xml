@@ -22,8 +22,8 @@
         <RadioButton
             android:id="@+id/rb_answer1"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
             android:textColor="@color/text_primary"
             android:textAppearance="?android:textAppearanceLarge"
             android:background="@color/color_radiobutton"
@@ -31,8 +31,9 @@
         <RadioButton
             android:id="@+id/rb_answer2"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:textColor="@color/text_primary"
+            android:minHeight="48dp"
             android:textAppearance="?android:textAppearanceLarge"
             android:background="@color/color_radiobutton"
             android:checked="false"
@@ -40,7 +41,8 @@
         <RadioButton
             android:id="@+id/rb_answer3"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
             android:textColor="@color/text_primary"
             android:textAppearance="?android:textAppearanceLarge"
             android:background="@color/color_radiobutton"
