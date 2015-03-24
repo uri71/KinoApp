@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 
@@ -20,6 +21,7 @@ import com.mozidev.kino.fragments.HistoryFragment;
 import com.mozidev.kino.fragments.ShotFragment;
 import com.mozidev.kino.fragments.TeamFragment;
 import com.mozidev.kino.fragments.TrailerFragment;
+import com.vk.sdk.util.VKUtil;
 
 
 public class MainActivity extends BaseActivity
@@ -41,6 +43,8 @@ public class MainActivity extends BaseActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        String[] fingerprints = VKUtil.getCertificateFingerprint(this, this.getPackageName());
+        Log.e("SHA", fingerprints[0]);
 
         mNavigationDrawerFragment = (DrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
