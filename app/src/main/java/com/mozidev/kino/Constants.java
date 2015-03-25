@@ -23,8 +23,14 @@ public class Constants {
     public static final int SHOT_SET = 0;
     public static final int NEWS_SET = 2;
 
+
     public static final String ARG_SET_TENDER = "ARG_SET_TENDER";
     public static final String ARG_URL_IOS = "ARG_URL_IOS";
     public static final String ARG_URL_ANDROID = "ARG_URL_ANDROID";
-    public static final String PREFERENCES_FINISH = "PREFERENCES_FINISH";
+    public static final String URL_BASE = "http://188.166.35.28/api";
+    public static final String URL_DATE = "/dates";
+    public static final String KEY_ANDROID_TOKEN = "android_device_token";
+    public static final String URL_DEVICES = "/devices";
+    public static final String URL_POSTS = "/posts";
+
 }

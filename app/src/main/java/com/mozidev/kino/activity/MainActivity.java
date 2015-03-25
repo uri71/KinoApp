@@ -39,6 +39,7 @@ public class MainActivity extends BaseActivity
     private String[] mTitles;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
