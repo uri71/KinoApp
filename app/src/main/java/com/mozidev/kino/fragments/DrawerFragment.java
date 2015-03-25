@@ -59,7 +59,7 @@ public class DrawerFragment extends Fragment {
     private ListView mDrawerListView;
     private View mFragmentContainerView;
 
-    private int mCurrentSelectedPosition = 1;
+    private int mCurrentSelectedPosition = 6;
     private boolean mFromSavedInstanceState;
     private boolean mUserLearnedDrawer;
 

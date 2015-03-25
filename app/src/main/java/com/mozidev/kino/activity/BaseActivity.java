@@ -23,6 +23,7 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 import com.mozidev.kino.Constants;
+import com.mozidev.kino.DownloadService;
 import com.mozidev.kino.R;
 
 import org.json.JSONException;
@@ -56,6 +57,7 @@ public class BaseActivity extends ActionBarActivity {
         preferences = getPreferences(MODE_PRIVATE);
         isDownloadURLS = preferences.getString(Constants.ARG_URL_IOS, "").isEmpty() || preferences.getString(Constants.ARG_URL_ANDROID, "").isEmpty();
         context = getApplicationContext();
+        startService(new Intent(this, DownloadService.class));
 
         // Check device for Play Services APK. If check succeeds, proceed with GCM registration.
         if (checkPlayServices()) {

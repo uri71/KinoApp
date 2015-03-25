@@ -1,5 +1,7 @@
 package com.mozidev.kino;
 
+import java.io.File;
+
 /**
  * Created by y.storchak on 19.12.14.
  */
@@ -32,5 +34,8 @@ public class Constants {
     public static final String KEY_ANDROID_TOKEN = "android_device_token";
     public static final String URL_DEVICES = "/devices";
     public static final String URL_POSTS = "/posts";
+    public static final String IMAGE_PATH = File.separator +"nezlamna"+ File.separator+ "image_share";
 
+    public static final String PREFS_DOWNLOAD_PHOTO = "PREFS_DOWNLOAD_PHOTO";
+    public static final String PREFERENCES = "PREFERENCES";
 }
