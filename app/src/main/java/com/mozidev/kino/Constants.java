@@ -31,6 +31,7 @@ public class Constants {
     public static final String ARG_URL_ANDROID = "ARG_URL_ANDROID";
     public static final String URL_BASE = "http://188.166.35.28/api";
     public static final String URL_DATE = "/dates";
+    public static final String URL_MEMBERS = "/members";
     public static final String KEY_ANDROID_TOKEN = "android_device_token";
     public static final String URL_DEVICES = "/devices";
     public static final String URL_POSTS = "/posts";
@@ -38,4 +39,11 @@ public class Constants {
 
     public static final String PREFS_DOWNLOAD_PHOTO = "PREFS_DOWNLOAD_PHOTO";
     public static final String PREFERENCES = "PREFERENCES";
+    public static final String PREFS_DOWNLOAD_DESCRIPTION = "PREFS_DOWNLOAD_DESCRIPTION";
+    public static final String PREFS_DOWNLOAD_IMAGE_URL = "PREFS_DOWNLOAD_IMAGE_URL";
+    public static final String PREFERENCES_FINISH = "PREFERENCES_FINISH";
+
+    public static final String PROPERTY_REG_ID = "registration_id";
+    public static final String PROPERTY_APP_VERSION = "appVersion";
+    public static final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
 }

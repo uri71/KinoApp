@@ -2,10 +2,13 @@ package com.mozidev.kino;
 
 import android.app.Application;
 import android.content.Context;
+import android.graphics.Typeface;
 
 import com.mozidev.kino.model.NewsItem;
 import com.mozidev.kino.model.Photo;
 import com.mozidev.kino.model.Team;
+import com.norbsoft.typefacehelper.TypefaceCollection;
+import com.norbsoft.typefacehelper.TypefaceHelper;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -26,10 +29,12 @@ public class KinoApplication extends Application {
     private List<Integer> photo;
     private List<Integer> shot;
     private List<Integer> shortShot;
+    private TypefaceCollection mTypefaceCollection;
 
 
     public KinoApplication(Context context) {
         mContext = context;
+        attachBaseContext(context);
     }
 
 
@@ -44,7 +49,11 @@ public class KinoApplication extends Application {
         photo = fillPhotoList();
         shot = fillShotList();
         shortShot = fillShortShotList();
-
+        mTypefaceCollection = new TypefaceCollection.Builder()
+                .set(Typeface.NORMAL, Typeface.createFromAsset(getAssets(),
+                        "fonts/B52.ttf"))
+                .create();
+        TypefaceHelper.init(mTypefaceCollection);
     }
 
 

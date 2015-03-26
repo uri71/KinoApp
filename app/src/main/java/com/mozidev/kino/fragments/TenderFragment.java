@@ -101,6 +101,7 @@ public class TenderFragment extends Fragment /*implements CompoundButton.OnCheck
             public void onClick(View v) {
                 if(answer == null || answer.isEmpty()) return;
                 if (((TenderActivity) getActivity()).getCounter() == 2) {
+                    // записываем результаты конкурса
                     SharedPreferences preferences = getActivity().getPreferences(Context.MODE_PRIVATE);
                     preferences.edit().putBoolean(Constants.ARG_PREFERENCES_WIN, ((TenderActivity) getActivity()).isAllAnswerTrue()).apply();
                     if (((BaseActivity) getActivity()).isConnected()) {

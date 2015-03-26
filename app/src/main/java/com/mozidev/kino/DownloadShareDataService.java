@@ -28,13 +28,15 @@ import java.io.File;
 
 /**
  * Created by y.storchak on 25.03.15.
+ * Получаем с сервера фотку и описание для шаринга
  */
-public class DownloadService extends IntentService {
+public class DownloadShareDataService extends IntentService {
     public static final String TAG = "DownloadService";
+    SharedPreferences.Editor editor;
     AQuery aq;
 
 
-    public DownloadService() {
+    public DownloadShareDataService() {
         super("DownloadService");
     }
 
@@ -43,6 +45,9 @@ public class DownloadService extends IntentService {
     protected void onHandleIntent(Intent intent) {
         boolean isDownloadImage = getSharedPreferences
                 (Constants.PREFERENCES, MODE_PRIVATE).getBoolean(Constants.PREFS_DOWNLOAD_PHOTO, false);
+        editor = getSharedPreferences
+                (Constants.PREFERENCES, MODE_PRIVATE).
+                edit();
         if (isDownloadImage) stopSelf();
         aq = new AQuery(getApplicationContext());
         aq.ajax(Constants.URL_BASE + Constants.URL_POSTS, JSONObject.class, new AjaxCallback<JSONObject>() {
@@ -54,8 +59,15 @@ public class DownloadService extends IntentService {
                 if (json != null) {
                     try {
                         String image_url = json.getJSONObject("data").getString("image");
+                        String description = json.getJSONObject("data").getString("text");
+                        if (description != null || !description.isEmpty()){
+                            editor.putString(Constants.PREFS_DOWNLOAD_DESCRIPTION, description);
+                        }
+                        if(image_url!=null || !image_url.isEmpty()){
+                            editor.putString(Constants.PREFS_DOWNLOAD_IMAGE_URL, image_url);
+                        }
                         getImage(aq, image_url);
-                        Log.d(TAG, "SUCCESS download URL:" + status.getCode());
+                        Log.d(TAG, "SUCCESS download URL - "+image_url+" \nand DESCRIPTION - " +description+" \nstatus.code"+ status.getCode());
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
@@ -67,6 +79,7 @@ public class DownloadService extends IntentService {
     }
 
     private void getImage(AQuery aq, String url) {
+        if(url.isEmpty()) url = getString(R.string.url_sharing);
 
         File target = new File(getFilesDir().getPath(), Constants.IMAGE_PATH);
 
@@ -75,9 +88,7 @@ public class DownloadService extends IntentService {
             public void callback(String url, File file, AjaxStatus status) {
 
                 if (file != null) {
-                    SharedPreferences.Editor editor = getSharedPreferences
-                            (Constants.PREFERENCES, MODE_PRIVATE).
-                            edit();
+
                     editor.putBoolean(Constants.PREFS_DOWNLOAD_PHOTO, true);
                     Log.d(TAG, "SUCCESS download IMG:" + status.getCode());
                 } else {

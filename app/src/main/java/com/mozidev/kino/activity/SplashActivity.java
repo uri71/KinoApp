@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.mozidev.kino.Constants;
+import com.mozidev.kino.KinoApplication;
 import com.mozidev.kino.R;
 import com.mozidev.kino.util.RippleDrawable;
 import com.squareup.picasso.Picasso;
@@ -32,6 +33,7 @@ public class SplashActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splach);
+        KinoApplication.getInstance(this).onCreate();
         mImage = (ImageView) findViewById(R.id.splash_screen);
         Button btn_tender = (Button) findViewById(R.id.btn_tender);
         TextView message = (TextView) findViewById(R.id.text);

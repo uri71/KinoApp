@@ -2,6 +2,7 @@ package com.mozidev.kino.fragments;
 
 
 import android.app.Activity;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -9,10 +10,12 @@ import android.support.v4.widget.DrawerLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.mozidev.kino.Constants;
 import com.mozidev.kino.R;
 import com.mozidev.kino.activity.MainActivity;
+import com.norbsoft.typefacehelper.TypefaceHelper;
 
 
 public class HistoryFragment extends Fragment implements View.OnClickListener {
@@ -40,11 +43,15 @@ public class HistoryFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        view.findViewById(R.id.biography).setOnClickListener(this);
-        view.findViewById(R.id.snipers).setOnClickListener(this);
-        view.findViewById(R.id.snipers_guns).setOnClickListener(this);
-        view.findViewById(R.id.gallery).setOnClickListener(this);
-
+        View biography = view.findViewById(R.id.biography);
+        biography.setOnClickListener(this);
+        View snipers = view.findViewById(R.id.snipers);
+        snipers.setOnClickListener(this);
+        View gun = view.findViewById(R.id.snipers_guns);
+        gun.setOnClickListener(this);
+        View gallery = view.findViewById(R.id.gallery);
+        gallery.setOnClickListener(this);
+        TypefaceHelper.typeface(view);
 
     }
 

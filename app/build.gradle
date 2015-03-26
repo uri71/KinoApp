@@ -39,4 +39,5 @@ dependencies {
     compile files('libs/android-query.0.26.8.jar')
     compile project(':vksdk_library')
     compile "com.google.android.gms:play-services:7.0.+"
+    compile 'com.norbsoft.typefacehelper:library:0.9.0'
 }

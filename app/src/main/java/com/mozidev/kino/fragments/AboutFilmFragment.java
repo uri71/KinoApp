@@ -18,6 +18,7 @@ import com.mozidev.kino.activity.MainActivity;
 import com.mozidev.kino.activity.PlayerActivity;
 import com.mozidev.kino.adapters.AboutFilmAdapter;
 import com.mozidev.kino.model.Item;
+import com.norbsoft.typefacehelper.TypefaceHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,6 +47,7 @@ public class AboutFilmFragment extends Fragment implements View.OnClickListener 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_poster, container, false);
+        TypefaceHelper.typeface(view);
 
         return view;
     }

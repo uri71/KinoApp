@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import com.mozidev.kino.Constants;
 import com.mozidev.kino.R;
 import com.mozidev.kino.activity.MainActivity;
+import com.norbsoft.typefacehelper.TypefaceHelper;
 
 /**
  * Created by y.storchak on 05.02.15.
@@ -32,6 +33,7 @@ public class SniperGunFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_sniper_gun, container, false);
         setHasOptionsMenu(true);
+        TypefaceHelper.typeface(view);
         return view;
     }
 

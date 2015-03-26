@@ -3,10 +3,14 @@ package com.mozidev.kino.fragments;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +19,9 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.androidquery.AQuery;
+import com.androidquery.callback.AjaxCallback;
+import com.androidquery.callback.AjaxStatus;
 import com.facebook.FacebookException;
 import com.facebook.FacebookOperationCanceledException;
 import com.facebook.Request;
@@ -27,19 +34,32 @@ import com.facebook.widget.LoginButton;
 import com.facebook.widget.WebDialog;
 import com.mozidev.kino.Constants;
 import com.mozidev.kino.R;
+import com.mozidev.kino.activity.MainActivity;
 import com.vk.sdk.VKAccessToken;
 import com.vk.sdk.VKScope;
 import com.vk.sdk.VKSdk;
 import com.vk.sdk.VKSdkListener;
 import com.vk.sdk.VKUIHelper;
+import com.vk.sdk.api.VKApi;
+import com.vk.sdk.api.VKApiConst;
 import com.vk.sdk.api.VKError;
+import com.vk.sdk.api.VKParameters;
+import com.vk.sdk.api.VKRequest;
+import com.vk.sdk.api.VKResponse;
 import com.vk.sdk.api.photo.VKImageParameters;
 import com.vk.sdk.api.photo.VKUploadImage;
 import com.vk.sdk.dialogs.VKCaptchaDialog;
 import com.vk.sdk.dialogs.VKShareDialog;
 import com.vk.sdk.util.VKUtil;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by y.storchak on 21.03.15.
@@ -87,15 +107,28 @@ public class ShareFragment extends BaseFragment {
         super.onCreate(savedInstanceState);
         uiHelper = new UiLifecycleHelper(getActivity(), callback);
         uiHelper.onCreate(savedInstanceState);
-        VKUIHelper.onCreate(getActivity());
+        getActivity().setTitle("Реєстрація");
+       /* VKUIHelper.onCreate(getActivity());
         VKSdk.initialize(sdkListener, getActivity().getString(R.string.vk_app_id), VKAccessToken.tokenFromSharedPreferences(getActivity(), vkTokenKey));
-
+*/
 
         String[] fingerprint = VKUtil.getCertificateFingerprint(getActivity(), getActivity().getPackageName());
         Log.d("Fingerprint", fingerprint[0]);
-        getActivity().setTitle("Реєстрація");
-      /*  if (VKSdk.wakeUpSession()) {
 
+        try {
+            PackageInfo info = getActivity().getPackageManager().getPackageInfo(
+                    "com.mozidev.kino", PackageManager.GET_SIGNATURES);
+            for (Signature signature : info.signatures) {
+                MessageDigest md = MessageDigest.getInstance("SHA");
+                md.update(signature.toByteArray());
+                Log.d("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
+            }
+        } catch (PackageManager.NameNotFoundException e) {
+
+        } catch (NoSuchAlgorithmException e) {
+
+        }
+      /*  if (VKSdk.wakeUpSession()) {
             return;
         }*/
     }
@@ -116,7 +149,8 @@ public class ShareFragment extends BaseFragment {
                               @Nullable
                               Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        VKUIHelper.onCreate(getActivity());
+        VKSdk.initialize(sdkListener, getActivity().getString(R.string.vk_app_id), VKAccessToken.tokenFromSharedPreferences(getActivity(), vkTokenKey));
         LoginButton authButton = (LoginButton) view.findViewById(R.id.authButton);
         authButton.setReadPermissions(Arrays.asList("public_profile"));
         authButton.setFragment(this);
@@ -132,20 +166,144 @@ public class ShareFragment extends BaseFragment {
         btn_share_fb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                publishFeedDialog();
+                publishFB();
             }
         });
     }
 
 
-    private void publishFeedDialog() {
+
+
+    private String getShareImageUrl() {
+        String url = getActivity().getSharedPreferences(Constants.PREFERENCES, Context.MODE_PRIVATE)
+                .getString(Constants.PREFS_DOWNLOAD_IMAGE_URL, getString(R.string.url_sharing));
+        return url;
+    }
+
+
+    // фотка для шаринга в ВК
+    private Bitmap getPhoto() {
+        String pathName = getActivity().getFilesDir().getPath() + Constants.IMAGE_PATH;
+        Bitmap bitmap = BitmapFactory.decodeFile(pathName);
+        if (bitmap == null) {
+            Log.d(TAG, "bitmap == null");
+            bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.poster_2);
+        }
+        return bitmap;
+    }
+
+
+    private String getDescription() {
+        String description = getActivity().getSharedPreferences(Constants.PREFERENCES, Context.MODE_PRIVATE).getString(Constants.PREFS_DOWNLOAD_DESCRIPTION, "");
+        if (description.isEmpty()) {
+            Log.d(TAG, "description isEmpty");
+            description = getErrorDescription();
+        } else {
+            Log.d(TAG, description);
+        }
+        return description;
+    }
+
+// если по каким-то причинам с сервера мы не получили описание для шаринга - используем дефолтное
+    private String getErrorDescription() {
+        String[] text = getResources().getStringArray(R.array.descriptions);
+        int random = (int) (Math.random() * 2);
+        String description = text[random] + getString(R.string.link_site);
+        return description;
+    }
+
+
+    private class SessionStatusCallback implements Session.StatusCallback {
+
+        @Override
+        public void call(Session session, SessionState state, Exception exception) {
+            if (state.isOpened()) {
+                Log.i(TAG, "Logged in...");
+                writeFBUserToServer();
+            } else if (state.isClosed()) {
+                Log.i(TAG, "Logged out...");
+            }
+        }
+    }
+
+
+    protected class UserDataStatusCallback implements Session.StatusCallback {
+
+        @Override
+        public void call(final Session session, SessionState state, Exception exception) {
+            if (exception != null) {
+                Log.i(TAG, exception.toString());
+            }
+
+            if (state.isOpened()) {
+                Request.newMeRequest(session, new Request.GraphUserCallback() {
+                    @Override
+                    public void onCompleted(GraphUser user, Response response) {
+                        // данные юзера + правильный ответ
+                    }
+                }).executeAsync();
+            }
+        }
+    }
+
+
+    private boolean writeFBUserToServer() {
+       /* Session session = Session.getActiveSession();
+        UserDataStatusCallback dataStatusCallback = new UserDataStatusCallback();
+        if (session != null && !session.isOpened() && !session.isClosed()) {
+            session.openForRead(new Session.OpenRequest(this)
+                    .setPermissions(Arrays.asList("public_profile", "email"))
+                    .setCallback(dataStatusCallback));
+        } else {
+            Session.openActiveSession(getActivity(), true,
+                    Arrays.asList("public_profile", "email"), dataStatusCallback);
+        }*/
+
+        return false;
+    }
+
+
+    private boolean writeVKUserToServer(Map<String, Object> params) {
+
+        AQuery aq = new AQuery(getActivity());
+        String url = Constants.URL_BASE + Constants.URL_MEMBERS;
+
+        //first_name, last_name, email, phone, is_correct_answer, contacts, fb_id, vk_id, ios_device_token, android_device_token
+
+        aq.ajax(url, params, JSONObject.class, new AjaxCallback<JSONObject>() {
+
+            @Override
+            public void callback(String url, JSONObject json, AjaxStatus status) {
+                Log.d(TAG, "SUCCESS send data:" + status.getCode());
+
+            }
+        });
+        return false;
+    }
+
+
+//получаем данные юзера
+    private void getVKUserData() {
+        VKRequest request = VKApi.users().get(VKParameters.from(VKApiConst.FIELDS,
+                "id,first_name,last_name" +
+                        "online_mobile,lists,domain,has_mobile,contacts,connections,site,education,"));
+
+//  не знаю USER_IDS - тот ли это id что и в предыдущем запросе
+//                  VKRequest request = VKApi.users().get(VKParameters.from(VKApiConst.USER_IDS, "1,2"));
+        request.secure = false;
+        request.useSystemLanguage = false;
+        request.setRequestListener(mRequestListener);
+    }
+
+    private void publishFB() {
         Bundle params = new Bundle();
         String description = getDescription();
         params.putString("name", "Акція «Дивись рідне!»\n");
         //params.putString("caption", "Build great social apps and get more installs.");
         params.putString("description", description);
         //params.putString("link", "https://developers.facebook.com/android");
-        params.putString("picture", getString(R.string.url_sharing));
+        String image_url = getShareImageUrl();
+        params.putString("picture", image_url);
 
         WebDialog feedDialog = (
                 new WebDialog.FeedDialogBuilder(getActivity(),
@@ -189,77 +347,6 @@ public class ShareFragment extends BaseFragment {
     }
 
 
-    private String getDescription() {
-        String[] text = getResources().getStringArray(R.array.descriptions);
-        int random = (int) (Math.random() * 2);
-        String url_ios = getActivity().getPreferences(Context.MODE_PRIVATE).getString(Constants.ARG_URL_IOS, "");
-        String url_android = getActivity().getPreferences(Context.MODE_PRIVATE).getString(Constants.ARG_URL_ANDROID, "");
-
-        String appstore = getString(R.string.link_appstore);
-        String googleplay = getString(R.string.link_googleplay);
-        String description = text[random]
-                + (url_ios.isEmpty() ? "" : (appstore + url_ios))
-                + (url_android.isEmpty() ? "" : (googleplay + url_android))
-                + getString(R.string.link_site);
-        return description;
-    }
-
-
-    private class SessionStatusCallback implements Session.StatusCallback {
-
-        @Override
-        public void call(Session session, SessionState state, Exception exception) {
-            if (state.isOpened()) {
-                Log.i(TAG, "Logged in...");
-                writeFBUserToServer();
-            } else if (state.isClosed()) {
-                Log.i(TAG, "Logged out...");
-            }
-        }
-    }
-
-
-
-    protected class UserDataStatusCallback implements Session.StatusCallback {
-
-        @Override
-        public void call(final Session session, SessionState state, Exception exception) {
-            if (exception != null) {
-                // Crashlytics.logException(exception);
-            }
-
-            if (state.isOpened()) {
-                Request.newMeRequest(session, new Request.GraphUserCallback() {
-                    @Override
-                    public void onCompleted(GraphUser user, Response response) {
-                // данные юзера + правильный ответ
-                    }
-                }).executeAsync();
-            }
-        }
-    }
-
-
-    private boolean writeFBUserToServer() {
-        Session session = Session.getActiveSession();
-        UserDataStatusCallback dataStatusCallback = new UserDataStatusCallback();
-        if (session != null && !session.isOpened() && !session.isClosed()) {
-            session.openForRead(new Session.OpenRequest(this)
-                    .setPermissions(Arrays.asList("public_profile", "email"))
-                    .setCallback(dataStatusCallback));
-        } else {
-            Session.openActiveSession(getActivity(), true,
-                    Arrays.asList("public_profile", "email"), dataStatusCallback);
-        }
-        return false;
-    }
-
-
-    private boolean writeVKUserToServer() {
-        return false;
-    }
-
-
     private void publishVK() {
         VKAccessToken token = VKAccessToken.tokenFromSharedPreferences(getActivity(), vkTokenKey);
         if ((token == null) || token.isExpired()) {
@@ -288,11 +375,6 @@ public class ShareFragment extends BaseFragment {
         }
     }
 
-
-    private Bitmap getPhoto() {
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.share_img);
-        return bitmap;
-    }
 
 
    /* private void makePost(VKAttachments attachments, String message) {
@@ -376,7 +458,6 @@ public class ShareFragment extends BaseFragment {
         }
         uiHelper.onResume();
 
-
         VKUIHelper.onResume(getActivity());
         VKSdk.initialize(sdkListener, getActivity().getString(R.string.vk_app_id), VKAccessToken.tokenFromSharedPreferences(getActivity(), vkTokenKey));
         if (VKSdk.isLoggedIn()) {
@@ -444,6 +525,8 @@ public class ShareFragment extends BaseFragment {
         public void onReceiveNewToken(VKAccessToken newToken) {
             Log.e("token", newToken.toString());
             newToken.saveTokenToSharedPreferences(getActivity().getApplicationContext(), vkTokenKey);
+            //получаем данные по пользователю ВК для отправки на сервер
+            getVKUserData();
         }
 
 
@@ -453,4 +536,58 @@ public class ShareFragment extends BaseFragment {
             VKSdk.setAccessToken(token, true);
         }
     };
+
+
+    VKRequest.VKRequestListener mRequestListener = new VKRequest.VKRequestListener() {
+        @Override
+        public void onComplete(VKResponse response) {
+            // отправляем данные пользователя ВК на сервер
+            Map<String, Object> params = getVKMap(response);
+
+            writeVKUserToServer(params);
+        }
+
+
+        @Override
+        public void onError(VKError error) {
+            Log.d(TAG, error.toString());
+        }
+
+
+        @Override
+        public void onProgress(VKRequest.VKProgressType progressType, long bytesLoaded,
+                               long bytesTotal) {
+            // you can show progress of the request if you want
+        }
+
+
+        @Override
+        public void attemptFailed(VKRequest request, int attemptNumber, int totalAttempts) {
+            Log.d(TAG, String.format("Attempt %d/%d failed\n", attemptNumber, totalAttempts));
+        }
+    };
+
+// создаем VK - Map для отправки на сервер
+    private Map<String, Object> getVKMap(VKResponse response) {
+        boolean isWin = getActivity().getPreferences(Context.MODE_PRIVATE).getBoolean(Constants.ARG_PREFERENCES_WIN, false);
+        Map<String, Object> params = new HashMap<String, Object>();
+        String android_token = getActivity().getSharedPreferences(MainActivity.class.getSimpleName(),
+                Context.MODE_PRIVATE).getString(Constants.PROPERTY_REG_ID, "");
+        JSONObject data = response.json;
+        try {
+            String name = data.get("first_name").toString() + data.get("last_name").toString();
+            params.put("first_name", data.get("first_name"));
+            params.put("last_name", data.get("first_name"));
+            params.put("name", name);
+            params.put("is_correct_answer", isWin);
+            params.put("contacts", data.get("contacts").toString());
+            params.put("fb_id", "");
+            params.put("vk_id", data.get("id"));
+            params.put("android_device_token", android_token);
+        }
+        catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return params;
+    }
 }

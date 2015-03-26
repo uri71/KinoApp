@@ -23,10 +23,9 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 import com.mozidev.kino.Constants;
-import com.mozidev.kino.DownloadService;
+import com.mozidev.kino.DownloadShareDataService;
 import com.mozidev.kino.R;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -35,16 +34,18 @@ import java.util.Map;
 
 /**
  * Created by y.storchak on 05.02.15.
+ * здесь запускаем сервис для получения с бекенда описания и фотки для шаринга
+ * и настравиваем получение push notification
  */
 public class BaseActivity extends ActionBarActivity {
 
     private SharedPreferences preferences;
     boolean isDownloadURLS;
     public static final String EXTRA_MESSAGE = "message";
-    public static final String PROPERTY_REG_ID = "registration_id";
-    private static final String PROPERTY_APP_VERSION = "appVersion";
-    private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
-    private String SENDER_ID = getString(R.string.project_number);
+
+
+
+    private String SENDER_ID;
     private static final String TAG = "BaseActivity";
     private GoogleCloudMessaging gcm;
     private Context context;
@@ -55,15 +56,14 @@ public class BaseActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         preferences = getPreferences(MODE_PRIVATE);
-        isDownloadURLS = preferences.getString(Constants.ARG_URL_IOS, "").isEmpty() || preferences.getString(Constants.ARG_URL_ANDROID, "").isEmpty();
         context = getApplicationContext();
-        startService(new Intent(this, DownloadService.class));
-
+        // запускаем сервис для получения с бекенда описания и фотки для шаринга
+        startService(new Intent(this, DownloadShareDataService.class));
+        SENDER_ID = getString(R.string.project_number);
         // Check device for Play Services APK. If check succeeds, proceed with GCM registration.
         if (checkPlayServices()) {
             gcm = GoogleCloudMessaging.getInstance(this);
             regid = getRegistrationId(context);
-
             if (regid.isEmpty()) {
                 registerInBackground();
             }
@@ -76,9 +76,6 @@ public class BaseActivity extends ActionBarActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if (!isDownloadURLS) {
-            requestDescription();
-        }
         checkPlayServices();
     }
 
@@ -88,7 +85,7 @@ public class BaseActivity extends ActionBarActivity {
         if (resultCode != ConnectionResult.SUCCESS) {
             if (GooglePlayServicesUtil.isUserRecoverableError(resultCode)) {
                 GooglePlayServicesUtil.getErrorDialog(resultCode, this,
-                        PLAY_SERVICES_RESOLUTION_REQUEST).show();
+                        Constants.PLAY_SERVICES_RESOLUTION_REQUEST).show();
             } else {
                 Log.i(TAG, "This device is not supported.");
                 finish();
@@ -104,15 +101,15 @@ public class BaseActivity extends ActionBarActivity {
         int appVersion = getAppVersion(context);
         Log.i(TAG, "Saving regId on app version " + appVersion);
         SharedPreferences.Editor editor = prefs.edit();
-        editor.putString(PROPERTY_REG_ID, regId);
-        editor.putInt(PROPERTY_APP_VERSION, appVersion);
+        editor.putString(Constants.PROPERTY_REG_ID, regId);
+        editor.putInt(Constants.PROPERTY_APP_VERSION, appVersion);
         editor.commit();
     }
 
 
     private String getRegistrationId(Context context) {
         final SharedPreferences prefs = getGcmPreferences(context);
-        String registrationId = prefs.getString(PROPERTY_REG_ID, "");
+        String registrationId = prefs.getString(Constants.PROPERTY_REG_ID, "");
         if (registrationId.isEmpty()) {
             Log.i(TAG, "Registration not found.");
             return "";
@@ -120,7 +117,7 @@ public class BaseActivity extends ActionBarActivity {
         // Check if app was updated; if so, it must clear the registration ID
         // since the existing regID is not guaranteed to work with the new
         // app version.
-        int registeredVersion = prefs.getInt(PROPERTY_APP_VERSION, Integer.MIN_VALUE);
+        int registeredVersion = prefs.getInt(Constants.PROPERTY_APP_VERSION, Integer.MIN_VALUE);
         int currentVersion = getAppVersion(context);
         if (registeredVersion != currentVersion) {
             Log.i(TAG, "App version changed.");
@@ -146,19 +143,11 @@ public class BaseActivity extends ActionBarActivity {
         NetworkInfo networkInfo = manager.getActiveNetworkInfo();
         if (networkInfo == null) {
             return false;
-        } else if (!isDownloadURLS) {
-            requestDescription();
-            return false;
         }
         boolean isConnected = networkInfo.isConnectedOrConnecting();
         return isConnected;
     }
 
-
-    private void requestDescription() {
-        setDescription(getString(R.string.api_url_base) + getString(R.string.link_googleplay), Constants.ARG_URL_IOS);
-        setDescription(getString(R.string.api_url_base) + getString(R.string.link_appstore), Constants.ARG_URL_ANDROID);
-    }
 
 
     public Dialog showConnectedDialog() {
@@ -173,26 +162,6 @@ public class BaseActivity extends ActionBarActivity {
         return Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH;
     }
 
-
-    public void setDescription(String url, final String key) {
-        AQuery aq = new AQuery(this);
-        aq.ajax(url, JSONObject.class, new AjaxCallback<JSONObject>() {
-            @Override
-            public void callback(String url, JSONObject json, AjaxStatus status) {
-                if (json != null) {
-                    try {
-                        String uri = json.getString("link");
-                        if (uri != null && !uri.isEmpty()) {
-                            preferences.edit().putString(key, uri).apply();
-                        }
-                    }
-                    catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        });
-    }
 
 
     private void registerInBackground() {
@@ -263,7 +232,7 @@ public class BaseActivity extends ActionBarActivity {
     }
 
 
-    private void sendRegistrationIdToBackend() {
+    private void  sendRegistrationIdToBackend() {
         if (regid == null || regid.isEmpty()) {
             return;
         }
