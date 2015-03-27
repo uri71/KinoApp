@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.mozidev.kino.R;
 import com.mozidev.kino.activity.MainActivity;
+import com.norbsoft.typefacehelper.TypefaceHelper;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -76,6 +77,7 @@ public class  BiographyFragment extends Fragment {
         ((TextView)view.findViewById(R.id.article)).setText(mText);
         ImageView photo = (ImageView) view.findViewById(R.id.iv_photo);
         photo.setImageResource(R.drawable.article_photo);
+        TypefaceHelper.typeface(view);
     }
 
 

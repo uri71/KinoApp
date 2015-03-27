@@ -1,5 +1,7 @@
 package com.mozidev.kino.fragments;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -24,6 +26,7 @@ import com.mozidev.kino.activity.MainActivity;
 import com.mozidev.kino.activity.ShareActivity;
 import com.mozidev.kino.activity.TenderActivity;
 import com.mozidev.kino.util.RippleDrawable;
+import com.norbsoft.typefacehelper.TypefaceHelper;
 
 /**
  * Created by user on 16.03.2015.
@@ -99,7 +102,10 @@ public class TenderFragment extends Fragment /*implements CompoundButton.OnCheck
         btn_continue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(answer == null || answer.isEmpty()) return;
+                if(answer == null || answer.isEmpty()){
+                    showDialog();
+                return;
+                }
                 if (((TenderActivity) getActivity()).getCounter() == 2) {
                     // записываем результаты конкурса
                     SharedPreferences preferences = getActivity().getPreferences(Context.MODE_PRIVATE);
@@ -116,6 +122,15 @@ public class TenderFragment extends Fragment /*implements CompoundButton.OnCheck
                 }
             }
         });
+        TypefaceHelper.typeface(view);
+    }
+
+
+    private Dialog showDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        AlertDialog dialog = builder.setMessage("Будь ласка, віберіть варіант відповіді").show();
+        TypefaceHelper.typeface(dialog.getWindow().getDecorView());
+        return dialog;
     }
 
 

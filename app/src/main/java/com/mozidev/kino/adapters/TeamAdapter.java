@@ -1,6 +1,7 @@
 package com.mozidev.kino.adapters;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,8 @@ import android.widget.TextView;
 
 import com.mozidev.kino.R;
 import com.mozidev.kino.model.Team;
+import com.mozidev.kino.util.RippleDrawable;
+import com.norbsoft.typefacehelper.TypefaceHelper;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -35,6 +38,8 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.ViewHolder> {
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(mContext);
         View view = inflater.inflate(R.layout.item_list_team, parent, false);
+        RippleDrawable.createRipple(view, Color.parseColor("#ffffff"));
+        TypefaceHelper.typeface(view);
         return new ViewHolder(this, view);
     }
 

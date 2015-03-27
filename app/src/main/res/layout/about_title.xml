@@ -3,7 +3,8 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              android:paddingLeft="@dimen/horizontal_padding"
-             android:paddingRight="@dimen/horizontal_padding">
+             android:paddingRight="@dimen/horizontal_padding"
+             android:background="@android:color/transparent">
 
     <TextView
         android:id="@+id/content"
@@ -15,11 +16,12 @@
         android:textAllCaps="true"
         android:textAppearance="?android:textAppearanceLarge"
         android:textColor="@android:color/black"
+        android:background="@android:color/transparent"
         />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_gravity="bottom"
-        android:background="@color/item_divider"/>
+        android:background="@android:color/black"/>
 </FrameLayout>

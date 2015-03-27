@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background">
@@ -7,56 +7,62 @@
     android:id="@+id/tv_question"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
     android:textColor="@color/text_primary"
-    android:layout_gravity="top"
-    android:layout_marginTop="48dp"
-    android:textAppearance="?android:textAppearanceLarge"/>
+    android:layout_alignParentTop="true"
+    android:layout_marginBottom="16dp"
+    android:textAppearance="?android:textAppearanceMedium"
+    android:layout_above="@+id/rg_answer"/>
     <RadioGroup
         android:id="@+id/rg_answer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:padding="16dp"
-        android:layout_gravity="center">
+        android:layout_centerInParent="true"
+        >
         <RadioButton
             android:id="@+id/rb_answer1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="64dp"
+            android:minHeight="72dp"
             android:textColor="@color/text_primary"
-            android:textAppearance="?android:textAppearanceLarge"
-            android:background="@color/color_radiobutton"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:background="@drawable/radiobutton_background"
+            android:layout_marginLeft="16dp"
             android:checked="false"/>
         <RadioButton
             android:id="@+id/rb_answer2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/text_primary"
-            android:minHeight="64dp"
-            android:textAppearance="?android:textAppearanceLarge"
-            android:background="@color/color_radiobutton"
+            android:minHeight="72dp"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:background="@drawable/radiobutton_background"
             android:checked="false"
+            android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"/>
         <RadioButton
             android:id="@+id/rb_answer3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="64dp"
+            android:minHeight="72dp"
             android:textColor="@color/text_primary"
-            android:textAppearance="?android:textAppearanceLarge"
-            android:background="@color/color_radiobutton"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:background="@drawable/radiobutton_background"
             android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
             android:checked="false"/>
         </RadioGroup>
     <Button
         android:id="@+id/btn_continue"
         android:layout_width="match_parent"
         android:text="Далі"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         android:textAllCaps="true"
         android:textAppearance="?android:textAppearanceLarge"
-        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
         android:background="@drawable/btn_selector"
-        android:layout_height="wrap_content" />
-</FrameLayout>
+        android:layout_height="64dp" />
+</RelativeLayout>

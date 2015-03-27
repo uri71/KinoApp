@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.mozidev.kino.Constants;
 import com.mozidev.kino.R;
 import com.mozidev.kino.model.Item;
+import com.norbsoft.typefacehelper.TypefaceHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,6 +50,7 @@ public class AboutFilmAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                 break;
             }
         }
+        TypefaceHelper.typeface(view);
         holder = new ViewHolderItem(view);
         return holder;
     }

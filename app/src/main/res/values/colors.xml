@@ -10,8 +10,8 @@
     <color name="team_text">#bbb8a5</color>
     <color name="link_color">#BDBDBD</color>
     <color name="primary_color">#9E9E9E</color>
-    <color name="primary">#009688</color>
-    <color name="primary_pressed">#33cbba</color>
+    <color name="primary">#689557</color>
+    <color name="primary_pressed">#9cca8b</color>
     <color name="accent">#EB0011</color>
     <color name="text_primary">#212121</color>
     <color name="text_second">#000000</color>
@@ -20,5 +20,8 @@
     <color name="color_radiobutton">#33cbba</color>
     <color name="color_share_normal">#475b9d</color>
     <color name="color_share_pressed">#798dce</color>
+    <color name="color_background_middle">#af8266</color>
+    <color name="color_background_middle_pressed">#d7ae94</color>
+    <color name="color_rb_stroke">#2f611c</color>
 
 </resources>

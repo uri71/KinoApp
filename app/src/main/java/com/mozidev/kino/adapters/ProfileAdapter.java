@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.mozidev.kino.Constants;
 import com.mozidev.kino.R;
 import com.mozidev.kino.model.Team;
+import com.norbsoft.typefacehelper.TypefaceHelper;
 import com.squareup.picasso.Picasso;
 
 /**
@@ -42,6 +43,7 @@ public class ProfileAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             view = inflater.inflate(R.layout.about_story, parent, false);
             holder = new TextViewHolder(view);
         }
+        TypefaceHelper.typeface(view);
         return holder;
     }
 

@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.mozidev.kino.Constants;
 import com.mozidev.kino.R;
 import com.mozidev.kino.util.RippleDrawable;
+import com.norbsoft.typefacehelper.TypefaceHelper;
 
 import java.util.List;
 
@@ -58,19 +59,17 @@ public class DrawerAdapter extends ArrayAdapter {
             mResourse = R.layout.item_drawer_top;
             view = LayoutInflater.from(mContext).inflate(mResourse, parent, false);
         }
-        RippleDrawable.createRipple(view, Color.parseColor("#ffffff"));
 
         String title = mTitle.get(position);
         TextView textView = ((TextView) view.findViewById(R.id.text));
         textView.setText(title);
 
         if (position == 0) {
-            view.setBackgroundResource(android.R.color.white);
-            textView.setTypeface(Typeface.create("sans-serif", Typeface.NORMAL));
+            view.setBackgroundResource(android.R.color.transparent);
         } else {
             view.setBackgroundResource(R.drawable.drawer_item_selector);
-            textView.setTypeface(Typeface.create("sans-serif", Typeface.NORMAL));
         }
+        TypefaceHelper.typeface(view);
         return view;
     }
 }

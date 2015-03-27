@@ -558,7 +558,7 @@
     </string-array>
     <string-array name="question_2">
         <item>Хто приїхав до Людмили в Москву після війни? </item>
-        <item>Її батько</item>
+        <item>Батько Людмили</item>
         <item>Елеонора Рузвельт</item>
         <item>Чарлі Чаплін</item>
         <item>2</item>
@@ -572,9 +572,9 @@
     </string-array>
     <string-array name="question_4">
         <item>Кого зіграв Віталій Лінецький?</item>
-        <item>•	Капітана</item>
-        <item>•	Майора</item>
-        <item>•	Прапорщика</item>
+        <item>Капітана</item>
+        <item>Майора</item>
+        <item>Прапорщика</item>
         <item>2</item>
     </string-array>
     <string-array name="question_5">

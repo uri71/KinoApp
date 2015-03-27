@@ -1,6 +1,7 @@
 package com.mozidev.kino.fragments;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -59,7 +60,7 @@ public class DrawerFragment extends Fragment {
     private ListView mDrawerListView;
     private View mFragmentContainerView;
 
-    private int mCurrentSelectedPosition = 6;
+    private int mCurrentSelectedPosition = 1;
     private boolean mFromSavedInstanceState;
     private boolean mUserLearnedDrawer;
 
@@ -81,7 +82,9 @@ public class DrawerFragment extends Fragment {
             mCurrentSelectedPosition = savedInstanceState.getInt(STATE_SELECTED_POSITION);
             mFromSavedInstanceState = true;
         }
-        if(getActivity().getIntent().getBooleanExtra(Constants.ARG_SET_TENDER, false)){
+        if(getActivity().getIntent().getBooleanExtra(Constants.ARG_SET_TENDER, false)
+                || !getActivity().getPreferences(Context.MODE_PRIVATE)
+                .getBoolean(Constants.PREFERENCES_FINISH, true)){
             mCurrentSelectedPosition = 6;
             mFromSavedInstanceState = true;
         }

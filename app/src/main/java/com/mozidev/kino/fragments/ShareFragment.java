@@ -35,6 +35,7 @@ import com.facebook.widget.WebDialog;
 import com.mozidev.kino.Constants;
 import com.mozidev.kino.R;
 import com.mozidev.kino.activity.MainActivity;
+import com.norbsoft.typefacehelper.TypefaceHelper;
 import com.vk.sdk.VKAccessToken;
 import com.vk.sdk.VKScope;
 import com.vk.sdk.VKSdk;
@@ -169,6 +170,7 @@ public class ShareFragment extends BaseFragment {
                 publishFB();
             }
         });
+        TypefaceHelper.typeface(view);
     }
 
 

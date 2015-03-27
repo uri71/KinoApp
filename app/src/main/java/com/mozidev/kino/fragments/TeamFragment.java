@@ -20,6 +20,7 @@ import com.mozidev.kino.R;
 import com.mozidev.kino.activity.ProfileActivity;
 import com.mozidev.kino.adapters.TeamAdapter;
 import com.mozidev.kino.model.Team;
+import com.norbsoft.typefacehelper.TypefaceHelper;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -64,6 +65,7 @@ public class TeamFragment extends Fragment implements AdapterView.OnItemClickLis
         listView.setAdapter(adapter);
         LinearLayoutManager manager = new LinearLayoutManager(getActivity());
         listView.setLayoutManager(manager);
+        TypefaceHelper.typeface(view);
     }
 
 

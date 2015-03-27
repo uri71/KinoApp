@@ -1,6 +1,7 @@
 package com.mozidev.kino.fragments;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -18,6 +19,7 @@ import com.mozidev.kino.R;
 import com.mozidev.kino.activity.MainActivity;
 import com.mozidev.kino.activity.TenderActivity;
 import com.mozidev.kino.util.RippleDrawable;
+import com.norbsoft.typefacehelper.TypefaceHelper;
 
 /**
  * Created by user on 16.03.2015.
@@ -39,14 +41,18 @@ public class AboutTenderFragment extends Fragment implements View.OnClickListene
                               @Nullable
                               Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Button btn_cancel = (Button) view.findViewById(R.id.btn_cancel);
+        //Button btn_cancel = (Button) view.findViewById(R.id.btn_cancel);
         Button btn_start = (Button) view.findViewById(R.id.btn_start);
-        btn_cancel.setOnClickListener(this);
+        TextView text_about = (TextView) view.findViewById(R.id.tv_about);
+        boolean finish = getActivity().getPreferences(Context.MODE_PRIVATE).getBoolean(Constants.PREFERENCES_FINISH, false);
+        if(finish)text_about.setText(getActivity().getString(R.string.end_tehder_message));
+        //btn_cancel.setOnClickListener(this);
         btn_start.setOnClickListener(this);
        /* TextView tv_about = (TextView) view.findViewById(R.id.tv_about);
         tv_about.setText(Html.fromHtml(getString(R.string.about_tender)));*/
-        RippleDrawable.createRipple(btn_cancel, Color.parseColor("#ffffff"));
+        //RippleDrawable.createRipple(btn_cancel, Color.parseColor("#ffffff"));
         RippleDrawable.createRipple(btn_start, Color.parseColor("#ffffff"));
+        TypefaceHelper.typeface(view);
     }
 
 
@@ -68,9 +74,9 @@ public class AboutTenderFragment extends Fragment implements View.OnClickListene
                 startActivity(intent);
                 getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
-            case R.id.btn_cancel:
+           /* case R.id.btn_cancel:
                 ((MainActivity) getActivity()).setFragment(AboutFilmFragment.newInstance(1));
-                break;
+                break;*/
         }
     }
 

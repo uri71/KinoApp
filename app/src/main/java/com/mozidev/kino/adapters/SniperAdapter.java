@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.mozidev.kino.Constants;
 import com.mozidev.kino.R;
 import com.mozidev.kino.model.Sniper;
+import com.norbsoft.typefacehelper.TypefaceHelper;
 
 import java.util.List;
 
@@ -41,6 +42,7 @@ public class SniperAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             view = inflater.inflate(R.layout.item_snipers_list, parent, false);
             holder = new ListViewHolder(view);
         }
+        TypefaceHelper.typeface(view);
         return holder;
     }
 

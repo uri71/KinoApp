@@ -21,6 +21,7 @@ import com.mozidev.kino.fragments.HistoryFragment;
 import com.mozidev.kino.fragments.ShotFragment;
 import com.mozidev.kino.fragments.TeamFragment;
 import com.mozidev.kino.fragments.TrailerFragment;
+import com.norbsoft.typefacehelper.TypefaceHelper;
 import com.vk.sdk.util.VKUtil;
 
 
@@ -51,6 +52,8 @@ public class MainActivity extends BaseActivity
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
         mTitle = getTitle();
         mTitles = getResources().getStringArray(R.array.title);
+        TypefaceHelper.typeface(getSupportActionBar().getCustomView());
+
 
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(

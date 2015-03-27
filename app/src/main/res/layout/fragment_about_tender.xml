@@ -26,30 +26,16 @@
             />
     </ScrollView>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:layout_gravity="bottom"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btn_cancel"
-            android:layout_width="0dp"
-            android:layout_height="64dp"
-            android:layout_weight="1"
-            android:background="@drawable/btn_selector"
-            android:text="@string/refuse_tender"
-            android:textAllCaps="true"
-            android:textColor="@android:color/white"/>
 
         <Button
             android:id="@+id/btn_start"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="64dp"
             android:background="@drawable/btn_selector"
             android:layout_weight="1"
             android:text="@string/start_tender"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:layout_gravity="bottom"
             android:textAllCaps="true"
             android:textColor="@android:color/white"/>
-    </LinearLayout>
 </FrameLayout>

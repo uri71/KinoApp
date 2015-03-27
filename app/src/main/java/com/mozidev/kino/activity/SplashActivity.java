@@ -16,6 +16,7 @@ import com.mozidev.kino.Constants;
 import com.mozidev.kino.KinoApplication;
 import com.mozidev.kino.R;
 import com.mozidev.kino.util.RippleDrawable;
+import com.norbsoft.typefacehelper.TypefaceHelper;
 import com.squareup.picasso.Picasso;
 
 import java.util.Calendar;
@@ -65,9 +66,11 @@ public class SplashActivity extends ActionBarActivity {
             message.setVisibility(View.GONE);
         }
 
-
+        TypefaceHelper.typeface(this);
 
     }
+
+
 
 
     private void sendIntent(boolean isTender) {

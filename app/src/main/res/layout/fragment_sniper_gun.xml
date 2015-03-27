@@ -26,7 +26,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/item_divider"/>
+                android:background="@android:color/black"/>
             <TextView
                 style="@style/TextViewTitle"
                 android:layout_width="match_parent"
@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
                 android:layout_marginTop="8dp"
-                android:src="@drawable/mosinka"
+                android:src="@drawable/mosinka1"
                 android:scaleType="centerCrop"/>
             <TextView
                 android:layout_width="match_parent"
@@ -61,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
                 android:layout_marginTop="8dp"
-                android:src="@drawable/svt_snipe"
+                android:src="@drawable/svt_snipe_1"
                 android:scaleType="centerCrop"/>
 
             <TextView
@@ -79,7 +79,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/item_divider"/>
+                android:background="@android:color/black"/>
             <TextView
                 style="@style/TextViewTitle"
                 android:layout_width="match_parent"
@@ -91,7 +91,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/k98_1"
+                android:src="@drawable/k98_1_1"
                 android:layout_marginTop="8dp"
                 android:scaleType="centerCrop"/>
 
@@ -116,7 +116,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/g43_1"
+                android:src="@drawable/g43_1_1"
                 android:layout_marginTop="8dp"
                 android:scaleType="centerCrop"/>
 

@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import com.mozidev.kino.R;
 import com.mozidev.kino.adapters.SniperAdapter;
 import com.mozidev.kino.model.Sniper;
+import com.norbsoft.typefacehelper.TypefaceHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -72,6 +73,7 @@ public class SnipersFragment extends Fragment {
         list.setHasFixedSize(true);
         SniperAdapter adapter = new SniperAdapter(getActivity(), getSnipers());
         list.setAdapter(adapter);
+
     }
 
 
