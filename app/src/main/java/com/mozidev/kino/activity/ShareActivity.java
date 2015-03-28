@@ -17,4 +17,6 @@ public class ShareActivity extends BaseActivity {
         setContentView(R.layout.activity_share);
         getSupportFragmentManager().beginTransaction().replace(R.id.container, new ShareFragment()).commit();
     }
+
+
 }

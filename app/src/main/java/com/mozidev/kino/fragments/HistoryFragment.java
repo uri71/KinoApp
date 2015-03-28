@@ -2,6 +2,7 @@ package com.mozidev.kino.fragments;
 
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 import com.mozidev.kino.Constants;
 import com.mozidev.kino.R;
 import com.mozidev.kino.activity.MainActivity;
+import com.mozidev.kino.util.RippleDrawable;
 import com.norbsoft.typefacehelper.TypefaceHelper;
 
 
@@ -52,6 +54,10 @@ public class HistoryFragment extends Fragment implements View.OnClickListener {
         View gallery = view.findViewById(R.id.gallery);
         gallery.setOnClickListener(this);
         TypefaceHelper.typeface(view);
+        RippleDrawable.createRipple(biography, Color.parseColor("#689557"));
+        RippleDrawable.createRipple(snipers, Color.parseColor("#689557"));
+        RippleDrawable.createRipple(gun, Color.parseColor("#689557"));
+        RippleDrawable.createRipple(gallery, Color.parseColor("#689557"));
 
     }
 
