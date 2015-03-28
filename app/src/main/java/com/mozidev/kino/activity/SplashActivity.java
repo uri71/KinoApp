@@ -85,7 +85,7 @@ public class SplashActivity extends ActionBarActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        mImage.setVisibility(View.GONE);
-        mImage.clearAnimation();
+       /* mImage.setVisibility(View.GONE);
+        mImage.clearAnimation();*/
     }
 }

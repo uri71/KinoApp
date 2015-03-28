@@ -237,14 +237,14 @@
     <string-array name="sniper_about">
         <item>""</item>
         <item>""</item>
-        <item>"Погибла в 1942"</item>
+        <item>"Загинула в 1942"</item>
         <item>""</item>
         <item>""</item>
         <item>"В 41-м пішла на фронт добровольцем у 48 років, загинула в травні 45-го"</item>
-        <item>"Погибла в 1943 г."</item>
+        <item>"Загинула в 1943 г."</item>
         <item>""</item>
-        <item>"Була також санінструктором, вінесла з полю бою 109 поранених бійців"</item>
-        <item>"Служила в морскій піхоті. Загінула в 1943"</item>
+        <item>"Була також санінструктором, винесла з полю бою 109 поранених бійців"</item>
+        <item>"Служила в морскій піхоті. Загинула в 1943"</item>
     </string-array>
     <string-array name="photo_caption">
         <item>Людмила Павличенко в начале войны</item>
@@ -293,10 +293,10 @@
     </string-array>
 
     <string-array name="shot_urls">
+        <item>https://film-apps.s3.amazonaws.com/shots/poster_4.jpeg</item>
         <item>https://film-apps.s3.amazonaws.com/shots/poster_1.jpg</item>
         <item>https://film-apps.s3.amazonaws.com/shots/poster_2.jpg</item>
         <item>https://film-apps.s3.amazonaws.com/shots/poster_3.jpg</item>
-        <item>https://film-apps.s3.amazonaws.com/shots/poster_4.jpeg</item>
         <item>https://film-apps.s3.amazonaws.com/shots/shot_01.jpg</item>
         <item>https://film-apps.s3.amazonaws.com/shots/shot_02.jpg</item>
         <item>https://film-apps.s3.amazonaws.com/shots/shot_03.jpg</item>

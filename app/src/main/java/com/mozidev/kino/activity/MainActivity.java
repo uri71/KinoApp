@@ -111,12 +111,13 @@ public class MainActivity extends BaseActivity
     public void restoreActionBar() {
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+//        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayShowTitleEnabled(true);
         if (!mNavigationDrawerFragment.isDrawerOpen()) {
-            actionBar.setTitle(mTitle);
+//            actionBar.setTitle(mTitle);
+			setTitle(mTitle);
         } else {
-            actionBar.setTitle(getResources().getString(R.string.app_name));
+            setTitle(getResources().getString(R.string.app_name));
         }
     }
 
@@ -130,24 +131,28 @@ public class MainActivity extends BaseActivity
 
     @Override
     public void onBackPressed() {
+       int count =  getSupportFragmentManager().getBackStackEntryCount();
+        if(count==0)
         showEscapeDialog();
+        else super.onBackPressed();
     }
 
 
     private Dialog showEscapeDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Ви дійсно хочете покинути додаток?");
-        builder.setNegativeButton("Ні", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        });
+
         builder.setPositiveButton("Так", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
                 MainActivity.this.finish();
+            }
+        });
+        builder.setNegativeButton("Ні", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
             }
         });
         builder.show();
