@@ -266,7 +266,7 @@ public class ShareActivity extends BaseActivity {
 			@Override
 			public void callback(String url, JSONObject json, AjaxStatus status) {
 				Log.d(TAG, "SUCCESS send data:" + status.getCode());
-
+				publishVK();
 			}
 		});
 		return false;
