@@ -9,14 +9,13 @@
         <item name="colorAccent">@color/accent</item>
     </style>
 
-    <!--<style name="CustomActionBar" parent="@style/Widget.AppCompat.ActionBar">
-        &lt;!&ndash;<item name="titleTextStyle">@style/CustomActionBarTextTitle</item>&ndash;&gt;
-        <item name="background">@color/primary_color</item>
+    <style name="CustomActionBar" parent="@style/Widget.AppCompat.ActionBar">
+        <item name="titleTextStyle">@style/CustomActionBarTextTitle</item>
+		<item name="android:background">@drawable/ab_texture</item>
+	</style>
 
-    </style>-->
     <style name="CustomActionBarTextTitle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
-        <item name="android:textColor">@color/team_text</item>
-        <item name="android:textStyle">italic</item>
+        <item name="android:textColor">@android:color/white</item>
     </style>
 
     <style name="TextViewTitle" parent="@style/TextAppearance.AppCompat.Large">

@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -25,6 +27,8 @@ import com.google.android.gms.gcm.GoogleCloudMessaging;
 import com.mozidev.kino.Constants;
 import com.mozidev.kino.DownloadShareDataService;
 import com.mozidev.kino.R;
+import com.norbsoft.typefacehelper.ActionBarHelper;
+import com.norbsoft.typefacehelper.TypefaceHelper;
 
 import org.json.JSONObject;
 
@@ -70,10 +74,22 @@ public class BaseActivity extends ActionBarActivity {
         } else {
             Log.i(TAG, "No valid Google Play Services APK found.");
         }
+
+
+		BitmapDrawable background = new BitmapDrawable(BitmapFactory.decodeResource(getResources(), R.drawable.ab_texture));
+		background.setTileModeX(android.graphics.Shader.TileMode.REPEAT);
+		getSupportActionBar().setBackgroundDrawable(background);
     }
 
 
-    @Override
+	@Override
+	public void setTitle(CharSequence title) {
+		ActionBarHelper.setTitle(getSupportActionBar(), TypefaceHelper.typeface(title));
+//		super.setTitle(title);
+	}
+
+
+	@Override
     protected void onResume() {
         super.onResume();
         checkPlayServices();
