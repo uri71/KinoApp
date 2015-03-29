@@ -8,7 +8,7 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -47,7 +47,6 @@ import com.vk.sdk.dialogs.VKCaptchaDialog;
 import com.vk.sdk.dialogs.VKShareDialog;
 import com.vk.sdk.util.VKUtil;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -62,9 +61,7 @@ import java.util.Map;
 public class ShareActivity extends BaseActivity {
 
 	private UiLifecycleHelper uiHelper;
-	private Button btn_share_fb;
-	private Button btn_share_vk;
-	private Button btn_login_vk;
+	//	private Button btn_login_vk;
 	private static String vkTokenKey = "VK_ACCESS_TOKEN";
 
 	private static final String TAG = "ShareFragment";
@@ -101,12 +98,12 @@ public class ShareActivity extends BaseActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.fragment_share);
 
-		LoginButton authButton = (LoginButton) findViewById(R.id.authButton);
-		authButton.setReadPermissions(Arrays.asList("public_profile"));
+//		LoginButton authButton = (LoginButton) findViewById(R.id.authButton);
+//		authButton.setReadPermissions(Arrays.asList("public_profile"));
 //		authButton.setFragment(this);
-		btn_share_fb = (Button) findViewById(R.id.btn_share_fb);
-		btn_share_vk = (Button) findViewById(R.id.btn_share_vk);
-		btn_login_vk = (Button) findViewById(R.id.sign_in_button);
+		ImageButton btn_share_fb = (ImageButton) findViewById(R.id.btn_share_fb);
+		ImageButton btn_share_vk = (ImageButton) findViewById(R.id.btn_share_vk);
+//		btn_login_vk = (Button) findViewById(R.id.sign_in_button);
 		btn_share_vk.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -127,10 +124,10 @@ public class ShareActivity extends BaseActivity {
 
 		VKUIHelper.onCreate(this);
 		VKSdk.initialize(sdkListener, this.getString(R.string.vk_app_id));
-		if (VKSdk.wakeUpSession()) {
-			getVKUserData();
-			return;
-		}
+//		if (VKSdk.wakeUpSession()) {
+//			getVKUserData();
+//			return;
+//		}
 
 		String[] fingerprint = VKUtil.getCertificateFingerprint(this, this.getPackageName());
 		Log.d("Fingerprint", fingerprint[0]);
@@ -149,7 +146,7 @@ public class ShareActivity extends BaseActivity {
 //
 //        }
 	  /*  if (VKSdk.wakeUpSession()) {
-            return;
+			return;
         }*/
 	}
 
@@ -254,7 +251,7 @@ public class ShareActivity extends BaseActivity {
 	}
 
 
-	private boolean writeVKUserToServer(Map<String, Object> params) {
+	private boolean writeUserToServer(Map<String, Object> params) {
 
 		AQuery aq = new AQuery(this);
 		String url = Constants.URL_BASE + Constants.URL_MEMBERS;
@@ -275,7 +272,7 @@ public class ShareActivity extends BaseActivity {
 
 	//получаем данные юзера
 	private void getVKUserData() {
-        VKRequest request = VKApi.users().get(VKParameters.from(VKApiConst.FIELDS,
+		VKRequest request = VKApi.users().get(VKParameters.from(VKApiConst.FIELDS,
 				"id,first_name,last_name" +
 						"online_mobile,lists,domain,has_mobile,contacts,connections,site,education,"));
 //		VKRequest request = VKApi.users().get();
@@ -290,13 +287,35 @@ public class ShareActivity extends BaseActivity {
 
 
 	private void publishFB() {
-		Bundle params = new Bundle();
+		Session session = Session.getActiveSession();
+		if (session == null || !session.isOpened()) {
+//			pendingPublishReauthorization = true;
+			Session.openActiveSession(this, true, new Session.StatusCallback() {
+				@Override
+				public void call(Session session, SessionState state, Exception exception) {
+					if (state.isOpened()) {
+						Request.newMeRequest(session, new Request.GraphUserCallback() {
+							@Override
+							public void onCompleted(GraphUser user, Response response) {
+								writeUserToServer(getFBMap(user));
+							}
+						}).executeAsync();
+						publishFB();
+					}
+				}
+			});
+			return;
+		}
+
+		String name = "Акція «Дивись рідне!»\n";
+		String image_url = getShareImageUrl();
 		String description = getDescription();
-		params.putString("name", "Акція «Дивись рідне!»\n");
+
+		Bundle params = new Bundle();
+		params.putString("name", name);
 		//params.putString("caption", "Build great social apps and get more installs.");
 		params.putString("description", description);
 		//params.putString("link", "https://developers.facebook.com/android");
-		String image_url = getShareImageUrl();
 		params.putString("picture", image_url);
 
 		WebDialog feedDialog = (
@@ -407,38 +426,38 @@ public class ShareActivity extends BaseActivity {
 	private void onSessionStateChange(Session session, SessionState state, Exception exception) {
 		if (state.isOpened()) {
 			Log.i(TAG, "Logged in...");
-			btn_share_fb.setVisibility(View.VISIBLE);
+//			btn_share_fb.setVisibility(View.VISIBLE);
 
 		} else if (state.isClosed()) {
 			Log.i(TAG, "Logged out...");
-			btn_share_fb.setVisibility(View.GONE);
+//			btn_share_fb.setVisibility(View.GONE);
 		}
 	}
 
 
 	private void showLogout() {
-		btn_login_vk.setText("Log out with VK");
-		btn_share_vk.setVisibility(View.VISIBLE);
+//		btn_login_vk.setText("Log out with VK");
+//		btn_share_vk.setVisibility(View.VISIBLE);
 
-		btn_login_vk.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				VKSdk.logout();
-				showLogin();
-			}
-		});
+//		btn_login_vk.setOnClickListener(new View.OnClickListener() {
+//			@Override
+//			public void onClick(View v) {
+//				VKSdk.logout();
+//				showLogin();
+//			}
+//		});
 	}
 
 
 	private void showLogin() {
-		btn_login_vk.setText("Log in with VK");
-		btn_share_vk.setVisibility(View.GONE);
-		btn_login_vk.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				VKSdk.authorize(sMyScope, true, false);
-			}
-		});
+//		btn_login_vk.setText("Log in with VK");
+//		btn_share_vk.setVisibility(View.GONE);
+//		btn_login_vk.setOnClickListener(new View.OnClickListener() {
+//			@Override
+//			public void onClick(View v) {
+//				VKSdk.authorize(sMyScope, true, false);
+//			}
+//		});
 	}
 
 
@@ -539,7 +558,7 @@ public class ShareActivity extends BaseActivity {
 			// отправляем данные пользователя ВК на сервер
 			Map<String, Object> params = getVKMap(response);
 
-			writeVKUserToServer(params);
+			writeUserToServer(params);
 		}
 
 
@@ -561,6 +580,23 @@ public class ShareActivity extends BaseActivity {
 			Log.d(TAG, String.format("Attempt %d/%d failed\n", attemptNumber, totalAttempts));
 		}
 	};
+
+	private Map<String, Object> getFBMap(GraphUser user) {
+		boolean isWin = ShareActivity.this.getPreferences(Context.MODE_PRIVATE).getBoolean(Constants.ARG_PREFERENCES_WIN, false);
+		Map<String, Object> params = new HashMap<String, Object>();
+		String android_token = ShareActivity.this.getSharedPreferences(MainActivity.class.getSimpleName(),
+				Context.MODE_PRIVATE).getString(Constants.PROPERTY_REG_ID, "");
+
+		String name = user.getFirstName() + " " + user.getLastName();
+		params.put("first_name", user.getFirstName());
+		params.put("last_name", user.getLastName());
+		params.put("name", name);
+		params.put("is_correct_answer", isWin);
+		params.put("fb_id", user.getId());
+		params.put("vk_id", "");
+		params.put("android_device_token", android_token);
+		return params;
+	}
 
 
 	// создаем VK - Map для отправки на сервер
