@@ -27,6 +27,7 @@ public class ProfileActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         int position = getIntent().getIntExtra(Constants.PROFILE_ARG, 0);
         setContentView(R.layout.activity_profile);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         mTeams = KinoApplication.getInstance(this).getTeamsList();
         mViewPager = (ViewPager)findViewById(R.id.pager);
         ProfileViewPagerAdapter adapter = new ProfileViewPagerAdapter(getSupportFragmentManager(), mTeams);
@@ -41,6 +42,17 @@ public class ProfileActivity extends ActionBarActivity {
         return super.onCreateView(parent, name, context, attrs);
     }
 
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+
+    }
 
 
 }

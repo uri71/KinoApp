@@ -14,6 +14,7 @@ import android.widget.AdapterView;
 
 import com.mozidev.kino.Constants;
 import com.mozidev.kino.R;
+import com.mozidev.kino.activity.BaseActivity;
 import com.mozidev.kino.activity.BigShotActivity;
 import com.mozidev.kino.activity.MainActivity;
 import com.mozidev.kino.adapters.ShotAdapter;
@@ -64,6 +65,7 @@ public class ShotFragment extends Fragment implements AdapterView.OnItemClickLis
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        if(!((BaseActivity)getActivity()).isConnected()) ((BaseActivity) getActivity()).showConnectedDialog();
         Intent intent;
         intent = new Intent(getActivity(), BigShotActivity.class);
         intent.putExtra(Constants.ARG_SHOT_NUMBER, position);

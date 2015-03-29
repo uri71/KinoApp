@@ -12,8 +12,9 @@
             android:id="@+id/list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:divider="@color/link_color"
+            android:divider="@android:color/black"
             android:dividerHeight="1dp"
+
             />
 
 </LinearLayout>

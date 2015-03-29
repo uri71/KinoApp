@@ -14,6 +14,7 @@ import android.widget.AdapterView;
 
 import com.mozidev.kino.Constants;
 import com.mozidev.kino.R;
+import com.mozidev.kino.activity.BaseActivity;
 import com.mozidev.kino.activity.BigShotActivity;
 import com.mozidev.kino.adapters.PhotoAdapter;
 
@@ -60,10 +61,10 @@ public class PhotoFragment extends Fragment implements AdapterView.OnItemClickLi
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        if(!((BaseActivity)getActivity()).isConnected())((BaseActivity) getActivity()).showConnectedDialog();
         Intent intent = new Intent(getActivity(), BigShotActivity.class);
         intent.putExtra(Constants.ARG_NUMBER_PHOTO_SET, Constants.PHOTO_SET);
         intent.putExtra(Constants.ARG_SHOT_NUMBER, position);
         startActivity(intent);
-
     }
 }

@@ -152,7 +152,7 @@ public class BaseActivity extends ActionBarActivity {
 
     public Dialog showConnectedDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(getString(R.string.check_network));
+        builder.setMessage(getString(R.string.check_network));
         Dialog dialog = builder.show();
         return dialog;
     }

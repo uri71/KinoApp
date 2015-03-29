@@ -7,10 +7,12 @@ import android.app.FragmentTransaction;
 import android.content.DialogInterface;
 import android.os.Bundle;
 
+import com.mozidev.kino.Constants;
 import com.mozidev.kino.KinoApplication;
 import com.mozidev.kino.R;
 import com.mozidev.kino.fragments.AboutTenderFragment;
 import com.mozidev.kino.fragments.TenderFragment;
+import com.norbsoft.typefacehelper.TypefaceHelper;
 
 import java.util.List;
 
@@ -29,7 +31,16 @@ public class TenderActivity extends BaseActivity{
         setContentView(R.layout.activity_tender);
         questions = KinoApplication.getInstance(this).getListQuestion();
         setTitle(getString(R.string.tender_title));
+        if(getPreferences(MODE_PRIVATE).getBoolean(Constants.PREFERENCES_FINISH, false))showFinishTenderDialog();
         setFragment();
+    }
+
+    private Dialog showFinishTenderDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(getString(R.string.dialog_finish_tender_message));
+        Dialog dialog = builder.show();
+        TypefaceHelper.typeface(dialog.getWindow().getDecorView());
+        return dialog;
     }
 
 
