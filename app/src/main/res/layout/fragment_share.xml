@@ -1,67 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:background="@drawable/background"
-              android:gravity="center_horizontal"
+              android:gravity="center"
               android:paddingLeft="32dp"
               android:paddingRight="32dp"
-              android:paddingTop="48dp"
+			  android:orientation="vertical"
     >
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:textAppearance="?android:textAppearanceMedium"
+        android:textSize="30sp"
         android:text="@string/share_title_message"
         android:textColor="@android:color/black"
         android:layout_marginBottom="8dp"
         android:gravity="center_horizontal"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp"
+		android:id="@+id/label_share"
+		/>
 
-    <Button
-        android:id="@+id/btn_share_fb"
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:text="@string/share_fb"
-        android:layout_above="@+id/btn_share_vk"
-        android:layout_centerInParent="true"
-        android:background="@drawable/btn_selector"
-        android:visibility="gone"
-        />
+    <LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="150dp"
+		android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/btn_share_vk"
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:text="@string/share_fb_btn"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/btn_selector"
-        android:layout_centerInParent="true"
-        android:visibility="gone"
-        />
+		<ImageButton
+			android:id="@+id/btn_share_fb"
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight="1"
+			android:background="@android:color/transparent"
+			android:src="@drawable/ic_share_fb"
+			android:scaleType="centerInside"
+			android:visibility="visible"
+			/>
 
-    <com.facebook.widget.LoginButton
-        android:id="@+id/authButton"
-        android:layout_width="240dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="32dp"
-        android:textAppearance="?android:textAppearanceMedium"
-        android:layout_gravity="center_horizontal|bottom"
-        android:layout_above="@+id/sign_in_button"
-        android:layout_centerHorizontal="true"
-        />
+		<ImageButton
+			android:id="@+id/btn_share_vk"
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight="1"
+			android:src="@drawable/ic_share_vk"
+			android:background="@android:color/transparent"
+			android:visibility="visible"
+			android:scaleType="centerInside"
+			/>
 
-    <Button
-        android:id="@+id/sign_in_button"
-        android:layout_width="240dp"
-        android:layout_height="48dp"
-        android:layout_gravity="bottom"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="32dp"
-        android:textColor="@android:color/white"
-        android:textAppearance="?android:textAppearanceMedium"
-        android:background="@drawable/button_share_selector"
-        android:text="@string/action_sign_in_short"/>
-</RelativeLayout>
+		</LinearLayout>
+
+    <!--<com.facebook.widget.LoginButton-->
+        <!--android:id="@+id/authButton"-->
+        <!--android:layout_width="240dp"-->
+        <!--android:layout_height="48dp"-->
+        <!--android:layout_marginBottom="32dp"-->
+        <!--android:textAppearance="?android:textAppearanceMedium"-->
+        <!--android:layout_gravity="center_horizontal|bottom"-->
+        <!--android:layout_above="@+id/sign_in_button"-->
+        <!--android:layout_centerHorizontal="true"-->
+		<!--android:visibility="gone"-->
+        <!--/>-->
+
+    <!--<Button-->
+        <!--android:id="@+id/sign_in_button"-->
+        <!--android:layout_width="240dp"-->
+        <!--android:layout_height="48dp"-->
+        <!--android:layout_gravity="bottom"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginBottom="32dp"-->
+        <!--android:textColor="@android:color/white"-->
+        <!--android:textAppearance="?android:textAppearanceMedium"-->
+        <!--android:background="@drawable/button_share_selector"-->
+        <!--android:text="@string/action_sign_in_short"-->
+		<!--android:visibility="gone"/>-->
+</LinearLayout>
