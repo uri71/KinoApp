@@ -111,12 +111,13 @@ public class MainActivity extends BaseActivity
     public void restoreActionBar() {
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+//        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayShowTitleEnabled(true);
         if (!mNavigationDrawerFragment.isDrawerOpen()) {
-            actionBar.setTitle(mTitle);
+//            actionBar.setTitle(mTitle);
+			setTitle(mTitle);
         } else {
-            actionBar.setTitle(getResources().getString(R.string.app_name));
+            setTitle(getResources().getString(R.string.app_name));
         }
     }
 
