@@ -79,6 +79,9 @@
         </receiver>
         <service android:name=".notifications.GcmIntentService" />
         <service android:name=".DownloadShareDataService"/>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="a8cfa2d071b5509c25e1489b8b7630296061d29f" />
     </application>
 
 </manifest>
