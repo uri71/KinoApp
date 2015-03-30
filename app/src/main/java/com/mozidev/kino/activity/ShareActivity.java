@@ -65,9 +65,11 @@ public class ShareActivity extends BaseActivity {
 	private static String vkTokenKey = "VK_ACCESS_TOKEN";
 
 	private static final String TAG = "ShareFragment";
-	private LinearLayout btn_container;
+//	private LinearLayout btn_container;
 	private static final String[] sMyScope = new String[]{
-			VKScope.WALL
+			VKScope.WALL,
+			VKScope.NOHTTPS,
+			VKScope.PHOTOS
 	};
 
 	private Session.StatusCallback statusCallback =
@@ -124,10 +126,10 @@ public class ShareActivity extends BaseActivity {
 
 		VKUIHelper.onCreate(this);
 		VKSdk.initialize(sdkListener, this.getString(R.string.vk_app_id));
-//		if (VKSdk.wakeUpSession()) {
-//			getVKUserData();
-//			return;
-//		}
+		if (VKSdk.wakeUpSession()) {
+//			VKSdk.authorize(sMyScope);
+			return;
+		}
 
 		String[] fingerprint = VKUtil.getCertificateFingerprint(this, this.getPackageName());
 		Log.d("Fingerprint", fingerprint[0]);
