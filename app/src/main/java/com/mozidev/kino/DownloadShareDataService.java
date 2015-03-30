@@ -43,12 +43,9 @@ public class DownloadShareDataService extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent intent) {
-        boolean isDownloadImage = getSharedPreferences
-                (Constants.PREFERENCES, MODE_PRIVATE).getBoolean(Constants.PREFS_DOWNLOAD_PHOTO, false);
         editor = getSharedPreferences
                 (Constants.PREFERENCES, MODE_PRIVATE).
                 edit();
-        if (isDownloadImage) stopSelf();
         aq = new AQuery(getApplicationContext());
         aq.ajax(Constants.URL_BASE + Constants.URL_POSTS, JSONObject.class, new AjaxCallback<JSONObject>() {
 
@@ -61,10 +58,10 @@ public class DownloadShareDataService extends IntentService {
                         String image_url = json.getJSONObject("data").getString("image");
                         String description = json.getJSONObject("data").getString("text");
                         if (description != null || !description.isEmpty()){
-                            editor.putString(Constants.PREFS_DOWNLOAD_DESCRIPTION, description);
+                            editor.putString(Constants.PREFS_DOWNLOAD_DESCRIPTION, description).commit();
                         }
                         if(image_url!=null || !image_url.isEmpty()){
-                            editor.putString(Constants.PREFS_DOWNLOAD_IMAGE_URL, image_url);
+                            editor.putString(Constants.PREFS_DOWNLOAD_IMAGE_URL, image_url).commit();
                         }
                         getImage(aq, image_url);
                         Log.d(TAG, "SUCCESS download URL - "+image_url+" \nand DESCRIPTION - " +description+" \nstatus.code"+ status.getCode());
@@ -89,7 +86,6 @@ public class DownloadShareDataService extends IntentService {
 
                 if (file != null) {
 
-                    editor.putBoolean(Constants.PREFS_DOWNLOAD_PHOTO, true);
                     Log.d(TAG, "SUCCESS download IMG:" + status.getCode());
                 } else {
                     Log.d(TAG, "Error download IMG:" + status.getCode());

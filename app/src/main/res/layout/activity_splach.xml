@@ -35,7 +35,7 @@
     <Button
         android:id="@+id/btn_tender"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="64dp"
         android:background="@drawable/btn_selector"
         android:paddingLeft="8dp"
         android:paddingRight="8dp"

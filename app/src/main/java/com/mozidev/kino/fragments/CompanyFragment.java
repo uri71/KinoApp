@@ -59,8 +59,6 @@ public class CompanyFragment extends Fragment implements SlidingUpPanelLayout.Pa
     }
 
 
-
-
     @Override
     public void onPanelSlide(View view, float v) {
 

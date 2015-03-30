@@ -94,7 +94,7 @@ public class TenderFragment extends Fragment /*implements CompoundButton.OnCheck
                 }
                 String trim = question[4].trim();
                 boolean b = answer.equals(trim);
-                Log.e("ANSWER", "number answer -" + answer + " right answer -" + trim + "right boolean - " + b);
+                Log.d("ANSWER", "number answer -" + answer + " right answer -" + trim + "right boolean - " + b);
             }
         });
 
@@ -112,7 +112,7 @@ public class TenderFragment extends Fragment /*implements CompoundButton.OnCheck
                     // записываем результаты конкурса
                     SharedPreferences preferences = getActivity().getSharedPreferences(Constants.PREFERENCES, Context.MODE_PRIVATE);
                     boolean allAnswerTrue = ((TenderActivity) getActivity()).isAllAnswerTrue();
-                    Log.e("TenderFragment", "allAnswerTrue- "+ allAnswerTrue);
+                    Log.d("TenderFragment", "allAnswerTrue- "+ allAnswerTrue);
                     preferences.edit().putBoolean(Constants.ARG_PREFERENCES_WIN, allAnswerTrue).apply();
                     if (((BaseActivity) getActivity()).isConnected()) {
                         sendIntent();

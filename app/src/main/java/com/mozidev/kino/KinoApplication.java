@@ -196,15 +196,23 @@ public class KinoApplication extends Application {
                 R.array.question_28, R.array.question_29, R.array.question_30
         };
 
-        List<String[]> set = new ArrayList();
-        while (set.size() < 3) {
+        List<String[]> list = new ArrayList();
+        while (list.size() < 3) {
             int number = (int) (Math.random() * 30);
             String[] newSet = mContext.getResources().getStringArray(allQuestion[number]);
-            if (!set.contains(newSet)) {
-                set.add(newSet);
+            if (checkList(list, newSet)) {
+                list.add(newSet);
             }
         }
-        return set;
+        return list;
+    }
+
+
+    private boolean checkList(List<String[]> list, String[] newSet) {
+        for(String[] item:list){
+            if(item[0].equals(newSet[0])) return false;
+        }
+        return true;
     }
 
 

@@ -299,15 +299,16 @@ public class ShareActivity extends BaseActivity {
             }).executeAsync();
         }
 
-        String name = "Акція «Дивись рідне!»\n";
+        String name = getString(R.string.slogan);
         String image_url = getShareImageUrl();
+        image_url = "http://s019.radikal.ru/i620/1503/d3/b56867c88cdf.jpg";
         String description = getDescription();
 
         Bundle params = new Bundle();
         params.putString("name", name);
         //params.putString("caption", "Build great social apps and get more installs.");
         params.putString("description", description);
-        //params.putString("link", "https://developers.facebook.com/android");
+        //params.putString("link", "https://nezlamna.com");
         params.putString("picture", image_url);
 
         WebDialog feedDialog = (
@@ -409,7 +410,7 @@ public class ShareActivity extends BaseActivity {
                 .show();
 
         if (error.httpError != null) {
-            Log.w("Test", "Error in request or upload", error.httpError);
+            Log.d("Test", "Error in request or upload", error.httpError);
         }
     }
 

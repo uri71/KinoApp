@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">Незламна</string>
-    <string name="facebook_app_id">777623975647931</string>
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="drawer_title_about">Про фільм</string>
@@ -194,12 +194,15 @@
     <string name="share_fb">Поділитися з FB</string>
     <string name="share_fb_btn">Поділитися з VK</string>
     <string name="project_number">879536906571</string>
+    <string name="facebook_app_id">588382384625138</string>
+    <!--<string name="facebook_app_id">777623975647931</string>-->
     <string name="end_tehder_message">Нажаль, конкурс вже закінчився(. \n Але все одно Ви відповісти на три запитання і перевірити - наскільки уважно Ви дивилися фільм</string>
     <string name="share_title_message">Розкажіть друзям \nпро свою участь у конкурсі!</string>
     <string name="dialog_finish_tender_message">На жаль, конкурс вже завершився(.\n Але Ви все одно можете відповісти на три запитання та перевирити себе - наскільки уважно дивилися фільм</string>
     <string name="message_win">Вітаємо!\nВи правильно відповіли на всі запитання і стали претендентом на отримання призу!</string>
     <string name="message_lose">"На жаль Ви не на всі питання дали вірні відповіді. \nАле не засмучуйтесь - Ви можете пройти цей тест будь-яку кількість раз. \nВи обов'язково переможете! "</string>
     <string name="go_to_app">Перейти до додатку</string>
+    <string name="slogan">Народжена в Україні\n</string>
 
 
 </resources>
