@@ -4,9 +4,13 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
@@ -51,6 +55,8 @@ import com.vk.sdk.util.VKUtil;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -137,33 +143,24 @@ public class ShareActivity extends BaseActivity {
         String[] fingerprint = VKUtil.getCertificateFingerprint(this, this.getPackageName());
         Log.d("Fingerprint", fingerprint[0]);
 
-//        try {
-//            PackageInfo info = this.getPackageManager().getPackageInfo(
-//                    "com.mozidev.kino", PackageManager.GET_SIGNATURES);
-//            for (Signature signature : info.signatures) {
-//                MessageDigest md = MessageDigest.getInstance("SHA");
-//                md.update(signature.toByteArray());
-//                Log.d("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
-//            }
-//        } catch (PackageManager.NameNotFoundException e) {
-//
-//        } catch (NoSuchAlgorithmException e) {
-//
-//        }
+        try {
+            PackageInfo info = this.getPackageManager().getPackageInfo(
+                    "com.mozidev.kino", PackageManager.GET_SIGNATURES);
+            for (Signature signature : info.signatures) {
+                MessageDigest md = MessageDigest.getInstance("SHA");
+                md.update(signature.toByteArray());
+                Log.d("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
+            }
+        } catch (PackageManager.NameNotFoundException e) {
+
+        } catch (NoSuchAlgorithmException e) {
+
+        }
       /*  if (VKSdk.wakeUpSession()) {
 			return;
         }*/
     }
 
-
-//	@Override
-//	public View onCreateView(LayoutInflater inflater,
-//							 @Nullable
-//							 ViewGroup container,
-//							 @Nullable
-//							 Bundle savedInstanceState) {
-//		return inflater.inflate(R.layout.fragment_share, container, false);
-//	}
 
 
     private String getShareImageUrl() {
@@ -240,22 +237,6 @@ public class ShareActivity extends BaseActivity {
     }
 
 
-    private boolean writeFBUserToServer() {
-       /* Session session = Session.getActiveSession();
-        UserDataStatusCallback dataStatusCallback = new UserDataStatusCallback();
-        if (session != null && !session.isOpened() && !session.isClosed()) {
-            session.openForRead(new Session.OpenRequest(this)
-                    .setPermissions(Arrays.asList("public_profile", "email"))
-                    .setCallback(dataStatusCallback));
-        } else {
-            Session.openActiveSession(this, true,
-                    Arrays.asList("public_profile", "email"), dataStatusCallback);
-        }*/
-
-        return false;
-    }
-
-
     private boolean writeUserToServer(Map<String, Object> params) {
 
         AQuery aq = new AQuery(this);
@@ -282,8 +263,7 @@ public class ShareActivity extends BaseActivity {
                         "online_mobile,lists,domain,has_mobile,contacts,connections,site,education,"));
 //		VKRequest request = VKApi.users().get();
 
-//  не знаю USER_IDS - тот ли это id что и в предыдущем запросе
-//                  VKRequest request = VKApi.users().get(VKParameters.from(VKApiConst.USER_IDS, "1,2"));
+
 //        request.secure = false;
 //        request.useSystemLanguage = false;
 //        request.setRequestListener(mRequestListener);
@@ -372,6 +352,7 @@ public class ShareActivity extends BaseActivity {
         feedDialog.show();
     }
 
+
     private void showWinMessage() {
         if(winDialog != null) return;
 
@@ -395,6 +376,7 @@ public class ShareActivity extends BaseActivity {
     }
 
     private void showVKShareDialog() {
+
         final Bitmap b = getPhoto();
         final VKShareDialog dialog = new VKShareDialog();
         dialog.setText(getDescription())
@@ -548,7 +530,7 @@ public class ShareActivity extends BaseActivity {
             Log.e("token", newToken.toString());
             newToken.saveTokenToSharedPreferences(getApplicationContext(), vkTokenKey);
             //получаем данные по пользователю ВК для отправки на сервер
-            //getVKUserData();
+            getVKUserData();
         }
 
 
@@ -568,6 +550,7 @@ public class ShareActivity extends BaseActivity {
             Map<String, Object> params = getVKMap(response);
 
             writeUserToServer(params);
+            publishVK();
         }
 
 
@@ -589,6 +572,7 @@ public class ShareActivity extends BaseActivity {
             Log.d(TAG, String.format("Attempt %d/%d failed\n", attemptNumber, totalAttempts));
         }
     };
+
 
     private Map<String, Object> getFBMap(GraphUser user) {
 

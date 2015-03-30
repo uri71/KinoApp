@@ -49,6 +49,11 @@ public class KinoApplication extends Application {
         photo = fillPhotoList();
         shot = fillShotList();
         shortShot = fillShortShotList();
+        initTypeFace();
+    }
+
+
+    public void initTypeFace() {
         mTypefaceCollection = new TypefaceCollection.Builder()
                 .set(Typeface.NORMAL, Typeface.createFromAsset(getAssets(),
                         "fonts/B52.ttf"))
@@ -107,6 +112,7 @@ public class KinoApplication extends Application {
         if (mTeams == null) {
             mTeams = createTeamList();
         }
+
         return mTeams;
     }
 

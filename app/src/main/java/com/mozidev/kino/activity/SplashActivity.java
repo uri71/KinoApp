@@ -63,8 +63,7 @@ public class SplashActivity extends ActionBarActivity {
         endCalendar.add(Calendar.MONTH, Calendar.MAY);
         endCalendar.add(Calendar.DAY_OF_MONTH, 2);
         endCalendar.add(Calendar.HOUR_OF_DAY, 0);
-       // boolean finish = calendar.after(endCalendar);
-        boolean finish = true;
+        boolean finish = calendar.after(endCalendar);
         SharedPreferences preferences = getSharedPreferences(Constants.PREFERENCES, MODE_PRIVATE);
         preferences.edit().putBoolean(Constants.PREFERENCES_FINISH, finish).commit();
         if(finish){

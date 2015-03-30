@@ -23,5 +23,6 @@
     <color name="color_background_middle">#af8266</color>
     <color name="color_background_middle_pressed">#d7ae94</color>
     <color name="color_rb_stroke">#2f611c</color>
+    <color name="color_links">#3949AB</color>
 
 </resources>

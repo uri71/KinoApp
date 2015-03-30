@@ -22,7 +22,7 @@
             android:paddingRight="8dp"
             android:text="@string/about_tender"
             android:textAppearance="?android:textAppearanceMedium"
-            android:textColorLink="@color/primary"
+            android:textColorLink="@color/color_links"
             />
     </ScrollView>
 

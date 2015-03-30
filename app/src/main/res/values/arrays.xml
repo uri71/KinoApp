@@ -8,6 +8,9 @@
         <item>@string/drawer_title_contest</item>
     </string-array>
     <string-array name="team_names">
+        <item>Сергій МОКРИЦЬКИЙ </item>
+        <item>Юрій КОРОЛЬ</item>
+        <item>Юрій ГРИГОРОВИЧ</item>
         <item>Юлія ПЕРЕСИЛЬД</item>
         <item>Євген ЦИГАНОВ</item>
         <item>Джоан БЛЕКХЕМ</item>
@@ -19,11 +22,11 @@
         <item>Алла СЕРГІЙКО</item>
         <item>В’ячеслав НІКОЛЕНКО</item>
         <item>Сергій СИПЛИВИЙ</item>
-        <item>Сергій МОКРИЦЬКИЙ </item>
-        <item>Юрій КОРОЛЬ</item>
-        <item>Юрій ГРИГОРОВИЧ</item>
     </string-array>
     <string-array name="team_lines">
+        <item>Режисер</item>
+        <item>Оператор-постановник</item>
+        <item>Художник-постановник</item>
         <item>Людмила Павличенко</item>
         <item>Капітан Леонід Кіценко</item>
         <item>Елеонора Рузвельт</item>
@@ -35,9 +38,6 @@
         <item>Мама Людмили</item>
         <item>Вуді Гатрі (американський співак)</item>
         <item>Інструктор в тирі</item>
-        <item>Режисер</item>
-        <item>Оператор-постановник</item>
-        <item>Художник-постановник</item>
     </string-array>
     <string-array name="team_rating">
         <item>6.01</item>
@@ -48,6 +48,9 @@
         <item>6.3</item>
     </string-array>
     <string-array name="team_about">
+        <item>@string/actor_about_12</item>
+        <item>@string/actor_about_13</item>
+        <item>@string/actor_about_14</item>
         <item>@string/actor_about_1</item>
         <item>@string/actor_about_2</item>
         <item>@string/actor_about_3</item>
@@ -59,9 +62,6 @@
         <item>@string/actor_about_9</item>
         <item>@string/actor_about_10</item>
         <item>@string/actor_about_11</item>
-        <item>@string/actor_about_12</item>
-        <item>@string/actor_about_13</item>
-        <item>@string/actor_about_14</item>
     </string-array>
     <string-array name="team_links">
         <item>http://www.kinopoisk.ru/name/565971/</item>
@@ -79,76 +79,76 @@
         <item>@array/line_5</item>
         <item>@array/line_6</item>
     </integer-array>
-    <string-array name="line_1">
+    <string-array name="line_4">
         <item>Параджанов</item>
         <item>У тумані </item>
         <item>Я повернусь</item>
     </string-array>
-    <string-array name="line_2">
+    <string-array name="line_5">
         <item>Пітер-FM</item>
         <item>Червоні перли кохання</item>
         <item>Гарячі новини</item>
         <item>Відлига</item>
     </string-array>
-    <string-array name="line_3">
+    <string-array name="line_6">
         <item>Щоденник Бріджит Джонс</item>
         <item>Летючий загін Скотланд-Ярду</item>
         <item>Чисто англійське вбивство</item>
     </string-array>
-    <string-array name="line_4">
+    <string-array name="line_7">
         <item>Інтимні місця </item>
         <item>Кухня в Парижі</item>
         <item>Людина без пістолета</item>
     </string-array>
-    <string-array name="line_5">
+    <string-array name="line_8">
         <item>Випереджаючи постріл</item>
         <item>Чемпіонки</item>
         <item>Без сліду</item>
     </string-array>
-    <string-array name="line_6">
+    <string-array name="line_9">
         <item>ТойХтоПройшовКрізьВогонь</item>
         <item>Звичайна справа</item>
         <item>День народження Буржуя</item>
     </string-array>
-    <string-array name="line_7">
+    <string-array name="line_10">
         <item>Конвой</item>
         <item>Таємниця «Святого Патрика»</item>
         <item>Бій з тінню 2</item>
     </string-array>
-    <string-array name="line_8">
+    <string-array name="line_11">
         <item>Коли ми вдома </item>
         <item>Поводир</item>
         <item>Нескорений</item>
         <item>Втрачені світанки</item>
     </string-array>
-    <string-array name="line_9">
+    <string-array name="line_12">
         <item>Істальгія</item>
         <item>Зцілення любов’ю</item>
         <item>Співачка Жозефіна і мишиний народ</item>
     </string-array>
-    <string-array name="line_10">
+    <string-array name="line_13">
         <item>Давай поцілуємося</item>
         <item>Весна в грудні</item>
         <item>Байки Мітяя</item>
     </string-array>
-    <string-array name="line_11">
+    <string-array name="line_14">
         <item>Під електричними хмарами</item>
         <item>Роман вихідного дня</item>
         <item>Райскі птахи</item>
         <item>Повернення Мухтара</item>
     </string-array>
-    <string-array name="line_12">
+    <string-array name="line_1">
         <item>Зображуючи жертву </item>
         <item>Мисливці за іконами</item>
         <item>Баязет</item>
     </string-array>
-    <string-array name="line_13">
+    <string-array name="line_2">
         <item>Трубач</item>
         <item>Вагома причина для вбивства</item>
         <item>Мовчун</item>
         <item>Легенда Людмили Гурченко</item>
     </string-array>
-    <string-array name="line_14">
+    <string-array name="line_3">
         <item>Всі пішли</item>
         <item>Юр’їв день</item>
         <item>Вільнюське гето</item>
@@ -494,6 +494,9 @@
     </string-array>
 
     <string-array name="thumb_actors_photo_url">
+        <item>https://film-apps.s3.amazonaws.com/actors_small/012_Mokrytsky.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/actors_small/013_Korol.jpg</item>
+        <item>https://film-apps.s3.amazonaws.com/actors_small/014_Grygorovych.jpg</item>
         <item>https://film-apps.s3.amazonaws.com/actors_small/01_Peresyld.jpg</item>
         <item>https://film-apps.s3.amazonaws.com/actors_small/02_Tsyganov.jpg</item>
         <item>https://film-apps.s3.amazonaws.com/actors_small/03_Bleckham.png</item>
@@ -505,9 +508,6 @@
         <item>https://film-apps.s3.amazonaws.com/actors_small/09_Sergijko.jpg</item>
         <item>https://film-apps.s3.amazonaws.com/actors_small/010_Nikolenko.jpg</item>
         <item>https://film-apps.s3.amazonaws.com/actors_small/011_Syplyvyj.jpg</item>
-        <item>https://film-apps.s3.amazonaws.com/actors_small/012_Mokrytsky.jpg</item>
-        <item>https://film-apps.s3.amazonaws.com/actors_small/013_Korol.jpg</item>
-        <item>https://film-apps.s3.amazonaws.com/actors_small/014_Grygorovych.jpg</item>
     </string-array>
 
     <integer-array name="arrays_filmografy">
