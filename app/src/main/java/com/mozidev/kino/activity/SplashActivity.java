@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
+import android.text.format.DateUtils;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -58,12 +60,19 @@ public class SplashActivity extends ActionBarActivity {
         endCalendar.add(Calendar.MONTH, Calendar.MAY);
         endCalendar.add(Calendar.DAY_OF_MONTH, 2);
         endCalendar.add(Calendar.HOUR_OF_DAY, 0);
-        boolean finish = calendar.after(endCalendar);
-        SharedPreferences preferences = getPreferences(MODE_PRIVATE);
-        preferences.edit().putBoolean(Constants.PREFERENCES_FINISH, finish);
+       // boolean finish = calendar.after(endCalendar);
+        boolean finish = true;
+        SharedPreferences preferences = getSharedPreferences(Constants.PREFERENCES, MODE_PRIVATE);
+        preferences.edit().putBoolean(Constants.PREFERENCES_FINISH, finish).commit();
         if(finish){
             btn_tender.setVisibility(View.GONE);
             message.setVisibility(View.GONE);
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    sendIntent(false);
+                }
+            }, 3 * DateUtils.SECOND_IN_MILLIS);
         }
 
         TypefaceHelper.typeface(this);

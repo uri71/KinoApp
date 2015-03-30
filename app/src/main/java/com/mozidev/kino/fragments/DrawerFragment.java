@@ -83,7 +83,7 @@ public class DrawerFragment extends Fragment {
             mFromSavedInstanceState = true;
         }
         if(getActivity().getIntent().getBooleanExtra(Constants.ARG_SET_TENDER, false)
-                || !getActivity().getPreferences(Context.MODE_PRIVATE)
+                || !getActivity().getSharedPreferences(Constants.PREFERENCES, Context.MODE_PRIVATE)
                 .getBoolean(Constants.PREFERENCES_FINISH, true)){
             mCurrentSelectedPosition = 6;
             mFromSavedInstanceState = true;

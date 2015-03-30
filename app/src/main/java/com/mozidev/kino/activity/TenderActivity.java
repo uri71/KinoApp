@@ -31,17 +31,17 @@ public class TenderActivity extends BaseActivity{
         setContentView(R.layout.activity_tender);
         questions = KinoApplication.getInstance(this).getListQuestion();
         setTitle(getString(R.string.tender_title));
-        if(getPreferences(MODE_PRIVATE).getBoolean(Constants.PREFERENCES_FINISH, false))showFinishTenderDialog();
+       // if(getSharedPreferences(Constants.PREFERENCES, MODE_PRIVATE).getBoolean(Constants.PREFERENCES_FINISH, false))showFinishTenderDialog();
         setFragment();
     }
 
-    private Dialog showFinishTenderDialog() {
+   /* private Dialog showFinishTenderDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(getString(R.string.dialog_finish_tender_message));
         Dialog dialog = builder.show();
         TypefaceHelper.typeface(dialog.getWindow().getDecorView());
         return dialog;
-    }
+    }*/
 
 
     public void setFragment() {

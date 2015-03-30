@@ -71,7 +71,8 @@ public class TrailerFragment extends Fragment implements AdapterView.OnItemClick
 
     public List<Integer> getTrailerList() {
         return Arrays.asList(R.drawable.trailer1, R.drawable.trailer2, R.drawable.backstage_1, R.drawable.backstage_2,
-                R.drawable.backstage_3, R.drawable.backstage_4, R.drawable.backstage_5);
+                R.drawable.backstage_3, R.drawable.backstage_4, R.drawable.backstage_5,
+                R.drawable.backstage_6, R.drawable.backstage_7, R.drawable.backstage_8);
     }
 
 

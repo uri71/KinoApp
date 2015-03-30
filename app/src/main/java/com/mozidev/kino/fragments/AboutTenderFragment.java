@@ -44,8 +44,11 @@ public class AboutTenderFragment extends Fragment implements View.OnClickListene
         //Button btn_cancel = (Button) view.findViewById(R.id.btn_cancel);
         Button btn_start = (Button) view.findViewById(R.id.btn_start);
         TextView text_about = (TextView) view.findViewById(R.id.tv_about);
-        boolean finish = getActivity().getPreferences(Context.MODE_PRIVATE).getBoolean(Constants.PREFERENCES_FINISH, false);
-        if(finish)text_about.setText(getActivity().getString(R.string.end_tehder_message));
+        boolean finish = getActivity().getSharedPreferences(Constants.PREFERENCES, Context.MODE_PRIVATE).getBoolean(Constants.PREFERENCES_FINISH, false);
+        if(finish){
+            text_about.setText(getActivity().getString(R.string.dialog_finish_tender_message));
+            text_about.setTextSize(26);
+        }
         //btn_cancel.setOnClickListener(this);
         btn_start.setOnClickListener(this);
        /* TextView tv_about = (TextView) view.findViewById(R.id.tv_about);

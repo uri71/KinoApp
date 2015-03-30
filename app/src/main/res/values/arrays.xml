@@ -436,6 +436,9 @@
         <item>https://film-apps.s3.amazonaws.com/trailers_small/backstage_3.mp4</item>
         <item>https://film-apps.s3.amazonaws.com/trailers_small/backstage_4.mp4</item>
         <item>https://film-apps.s3.amazonaws.com/trailers_small/backstage_5.mp4</item>
+        <item>https://film-apps.s3.amazonaws.com/trailers_small/backstage_6.mp4</item>
+        <item>https://film-apps.s3.amazonaws.com/trailers_small/backstage_7.mp4</item>
+        <item>https://film-apps.s3.amazonaws.com/trailers_small/backstage_8.mp4</item>
     </string-array>
     <string-array name="trailers_preview">
         <item>https://film-apps.s3.amazonaws.com/trailer_preview/backstage1.png</item>
@@ -445,6 +448,9 @@
         <item>https://film-apps.s3.amazonaws.com/trailer_preview/backstage3.png</item>
         <item>https://film-apps.s3.amazonaws.com/trailer_preview/backstage4.png</item>
         <item>https://film-apps.s3.amazonaws.com/trailer_preview/backstage5.png</item>
+        <item>https://film-apps.s3.amazonaws.com/trailer_preview/backstage6.png</item>
+        <item>https://film-apps.s3.amazonaws.com/trailer_preview/backstage7.png</item>
+        <item>https://film-apps.s3.amazonaws.com/trailer_preview/backstage8.png</item>
     </string-array>
     <string-array name="news_title">
         <item>@string/about1</item>
@@ -460,11 +466,14 @@
     <string-array name="trailer_title">
         <item>Перший офіційний трейлер</item>
         <item>Другий офіційний трейлер</item>
-        <item>Ризикуємо заради хорошого кадру</item>
-        <item>Вогонь і любов в об’єктиві!</item>
-        <item>Актори бруду не бояться</item>
-        <item>Як підірвали майданчик</item>
-        <item>Сніг на майданчику падає навіть влітку</item>
+        <item>Як ми знімали "Незламна" 1</item>
+        <item>Як ми знімали "Незламна" 2</item>
+        <item>Як ми знімали "Незламна" 3</item>
+        <item>Як ми знімали "Незламна" 4</item>
+        <item>Як ми знімали "Незламна" 5</item>
+        <item>Як ми знімали "Незламна" 6</item>
+        <item>Як ми знімали "Незламна" 7</item>
+        <item>Як ми знімали "Незламна" 8</item>
     </string-array>
 
     <string-array name="actors_photo_url">
