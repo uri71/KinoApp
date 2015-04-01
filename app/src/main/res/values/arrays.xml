@@ -154,8 +154,6 @@
         <item>Вільнюське гето</item>
         <item>Ангел із залізними крилами</item>
     </string-array>
-
-
     <string-array name="about_facts">
         <item>@string/about1</item>
         <item>@string/about2</item>
@@ -169,6 +167,7 @@
     <string-array name="about_title">
         <item>Назва</item>
         <item>Країна</item>
+        <item>Слоган</item>
         <item>Жанр</item>
         <item>Режисер</item>
         <item>Продюсери</item>
@@ -185,6 +184,7 @@
     <string-array name="about_data">
         <item>Незламна </item>
         <item>Украіїна, Росія</item>
+        <item>Народжена в Україні!</item>
         <item>військовий, драма</item>
         <item>Сергій Мокрицький</item>
         <item>Єгор Олесов, Наталія Мокрицька</item>

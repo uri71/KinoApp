@@ -176,7 +176,7 @@ public class ShareActivity extends BaseActivity {
         Bitmap bitmap = BitmapFactory.decodeFile(pathName);
         if (bitmap == null) {
             Log.d(TAG, "bitmap == null");
-            bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.poster_2);
+            bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.share_image);
         }
         return bitmap;
     }
@@ -299,13 +299,13 @@ public class ShareActivity extends BaseActivity {
             }).executeAsync();
         }
 
-        String name = getString(R.string.slogan);
+        //String name = getString(R.string.slogan);
         String image_url = getShareImageUrl();
-        image_url = "http://s019.radikal.ru/i620/1503/d3/b56867c88cdf.jpg";
+        image_url = "http://s020.radikal.ru/i710/1503/49/9deb8eeff5f1.jpg";
         String description = getDescription();
 
         Bundle params = new Bundle();
-        params.putString("name", name);
+        //params.putString("name", name);
         //params.putString("caption", "Build great social apps and get more installs.");
         params.putString("description", description);
         //params.putString("link", "https://nezlamna.com");
@@ -381,7 +381,7 @@ public class ShareActivity extends BaseActivity {
         final Bitmap b = getPhoto();
         final VKShareDialog dialog = new VKShareDialog();
         dialog.setText(getDescription())
-                .setAttachmentImages(new VKUploadImage[]{
+                .setAttachmentImages(new VKUploadImage[] {
                         new VKUploadImage(b, VKImageParameters.jpgImage(0.5f))
                 })
                 .setShareDialogListener(new VKShareDialog.VKShareDialogListener() {
