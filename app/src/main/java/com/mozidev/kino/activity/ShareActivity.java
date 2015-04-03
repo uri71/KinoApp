@@ -298,17 +298,15 @@ public class ShareActivity extends BaseActivity {
                 }
             }).executeAsync();
         }
-
-        //String name = getString(R.string.slogan);
         String image_url = getShareImageUrl();
-        image_url = "http://s020.radikal.ru/i710/1503/49/9deb8eeff5f1.jpg";
-        String description = getDescription();
+       if(image_url.isEmpty()) image_url = "http://i.imgur.com/kom2GTW.jpg";
+
 
         Bundle params = new Bundle();
-        //params.putString("name", name);
-        //params.putString("caption", "Build great social apps and get more installs.");
-        params.putString("description", description);
-        //params.putString("link", "https://nezlamna.com");
+        params.putString("name", "Народжена в Україні!");
+        params.putString("caption", "Щоб скачати мобільний додаток просто клікніть на цей пост");
+        params.putString("description", "Дивись #НЕЗЛАМНА, завантаж мобільний додаток та виграй iPhone 6!");
+        params.putString("link", "http://nezlamna-konkurs.com.ua/download");
         params.putString("picture", image_url);
 
         WebDialog feedDialog = (
@@ -360,7 +358,7 @@ public class ShareActivity extends BaseActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
          winDialog = builder.setMessage(isWin ?
                 getString(R.string.message_win)
-                : getString(R.string.message_lose)).show();
+                 : getString(R.string.message_lose)).show();
         TypefaceHelper.typeface(winDialog.getWindow().getDecorView());
     }
 
